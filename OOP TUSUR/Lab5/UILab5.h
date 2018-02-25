@@ -2,4 +2,7 @@
 #include "../CheckSymbol.h"
 #include "PersonList.h"
 
-void UILab5();
+namespace Lab5
+{
+	void UILab5();
+}

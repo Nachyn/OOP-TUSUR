@@ -123,6 +123,11 @@
     <ClCompile Include="Lab4\UILab4.cpp" />
     <ClCompile Include="Lab5\PersonList.cpp" />
     <ClCompile Include="Lab5\UILab5.cpp" />
+    <ClCompile Include="Lab6\Adult6.cpp" />
+    <ClCompile Include="Lab6\Child6.cpp" />
+    <ClCompile Include="Lab6\Person6.cpp" />
+    <ClCompile Include="Lab6\PersonList6.cpp" />
+    <ClCompile Include="Lab6\UILab6.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -135,6 +140,11 @@
     <ClInclude Include="Lab4\UILab4.h" />
     <ClInclude Include="Lab5\PersonList.h" />
     <ClInclude Include="Lab5\UILab5.h" />
+    <ClInclude Include="Lab6\Adult6.h" />
+    <ClInclude Include="Lab6\Child6.h" />
+    <ClInclude Include="Lab6\Person6.h" />
+    <ClInclude Include="Lab6\PersonList6.h" />
+    <ClInclude Include="Lab6\UILab6.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

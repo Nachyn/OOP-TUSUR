@@ -116,11 +116,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Lab1\Tasks.cpp" />
+    <ClCompile Include="Lab2\Tasks2.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CheckSymbol.h" />
     <ClInclude Include="Lab1\Tasks.h" />
+    <ClInclude Include="Lab2\Tasks2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

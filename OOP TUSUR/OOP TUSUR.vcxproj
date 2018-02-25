@@ -128,7 +128,6 @@
     <ClCompile Include="Lab6\Person6.cpp" />
     <ClCompile Include="Lab6\PersonList6.cpp" />
     <ClCompile Include="Lab6\UILab6.cpp" />
-    <ClCompile Include="Lab7\TemplateList.cpp" />
     <ClCompile Include="Lab7\UILab7.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>

@@ -99,9 +99,6 @@
     <ClCompile Include="Lab6\PersonList6.cpp">
       <Filter>Исходные файлы\Lab6</Filter>
     </ClCompile>
-    <ClCompile Include="Lab7\TemplateList.cpp">
-      <Filter>Исходные файлы\Lab7</Filter>
-    </ClCompile>
     <ClCompile Include="Lab7\UILab7.cpp">
       <Filter>Исходные файлы\Lab7</Filter>
     </ClCompile>

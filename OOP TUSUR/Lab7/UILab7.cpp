@@ -4,7 +4,7 @@ void UILab7()
 {
 	Lab7::TemplateList<double> doubleList;
 	Lab7::TemplateList<Lab7::Person> personList;
-	//TemplateList<double[5]> doubleArrayList;
+	Lab7::TemplateList<double[5]> doubleArrayList;
 	Lab7::TemplateList<Lab7::TemplateList<double>> doubleListList;
 
 	Lab7::TemplateList<double> doubleList2;
@@ -24,7 +24,7 @@ void UILab7()
 			<< "[3] Demonstrate on List<double>" << endl
 			<< "[0] Exit" << endl
 			<< "-------------------------------------------------" << endl
-			<< "Choose 0-4: ";
+			<< "Choose 0-3: ";
 		n = CheckSymbol();
 		system("cls");
 		switch (n)

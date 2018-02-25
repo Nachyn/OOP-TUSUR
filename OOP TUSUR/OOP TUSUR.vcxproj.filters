@@ -31,6 +31,12 @@
     <Filter Include="Исходные файлы\Lab3">
       <UniqueIdentifier>{cb94a58d-6e68-4256-be6d-0847ec2590af}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Lab4">
+      <UniqueIdentifier>{2223ccf7-4b2e-4025-8d4c-265dff02e9d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Lab4">
+      <UniqueIdentifier>{1072a6bc-a34a-46be-920a-a4553fa63667}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -45,6 +51,15 @@
     <ClCompile Include="Lab3\Tasks3.cpp">
       <Filter>Исходные файлы\Lab3</Filter>
     </ClCompile>
+    <ClCompile Include="Lab4\DoublyLinkedList.cpp">
+      <Filter>Исходные файлы\Lab4</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab4\Stack.cpp">
+      <Filter>Исходные файлы\Lab4</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab4\UILab4.cpp">
+      <Filter>Исходные файлы\Lab4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CheckSymbol.h">
@@ -58,6 +73,15 @@
     </ClInclude>
     <ClInclude Include="Lab3\Tasks3.h">
       <Filter>Файлы заголовков\Lab3</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab4\Stack.h">
+      <Filter>Файлы заголовков\Lab4</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab4\DoublyLinkedList.h">
+      <Filter>Файлы заголовков\Lab4</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab4\UILab4.h">
+      <Filter>Файлы заголовков\Lab4</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

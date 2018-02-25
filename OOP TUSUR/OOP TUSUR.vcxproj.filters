@@ -81,9 +81,6 @@
     <ClCompile Include="Lab6\UILab6.cpp">
       <Filter>Исходные файлы\Lab6</Filter>
     </ClCompile>
-    <ClCompile Include="Lab6\PersonList6.cpp">
-      <Filter>Исходные файлы\Lab6</Filter>
-    </ClCompile>
     <ClCompile Include="Lab6\Person6.cpp">
       <Filter>Исходные файлы\Lab6</Filter>
     </ClCompile>
@@ -91,6 +88,9 @@
       <Filter>Исходные файлы\Lab6</Filter>
     </ClCompile>
     <ClCompile Include="Lab6\Adult6.cpp">
+      <Filter>Исходные файлы\Lab6</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab6\PersonList6.cpp">
       <Filter>Исходные файлы\Lab6</Filter>
     </ClCompile>
   </ItemGroup>
@@ -125,9 +125,6 @@
     <ClInclude Include="Lab6\UILab6.h">
       <Filter>Файлы заголовков\Lab6</Filter>
     </ClInclude>
-    <ClInclude Include="Lab6\PersonList6.h">
-      <Filter>Файлы заголовков\Lab6</Filter>
-    </ClInclude>
     <ClInclude Include="Lab6\Person6.h">
       <Filter>Файлы заголовков\Lab6</Filter>
     </ClInclude>
@@ -135,6 +132,9 @@
       <Filter>Файлы заголовков\Lab6</Filter>
     </ClInclude>
     <ClInclude Include="Lab6\Adult6.h">
+      <Filter>Файлы заголовков\Lab6</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab6\PersonList6.h">
       <Filter>Файлы заголовков\Lab6</Filter>
     </ClInclude>
   </ItemGroup>

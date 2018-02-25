@@ -40,9 +40,9 @@ int main()
 		case 4:
 			UILab4(); break;
 		case 5:
-			Lab5::UILab5(); break;
+			UILab5(); break;
 		case 6:
-			Lab6::UILab6(); break;
+			UILab6(); break;
 		case 7:
 			//UILab7(); break;
 		case 0:

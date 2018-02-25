@@ -25,6 +25,12 @@
     <Filter Include="Файлы заголовков\Lab2">
       <UniqueIdentifier>{b42915a6-25d4-4ac4-8760-fcf2933db217}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Lab3">
+      <UniqueIdentifier>{f4a1fbef-0750-45c7-a6f3-41c56bd95035}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Lab3">
+      <UniqueIdentifier>{cb94a58d-6e68-4256-be6d-0847ec2590af}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -36,6 +42,9 @@
     <ClCompile Include="Lab2\Tasks2.cpp">
       <Filter>Исходные файлы\Lab2</Filter>
     </ClCompile>
+    <ClCompile Include="Lab3\Tasks3.cpp">
+      <Filter>Исходные файлы\Lab3</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CheckSymbol.h">
@@ -46,6 +55,9 @@
     </ClInclude>
     <ClInclude Include="Lab2\Tasks2.h">
       <Filter>Файлы заголовков\Lab2</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab3\Tasks3.h">
+      <Filter>Файлы заголовков\Lab3</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

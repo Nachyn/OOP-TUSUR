@@ -1,6 +1,6 @@
 #include "Lab1/Tasks.h"
 #include "Lab2/Tasks2.h"
-//#include "Lab3/UI.h"
+#include "Lab3/Tasks3.h"
 //#include "Lab4/UI.h"
 //#include "Lab5/UI.h"
 //#include "Lab6/UI.h"
@@ -36,7 +36,7 @@ int main()
 		case 2:
 			Lab2::UILab2(); break;
 		case 3:
-			//Lab3::UILab3(); break;
+			Lab3::UILab3(); break;
 		case 4:
 			//UILab4(); break;
 		case 5:

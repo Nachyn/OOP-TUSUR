@@ -49,6 +49,12 @@
     <Filter Include="Исходные файлы\Lab6">
       <UniqueIdentifier>{2b4e97e4-8daf-4e64-920d-8201986cf574}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Файлы заголовков\Lab7">
+      <UniqueIdentifier>{f93c02fc-7d58-49f8-96b6-a76095955730}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\Lab7">
+      <UniqueIdentifier>{2760c2e1-43be-4565-8c11-f8b83afcf4f0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -93,6 +99,12 @@
     <ClCompile Include="Lab6\PersonList6.cpp">
       <Filter>Исходные файлы\Lab6</Filter>
     </ClCompile>
+    <ClCompile Include="Lab7\TemplateList.cpp">
+      <Filter>Исходные файлы\Lab7</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab7\UILab7.cpp">
+      <Filter>Исходные файлы\Lab7</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CheckSymbol.h">
@@ -136,6 +148,12 @@
     </ClInclude>
     <ClInclude Include="Lab6\PersonList6.h">
       <Filter>Файлы заголовков\Lab6</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab7\TemplateList.h">
+      <Filter>Файлы заголовков\Lab7</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab7\UILab7.h">
+      <Filter>Файлы заголовков\Lab7</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

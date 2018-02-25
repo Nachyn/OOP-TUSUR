@@ -4,7 +4,7 @@
 #include "Lab4/UILab4.h"
 #include "Lab5/UILab5.h"
 #include "Lab6/UILab6.h"
-//#include "Lab7/UI.h"
+#include "Lab7/UILab7.h"
 
 using namespace std;
 
@@ -44,7 +44,7 @@ int main()
 		case 6:
 			UILab6(); break;
 		case 7:
-			//UILab7(); break;
+			UILab7(); break;
 		case 0:
 			return 0;
 		default:

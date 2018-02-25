@@ -121,6 +121,8 @@
     <ClCompile Include="Lab4\DoublyLinkedList.cpp" />
     <ClCompile Include="Lab4\Stack.cpp" />
     <ClCompile Include="Lab4\UILab4.cpp" />
+    <ClCompile Include="Lab5\PersonList.cpp" />
+    <ClCompile Include="Lab5\UILab5.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -131,6 +133,8 @@
     <ClInclude Include="Lab4\DoublyLinkedList.h" />
     <ClInclude Include="Lab4\Stack.h" />
     <ClInclude Include="Lab4\UILab4.h" />
+    <ClInclude Include="Lab5\PersonList.h" />
+    <ClInclude Include="Lab5\UILab5.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

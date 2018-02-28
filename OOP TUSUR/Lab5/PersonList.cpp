@@ -132,7 +132,15 @@ namespace Lab5
 
 	void PersonList::Clear()
 	{
-		//ÏÓÑÒÎÒÀ
+		PersonListItem* next = _head;
+		while (next != NULL)
+		{
+			PersonListItem* tempNext = next->Next;
+			delete next;
+			next = tempNext;
+		}
+		_head = NULL;
+		_tail = NULL;
 	}
 
 	int PersonList::GetCount()

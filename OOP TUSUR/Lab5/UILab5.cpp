@@ -26,6 +26,10 @@ void UILab5()
 
 	list1.Read();
 	list1.ShowInConsole();
+	system("pause");
+	cout << "Лист1 очищен.";
+	list1.Clear();
 
+	list1.ShowInConsole();
 	system("pause");
 }

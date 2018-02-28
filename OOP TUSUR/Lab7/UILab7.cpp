@@ -22,9 +22,12 @@ void UILab7()
 			<< "[1] Demonstrate on double" << endl
 			<< "[2] Demonstrate on Person" << endl
 			<< "[3] Demonstrate on List<double>" << endl
+			<< "[4] Clear double" << endl
+			<< "[5] Clear Person" << endl
+			<< "[6] Clear List<double>" << endl
 			<< "[0] Exit" << endl
 			<< "-------------------------------------------------" << endl
-			<< "Choose 0-3: ";
+			<< "Choose 0-6: ";
 		n = CheckSymbol();
 		system("cls");
 		switch (n)
@@ -91,6 +94,16 @@ void UILab7()
 
 			doubleListList.InsertByIndex(doubleListAdd, 4);
 			doubleListList.ShowInConsole();
+			break;
+
+		case 4:
+			doubleList.Clear();
+			break;
+		case 5:
+			personList.Clear();
+			break;
+		case 6:
+			doubleListList.Clear();
 			break;
 		default:
 			cout << "Повторите ввод";

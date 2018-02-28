@@ -262,7 +262,19 @@ namespace Lab7
 
 		void Clear()
 		{
-
+			TemplateListItem<T>* next = _head;
+			while (next != NULL)
+			{
+				TemplateListItem<T>* tempNext = next->Next;
+				if (typeid(next->Value) == typeid(TemplateList<double>))
+				{
+					//(TemplateList<double>)(next->Value).Clear();
+				}
+				delete next;
+				next = tempNext;
+			}
+			_head = NULL;
+			_tail = NULL;
 		}
 
 		int GetCount()

@@ -170,15 +170,13 @@ namespace Lab4
 
 	DoublyLinkedList Clear(DoublyLinkedList list)
 	{
-		//ÍÅ ÑÄÅËÀË :ñ
-		/*if (list.head != NULL)
+		Node* next = list.head;
+		while (next != NULL)
 		{
-		delete list.head;
+			Node* tempNext = next->next;
+			delete next;
+			next = tempNext;
 		}
-		if (list.tail != NULL)
-		{
-		delete list.tail;
-		} */
 		list.head = NULL;
 		list.tail = NULL;
 		return list;

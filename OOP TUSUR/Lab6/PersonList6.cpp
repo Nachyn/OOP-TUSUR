@@ -133,7 +133,16 @@ namespace Lab6
 
 	void PersonList::Clear()
 	{
-		//ÏÓÑÒÎÒÀ
+		PersonListItem* next = _head;
+		while (next != NULL)
+		{
+			PersonListItem* tempNext = next->Next;
+			delete next->Value;
+			delete next;
+			next = tempNext;
+		}
+		_head = NULL;
+		_tail = NULL;
 	}
 
 	int PersonList::GetCount()

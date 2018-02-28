@@ -22,5 +22,9 @@ void UILab6()
 	list.RemoveAt(0);
 	list.ShowInConsole();
 
+	list.Clear();
+	cout << "Лист очищен" << endl;
+	list.ShowInConsole();
+
 	system("pause");
 }

@@ -2,7 +2,7 @@
 
 namespace Lab3
 {
-	Person Lab3::ReadPerson()
+	Person ReadPerson()
 	{
 		Person newPerson;
 		cout << "Insert Surname: ";

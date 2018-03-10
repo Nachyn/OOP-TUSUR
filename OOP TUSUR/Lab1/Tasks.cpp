@@ -2,12 +2,12 @@
 
 namespace Lab1
 {
-	void Lab1::Task2()
+	void Task2()
 	{
 		printf_s("Hello World!\n");
 	}
 
-	void Lab1::Task3()
+	void Task3()
 	{
 		int a = 1;
 		int b = 2;
@@ -17,7 +17,7 @@ namespace Lab1
 		printf_s("A + B: %d \n", a + b);
 	}
 
-	void Lab1::Task4()
+	void Task4()
 	{
 		int a = 5;
 		int b = 3;
@@ -29,7 +29,7 @@ namespace Lab1
 		printf_s("Integer division: %d \n", a / b);
 	}
 
-	void Lab1::Task5()
+	void Task5()
 	{
 		int a;
 		int b;
@@ -42,7 +42,7 @@ namespace Lab1
 		printf_s("Sum %d + %d = %d \n", a, b, a + b);
 	}
 
-	void Lab1::Task6()
+	void Task6()
 	{
 		int* pA = new int;
 		int* pB = new int;
@@ -55,7 +55,7 @@ namespace Lab1
 		printf_s("Sum %d + %d = %d \n", *pA, *pB, *pA + *pB);
 	}
 
-	void Lab1::Task7()
+	void Task7()
 	{
 		int a;
 		printf_s("Enter value for check on even/odd: ");
@@ -70,7 +70,7 @@ namespace Lab1
 		}
 	}
 
-	void Lab1::Task8()
+	void Task8()
 	{
 		int a;
 		printf_s("Enter value for check on even/odd: ");
@@ -89,7 +89,7 @@ namespace Lab1
 		}
 	}
 
-	void Lab1::Task9()
+	void Task9()
 	{
 		int a = 0;
 		while (a < 5)
@@ -99,7 +99,7 @@ namespace Lab1
 		}
 	}
 
-	void Lab1::Task10()
+	void Task10()
 	{
 		int a = 0;
 		do
@@ -109,7 +109,7 @@ namespace Lab1
 		} while (a < 5);
 	}
 
-	void Lab1::Task11()
+	void Task11()
 	{
 		int a = 10;
 		for (int i = 0; i < 10; i++)
@@ -124,7 +124,7 @@ namespace Lab1
 		}
 	}
 
-	void Lab1::Task12()
+	void Task12()
 	{
 		int a = 10;
 		for (int i = 0; i < 10; i++)
@@ -139,7 +139,7 @@ namespace Lab1
 		printf_s("\n A is %d \n", a);
 	}
 
-	void Lab1::Task13()
+	void Task13()
 	{
 		int a = 5;
 		int b = 3;
@@ -158,7 +158,7 @@ namespace Lab1
 		printf_s("Value of z is %f \n", z);
 	}
 
-	void Lab1::UILab1()
+	void UILab1()
 	{
 		Task2();
 		cout << "-----------------------------------------------------------\n";

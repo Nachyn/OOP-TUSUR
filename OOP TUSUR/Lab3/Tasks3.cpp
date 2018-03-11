@@ -10,22 +10,24 @@ namespace Lab3
 		cout << endl << "Insert Name: ";
 		cin >> newPerson.Name;
 		cout << endl << "Insert Sex: ";
-		int n;
+		int sex;
 
 		do
 		{
-			n = CheckSymbol();
-		} while (n != 0 && n != 1);
-		switch (n)
+			sex = CheckSymbol();
+		} 
+		while (sex != 0 && sex != 1);
+
+		switch (sex)
 		{
-		case Female:
-			newPerson.SexPerson = Female;
-			break;
-		case Male:
-			newPerson.SexPerson = Male;
-			break;
-		default:
-			break;
+			case Female:
+				newPerson.SexPerson = Female;
+				break;
+			case Male:
+				newPerson.SexPerson = Male;
+				break;
+			default:
+				break;
 		}
 		return newPerson;
 	}
@@ -312,100 +314,100 @@ namespace Lab3
 
 			switch (n)
 			{
-			case GetLengthEnum:
-			{
-				char* mass1 = (char*)"abc123";
-				cout << GetLength(mass1) << endl;
-				break;
-			}
-
-			case ConcatenateEnum:
-			{
-				char* mass2 = Concatenate(new char[10]{ '1', '2', '3', '\0' }, new char[10]{ 'a', 'b', 'c','\0' });
-				for (int i = 0; i < GetLength(mass2); i++)
+				case GetLengthEnum:
 				{
-					cout << mass2[i] << " ";
-				}cout << endl;
-				break;
-			}
-
-			case GetSubstringEnum:
-			{
-				char* mass3 = (char*)"abc123";
-				char* subMass3 = GetSubstring(mass3, 3, 3);
-				for (int i = 0; i < GetLength(subMass3); i++)
-				{
-					cout << subMass3[i] << " ";
-				}cout << endl;
-				break;
-			}
-
-			case FindSubstringEnum:
-			{
-				char* mass4 = (char*)"vybory2018putin";
-				char* subStr = (char*)"naval";
-				char* subStr2 = (char*)"putin";
-				if (FindSubstring(mass4, subStr) == -1)
-				{
-					cout << "/naval/ NEnaiden v /vybory2018putin/" << endl;
+					char* mass1 = (char*)"abc123";
+					cout << GetLength(mass1) << endl;
+					break;
 				}
-				if (FindSubstring(mass4, subStr2) != -1)
+
+				case ConcatenateEnum:
 				{
-					cout << "/putin/ naiden v /vybory2018putin/" << endl;
-					cout << "na pozicii " << FindSubstring(mass4, subStr2) << endl;
+					char* mass2 = Concatenate(new char[10]{ '1', '2', '3', '\0' }, new char[10]{ 'a', 'b', 'c','\0' });
+					for (int i = 0; i < GetLength(mass2); i++)
+					{
+						cout << mass2[i] << " ";
+					}cout << endl;
+					break;
 				}
-				break;
-			}
 
-			case UppercaseEnum:
-			{
-				char* mass5 = (char*)"Different cases in That string, also 1 and 2 numbers!.!#@48";
-				cout << Uppercase(mass5) << endl;
-				break;
-			}
+				case GetSubstringEnum:
+				{
+					char* mass3 = (char*)"abc123";
+					char* subMass3 = GetSubstring(mass3, 3, 3);
+					for (int i = 0; i < GetLength(subMass3); i++)
+					{
+						cout << subMass3[i] << " ";
+					}cout << endl;
+					break;
+				}
 
-			case LowercaseEnum:
-			{
-				char* mass5 = (char*)"Different cases in That string, also 1 and 2 numbers!.!#@48";
-				cout << Lowercase(mass5) << endl;
-				break;
-			}
+				case FindSubstringEnum:
+				{
+					char* mass4 = (char*)"vybory2018putin";
+					char* subStr = (char*)"naval";
+					char* subStr2 = (char*)"putin";
+					if (FindSubstring(mass4, subStr) == -1)
+					{
+						cout << "/naval/ NEnaiden v /vybory2018putin/" << endl;
+					}
+					if (FindSubstring(mass4, subStr2) != -1)
+					{
+						cout << "/putin/ naiden v /vybory2018putin/" << endl;
+						cout << "na pozicii " << FindSubstring(mass4, subStr2) << endl;
+					}
+					break;
+				}
+	
+				case UppercaseEnum:
+				{
+					char* mass5 = (char*)"Different cases in That string, also 1 and 2 numbers!.!#@48";
+					cout << Uppercase(mass5) << endl;
+					break;
+				}
 
-			case SplitFilenameEnum:
-			{
-				char source6[50]{ 'd',':','\\','f','o','l','d','e','r','\\','s','u','b','f','o','l','d','e','r','\\','f','i','l','e','N','e','x','e','\0' };
-				char path6[50];
-				char name6[50];
-				char extension6[50];
+				case LowercaseEnum:
+				{
+					char* mass5 = (char*)"Different cases in That string, also 1 and 2 numbers!.!#@48";
+					cout << Lowercase(mass5) << endl;
+					break;
+				}
+	
+				case SplitFilenameEnum:
+				{
+					char source6[50]{ 'd',':','\\','f','o','l','d','e','r','\\','s','u','b','f','o','l','d','e','r','\\','f','i','l','e','N','e','x','e','\0' };
+					char path6[50];
+					char name6[50];
+					char extension6[50];
+	
+					SplitFilename(source6, path6, name6, extension6);
+					cout << "source: " << source6 << endl;
+					cout << "path: " << path6 << endl;
+					cout << "name: " << name6 << endl;
+					cout << "extension: " << extension6 << endl;
+					break;
+				}
 
-				SplitFilename(source6, path6, name6, extension6);
-				cout << "source: " << source6 << endl;
-				cout << "path: " << path6 << endl;
-				cout << "name: " << name6 << endl;
-				cout << "extension: " << extension6 << endl;
-				break;
-			}
+				case ReplaceTabsOnSpacesEnum:
+				{
+					char* mass7 = (char*)":::Cake\tis\ta lie! C::ake\t\tis a lie! ";
+					cout << ReplaceTabsOnSpaces(mass7) << endl;
+					break;
+				}
 
-			case ReplaceTabsOnSpacesEnum:
-			{
-				char* mass7 = (char*)":::Cake\tis\ta lie! C::ake\t\tis a lie! ";
-				cout << ReplaceTabsOnSpaces(mass7) << endl;
-				break;
-			}
+				case ReplaceSpacesOnTabsEnum:
+				{
+					char* mass7 = (char*)":::Cake\tis\ta lie! C::ake\t\tis a lie! ";
+					cout << ReplaceSpacesOnTabs(mass7) << endl;
+					break;
+				}
+				case 10:
+					exit = true;
+					break;
 
-			case ReplaceSpacesOnTabsEnum:
-			{
-				char* mass7 = (char*)":::Cake\tis\ta lie! C::ake\t\tis a lie! ";
-				cout << ReplaceSpacesOnTabs(mass7) << endl;
-				break;
-			}
-			case 10:
-				exit = true;
-				break;
-
-			default:
-				cout << "Enter Again" << endl;
-				break;
+				default:
+					cout << "Enter Again" << endl;
+					break;
 			}
 		}
 

@@ -238,9 +238,13 @@ namespace Lab2
 	
 		double array1[100][100], array2[100][100], array3[100][100];
 		int size;
-		cout << endl << "Введите Размер матрицы:";
-		cin >> size;
-		cout << endl;
+		do 
+		{
+			cout << endl << "Введите Размер матрицы:";
+			size = CheckSymbol();
+			cout << endl;
+		} 
+		while (size < 1);
 
 		for (int i = 0; i < size; i++)
 		{

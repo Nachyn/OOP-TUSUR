@@ -236,7 +236,10 @@ namespace Lab2
 		}
 		cout << endl << "--------------------------------------------------" << endl;
 	
-		double array1[100][100], array2[100][100], array3[100][100];
+		double array1[100][100];
+		double array2[100][100];
+		double array3[100][100];
+
 		int size;
 		do 
 		{

@@ -43,33 +43,38 @@ namespace Lab2
 		}
 	}
 
-	int GetRoots(int a, int b, int c, double * x1, double * x2)
+	int GetRoots(int a, int b, int c, double** x1, double** x2)
 	{
 		double D = b * b - (4 * a*c);
 		double sqrtD = sqrt(D);
 
 		if (D < 0)
 		{
-			x1 = x2 = NULL;
+			*x1 = *x2 = NULL;
 			return 0;
+		}
+		if (a == 0) {
+			**x1 = (-c/b);
+			*x2 = NULL;
+			return 1;
 		}
 		if ((int)D == 0)
 		{
-			*x1 = -(b / 2 * a);
-			x2 = NULL;
+			**x1 = -(b / 2 * a);
+			*x2 = NULL;
 			return 1;
 		}
-		*x1 = (-b - sqrtD) / 2 * a;
-		*x2 = (-b + sqrtD) / 2 * a;
+		**x1 = (-b - sqrtD) / (2 * a);
+		**x2 = (-b + sqrtD) / (2 * a);
 		return 2;
 	}
 
-	int GetRoots2(int a, int b, int c, double & x1, double & x2)
+	/*int GetRoots2(int a, int b, int c, double & x1, double & x2)
 	{
 		double D = b * b - (4 * a*c);
 		double sqrtD = sqrt(D);
 
-		if (D < 0)
+		if (D < 0 || a < 1)
 		{
 			x1 = x2 = NULL;
 			return 0;
@@ -83,7 +88,7 @@ namespace Lab2
 		x1 = (-b - sqrtD) / 2 * a;
 		x2 = (-b + sqrtD) / 2 * a;
 		return 2;
-	}
+	}*/
 
 	void SummNumbers(int value1, int value2)
 	{
@@ -149,15 +154,15 @@ namespace Lab2
 		//5
 		double* x1 = new double;
 		double* x2 = new double;
-		cout << GetRoots(1, 3, 2, x1, x2);
-		cout << " " << *x1 << " " << *x2 << endl;
+		cout << GetRoots(0, 1, 2, &x1,&x2);
+		cout << " " << *x1 << " " << x2 << endl;
 		cout << "--------------------------------------------------" << endl;
 
 		//6
 		double& xx1 = *(new double);
 		double& xx2 = *(new double);
-		cout << GetRoots2(1, 3, 2, xx1, xx2);
-		cout << " " << *x1 << " " << *x2 << endl;
+		//cout << GetRoots2(1, 3, 2, xx1, xx2);
+		//cout << " " << *x1 << " " << *x2 << endl;
 		cout << "--------------------------------------------------" << endl;
 
 		//7

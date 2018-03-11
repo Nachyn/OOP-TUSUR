@@ -48,19 +48,26 @@ namespace Lab2
 		double D = b * b - (4 * a*c);
 		double sqrtD = sqrt(D);
 
-		if (D < 0)
+		if (D < 0 || b == 0)
 		{
 			x1 = x2 = NULL;
 			return 0;
 		}
+
+		if (a == 0)
+		{
+			*x1 = -c / b;
+			return 1;
+		}
+
 		if ((int)D == 0)
 		{
 			*x1 = -(b / 2 * a);
 			x2 = NULL;
 			return 1;
 		}
-		*x1 = (-b - sqrtD) / 2 * a;
-		*x2 = (-b + sqrtD) / 2 * a;
+		*x1 = (-b - sqrtD) / (2 * a);
+		*x2 = (-b + sqrtD) / (2 * a);
 		return 2;
 	}
 
@@ -69,19 +76,26 @@ namespace Lab2
 		double D = b * b - (4 * a*c);
 		double sqrtD = sqrt(D);
 
-		if (D < 0)
+		if (D < 0 || b == 0)
 		{
 			x1 = x2 = NULL;
 			return 0;
 		}
+
+		if (a == 0)
+		{
+			x1 = -c / b;
+			return 1;
+		}
+
 		if ((int)D == 0)
 		{
 			x1 = -(b / 2 * a);
 			x2 = NULL;
 			return 1;
 		}
-		x1 = (-b - sqrtD) / 2 * a;
-		x2 = (-b + sqrtD) / 2 * a;
+		x1 = (-b - sqrtD) / (2 * a);
+		x2 = (-b + sqrtD) / (2 * a);
 		return 2;
 	}
 
@@ -136,31 +150,51 @@ namespace Lab2
 		}
 	}
 
+	void ShowArray(double arr[100][100], int size)
+	{
+		for (int i = 0; i < size; i++)
+		{
+			for (int j = 0; j < size; j++)
+			{
+				cout << arr[i][j] << " ";
+			}
+			cout << endl;
+		}
+	}
+
+	void MultiplyArrays(double arr1[100][100], double arr2[100][100], double resultArr[100][100], int size)
+	{
+		for (int i = 0; i < size; i++)
+		{
+			for (int l = 0; l < size; l++)
+			{
+				double sum = 0;
+				for (int j = 0; j < size; j++)
+				{
+					sum += arr1[i][j] * arr2[j][l];
+				}
+				resultArr[i][l] = sum;
+			}
+		}
+	}
+
 	void UILab2()
 	{
-		//2
-		cout << Prototype(false) << endl;
-		cout << "--------------------------------------------------" << endl;
-
-		//4
 		cout << MakeCalculation(5, 5) << endl;
 		cout << "--------------------------------------------------" << endl;
 
-		//5
 		double* x1 = new double;
 		double* x2 = new double;
-		cout << GetRoots(1, 3, 2, x1, x2);
+		cout << GetRoots(0, 1, 2, x1, x2);
 		cout << " " << *x1 << " " << *x2 << endl;
 		cout << "--------------------------------------------------" << endl;
 
-		//6
 		double& xx1 = *(new double);
 		double& xx2 = *(new double);
-		cout << GetRoots2(1, 3, 2, xx1, xx2);
-		cout << " " << *x1 << " " << *x2 << endl;
+		cout << GetRoots2(0, 1, 2, xx1, xx2);
+		cout << " " << xx1 << " " << xx2 << endl;
 		cout << "--------------------------------------------------" << endl;
 
-		//7
 		int a = 1;
 		int b = 2;
 		SummNumbers(a, b);
@@ -173,7 +207,6 @@ namespace Lab2
 		SummNumbers(m, nn);
 		cout << "--------------------------------------------------" << endl;
 
-		//8
 		cout << "Global Variable: " << globalVariable << endl;
 		GlobalPlusTwo();
 		cout << "Global Variable: " << globalVariable << endl;
@@ -185,85 +218,49 @@ namespace Lab2
 		cout << "Global Variable: " << globalVariable << endl;
 		cout << "--------------------------------------------------" << endl;
 
-		//9
 		cout << GetPower(40, 10) << endl;
 		cout << "--------------------------------------------------" << endl;
 
-		//10
 		cout << rand() % 11 << endl;
 		cout << "--------------------------------------------------" << endl;
 
-		//11 12 сортировка вставками
 		double arr[20];
 		for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
 		{
 			arr[i] = rand() % 100;
 		}
 		InsertionSort(arr, sizeof(arr) / sizeof(arr[0]));
-		//InsertionSort2(arr, sizeof(arr) / sizeof(arr[0]));
 		for (int i = 0; i < sizeof(arr) / sizeof(arr[0]); i++)
 		{
 			cout << arr[i] << " ";
 		}
 		cout << endl << "--------------------------------------------------" << endl;
-
-		//13
-//TODO: Внимательно прочитайте стандарт оформления кода RSDN https://rsdn.org/article/mag/200401/codestyle.XML
-//TODO: и приведите свой код в соответстие со стандартом		
-		double mA[100][100], mB[100][100], mC[100][100];
-		int i, j, l, n;
-		double s;
+	
+		double array1[100][100], array2[100][100], array3[100][100];
+		int size;
 		cout << endl << "Введите Размер матрицы:";
-		cin >> n;
+		cin >> size;
 		cout << endl;
 
-		for (i = 0; i<n; i++)
+		for (int i = 0; i < size; i++)
 		{
-			for (j = 0; j<n; j++)
+			for (int j = 0; j < size; j++)
 			{
-				mA[i][j] = rand() % 100;
-				mB[i][j] = rand() % 100;
+				array1[i][j] = rand() % 100;
+				array2[i][j] = rand() % 100;
 			}
 		}
-		//TODO: Ниже много дублирования, поправьте.
+
 		cout << "A:" << endl << endl;
-		for (i = 0; i<n; i++)
-		{
-			for (j = 0; j<n; j++)
-			{
-				cout << mA[i][j] << " ";
-			}
-			cout << endl;
-		}
+		ShowArray(array1, size);
+
 		cout << endl << "B:" << endl << endl;
-		for (i = 0; i<n; i++)
-		{
-			for (j = 0; j<n; j++)
-			{
-				cout << mB[i][j] << " ";
-			}
-			cout << endl;
-		}
-		for (i = 0; i<n; i++)
-		{
-			for (l = 0; l<n; l++)
-			{
-				s = 0;
-				for (j = 0; j<n; j++) {
-					s += mA[i][j] * mB[j][l];
-				}
-				mC[i][l] = s;
-			}
-		}
+		ShowArray(array2, size);
+
+		MultiplyArrays(array1, array2, array3, size);
+
 		cout << endl << "A*B:" << endl << endl;
-		for (i = 0; i<n; i++)
-		{
-			for (j = 0; j<n; j++)
-			{
-				cout << mC[i][j] << " ";
-			}
-			cout << endl;
-		}
+		ShowArray(array3, size);
 
 		system("pause");
 	}
@@ -281,11 +278,5 @@ namespace Lab2
 	void GlobalMultiplyThree()
 	{
 		globalVariable *= 3;
-	}
-
-	//TODO: Чёт не понял - а это зачем и что показывает?
-	bool Prototype(bool p)
-	{
-		return !p;
 	}
 }

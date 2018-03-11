@@ -14,7 +14,8 @@ namespace Lab2
 	void InsertionSort(double arr[], int size);
 	void InsertionSort2(double* arr, int size);
 
-	bool Prototype(bool p);
+	void ShowArray(double arr[100][100], int size);
+	void MultiplyArrays(double arr1[100][100], double arr2[100][100], double resultArr[100][100], int size);
 	void GlobalPlusTwo();
 	void GlobalMultiplyThree();
 	void GlobalEqualsOne();

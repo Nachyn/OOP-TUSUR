@@ -7,15 +7,14 @@
 using namespace std;
 inline int CheckSymbol()
 {
-//TODO: Внимательно прочитайте стандарт оформления кода RSDN https://rsdn.org/article/mag/200401/codestyle.XML
-//TODO: и приведите свой код в соответстие со стандартом
-	string n;
-	int m;
+	string inputData;
+	int outputNumber;
 	do
 	{
-		cin >> n;
-		if (n == "0") { return 0; }
-		m = atoi(n.c_str());
-	} while (m == 0);
-	return m;
+		cin >> inputData;
+		if (inputData == "0") { return 0; }
+		outputNumber = atoi(inputData.c_str());
+	} 
+	while (outputNumber == 0);
+	return outputNumber;
 }

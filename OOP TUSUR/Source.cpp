@@ -31,25 +31,24 @@ int main()
 		system("cls");
 		switch (n)
 		{
-			//TODO: Поправьте форматирование по RSDN.
-		case 1:
-			Lab1::UILab1(); break;
-		case 2:
-			Lab2::UILab2(); break;
-		case 3:
-			Lab3::UILab3(); break;
-		case 4:
-			UILab4(); break;
-		case 5:
-			UILab5(); break;
-		case 6:
-			UILab6(); break;
-		case 7:
-			UILab7(); break;
-		case 0:
-			return 0;
-		default:
-			cout << "Повторите ввод"; break;
+			case 1:
+				Lab1::UILab1(); break;
+			case 2:
+				Lab2::UILab2(); break;
+			case 3:
+				Lab3::UILab3(); break;
+			case 4:
+				UILab4(); break;
+			case 5:
+				UILab5(); break;
+			case 6:
+				UILab6(); break;
+			case 7:
+				UILab7(); break;
+			case 0:
+				return 0;
+			default:
+				cout << "Повторите ввод"; break;
 		}
 	}
 	return 0;

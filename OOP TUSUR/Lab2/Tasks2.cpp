@@ -208,6 +208,8 @@ namespace Lab2
 		cout << endl << "--------------------------------------------------" << endl;
 
 		//13
+//TODO: Внимательно прочитайте стандарт оформления кода RSDN https://rsdn.org/article/mag/200401/codestyle.XML
+//TODO: и приведите свой код в соответстие со стандартом		
 		double mA[100][100], mB[100][100], mC[100][100];
 		int i, j, l, n;
 		double s;
@@ -223,6 +225,7 @@ namespace Lab2
 				mB[i][j] = rand() % 100;
 			}
 		}
+		//TODO: Ниже много дублирования, поправьте.
 		cout << "A:" << endl << endl;
 		for (i = 0; i<n; i++)
 		{
@@ -280,6 +283,7 @@ namespace Lab2
 		globalVariable *= 3;
 	}
 
+	//TODO: Чёт не понял - а это зачем и что показывает?
 	bool Prototype(bool p)
 	{
 		return !p;

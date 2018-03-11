@@ -7,6 +7,8 @@
 using namespace std;
 inline int CheckSymbol()
 {
+//TODO: Внимательно прочитайте стандарт оформления кода RSDN https://rsdn.org/article/mag/200401/codestyle.XML
+//TODO: и приведите свой код в соответстие со стандартом
 	string n;
 	int m;
 	do

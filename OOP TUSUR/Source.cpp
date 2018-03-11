@@ -31,6 +31,7 @@ int main()
 		system("cls");
 		switch (n)
 		{
+			//TODO: Поправьте форматирование по RSDN.
 		case 1:
 			Lab1::UILab1(); break;
 		case 2:

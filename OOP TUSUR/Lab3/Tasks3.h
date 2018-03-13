@@ -1,30 +1,20 @@
 #pragma once
 #include "../CheckSymbol.h"
+#include "Person3.h"
 
 namespace Lab3
 {
-	//TODO: Каждую сущность в отдельный файл!
-	enum Sex { Female, Male };
-
-	struct Person
-	{
-		char Surname[40];
-		char Name[20];
-		//TODO: По именованию не правильно использовать префикс или постфикс Person в той же структуре.
-		Sex SexPerson;
-	};
-
 	Person ReadPerson();
-	void PrintPerson(Person person);
+	void PrintPerson(Person& person);
 	int GetLength(char* str);
 	char* Concatenate(char* string1, char* string2);
 	char* GetSubstring(char* string, int startIndex, int charCount);
 	int FindSubstring(char* string, char* substring);
-	char* Uppercase(char* string);
-	char* Lowercase(char* string);
+	char* ConvertUppercase(char* string);
+	char* ConvertLowercase(char* string);
 	int Copy(char* string, char* resString, int i, int j);
 	void SplitFilename(char* source, char* path, char* name, char* extension);
-	char* ReplaceTabsOnSpaces(char* string);
-	char* ReplaceSpacesOnTabs(char* string);
+	char* ReplaceTabsOnSpaces(char* string, int countSpace);
+	char* ReplaceSpacesOnTabs(char* string, int countSpace);
 	void UILab3();
 }

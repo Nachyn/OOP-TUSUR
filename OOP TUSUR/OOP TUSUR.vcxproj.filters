@@ -152,5 +152,14 @@
     <ClInclude Include="Lab7\UILab7.h">
       <Filter>Файлы заголовков\Lab7</Filter>
     </ClInclude>
+    <ClInclude Include="Lab3\MenuEnum.h">
+      <Filter>Файлы заголовков\Lab3</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab3\Sex3.h">
+      <Filter>Файлы заголовков\Lab3</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab3\Person3.h">
+      <Filter>Файлы заголовков\Lab3</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

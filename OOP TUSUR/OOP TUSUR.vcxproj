@@ -135,6 +135,9 @@
     <ClInclude Include="CheckSymbol.h" />
     <ClInclude Include="Lab1\Tasks.h" />
     <ClInclude Include="Lab2\Tasks2.h" />
+    <ClInclude Include="Lab3\MenuEnum.h" />
+    <ClInclude Include="Lab3\Person3.h" />
+    <ClInclude Include="Lab3\Sex3.h" />
     <ClInclude Include="Lab3\Tasks3.h" />
     <ClInclude Include="Lab4\DoublyLinkedList.h" />
     <ClInclude Include="Lab4\Stack.h" />

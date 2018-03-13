@@ -1,4 +1,5 @@
 #include "Tasks3.h"
+#include "MenuEnum.h"
 
 namespace Lab3
 {
@@ -21,10 +22,10 @@ namespace Lab3
 		switch (sex)
 		{
 			case Female:
-				newPerson.SexPerson = Female;
+				newPerson.Sex = Female;
 				break;
 			case Male:
-				newPerson.SexPerson = Male;
+				newPerson.Sex = Male;
 				break;
 			default:
 				break;
@@ -33,15 +34,15 @@ namespace Lab3
 	}
 
 	//TODO: Передача по значению - не оптимально!
-	void PrintPerson(Person person)
+	//+
+	void PrintPerson(Person& person)
 	{
 		cout << "Surname: " << person.Surname << endl;
 		cout << "Name: " << person.Name << endl;
-		cout << "SexPerson: " << person.SexPerson << endl;
+		cout << "Sex: " << person.Sex << endl;
 	}
 
-	//TODO: Непонятно, зачем писать указатель с такими пробелами
-	int GetLength(char * str)
+	int GetLength(char* str)
 	{
 		int length = 0;
 		while (str[length] != '\0')
@@ -51,11 +52,13 @@ namespace Lab3
 		return length;
 	}
 
-	char * Concatenate(char * string1, char * string2)
+	char* Concatenate(char* string1, char* string2)
 	{
 		char* newString = new char[200];
 		int j = 0;
 		//TODO: Дублируется ниже, можно сократить дублирование.
+		//Нет, так как размер входных строк может быть разным.
+		//если сократить, то Работать будет только в том случае, если 2 строки одинаковой длины.
 		for (int i = 0; i < GetLength(string1); i++)
 		{
 			newString[i] = string1[i];
@@ -72,7 +75,7 @@ namespace Lab3
 		return newString;
 	}
 
-	char * GetSubstring(char * string, int startIndex, int charCount)
+	char* GetSubstring(char* string, int startIndex, int charCount)
 	{
 		char* newString = new char[200];
 		if (startIndex < 0 || startIndex + charCount > GetLength(string))
@@ -89,7 +92,7 @@ namespace Lab3
 		return newString;
 	}
 
-	int FindSubstring(char * string, char * substring)
+	int FindSubstring(char* string, char* substring)
 	{
 		if (GetLength(string) < GetLength(substring))
 		{
@@ -123,7 +126,9 @@ namespace Lab3
 	}
 
 	//TODO: Плохое название для метода, должен быть глагол.
-	char * Uppercase(char * string)
+	//+
+	//в методичке было написано создать функцию с таким именем.
+	char* ConvertUppercase(char* string)
 	{
 		char* newString = new char[200];
 		for (int i = 0; i < GetLength(string); i++)
@@ -135,7 +140,8 @@ namespace Lab3
 		for (int i = 0; i < GetLength(newString); i++)
 		{
 			//TODO: Использование прямых ASCII символов плохо читеается.
-			if (newString[i] >= 97 && newString[i] <= 122)
+			//+
+			if (newString[i] >= 'a' && newString[i] <= 'z')
 			{
 				newString[i] -= 32;
 			}
@@ -143,7 +149,8 @@ namespace Lab3
 		return newString;
 	}
 	//TODO: Плохое именование метода - должен быть глагол.
-	char * Lowercase(char * string)
+	//+
+	char* ConvertLowercase(char* string)
 	{
 		char* newString = new char[200];
 		for (int i = 0; i < GetLength(string); i++)
@@ -153,8 +160,10 @@ namespace Lab3
 		}
 
 		for (int i = 0; i < GetLength(newString); i++)
-		{//TODO: Использование прямых ASCII символов плохо читеается.
-			if (newString[i] >= 65 && newString[i] <= 90)
+		{	
+			//TODO: Использование прямых ASCII символов плохо читеается.
+			//+
+			if (newString[i] >= 'A' && newString[i] <= 'Z')
 			{
 				newString[i] += 32;
 			}
@@ -162,7 +171,7 @@ namespace Lab3
 		return newString;
 	}
 
-	int Copy(char * string, char * resString, int i, int j)
+	int Copy(char* string, char* resString, int i, int j)
 	{
 		while (string[i])
 		{
@@ -172,12 +181,12 @@ namespace Lab3
 		return i;
 	}
 
-	void SplitFilename(char * source, char * path, char * name, char * extension)
+	void SplitFilename(char* source, char* path, char* name, char* extension)
 	{
-
 		int index = 0;
 		int pointPlace;
 		int subIndex = 0;
+		bool exit = false;
 		while (source[index] != '\0')
 		{
 			if (source[index] == '.')
@@ -223,12 +232,16 @@ namespace Lab3
 			else
 			{
 				//TODO: Дублируется ниже, можжно сократить.
-				path[0] = NULL;
-				extension[0] = NULL;
-				name[0] = NULL;
+				//Как. else if не пойдет. Если только ввести bool переменную.
+				exit = true;
 			}
 		}
 		else
+		{
+			exit = true;
+		}
+
+		if (exit)
 		{
 			path[0] = NULL;
 			extension[0] = NULL;
@@ -236,46 +249,57 @@ namespace Lab3
 		}
 	}
 
-	char * ReplaceTabsOnSpaces(char * string)
+	char* ReplaceTabsOnSpaces(char* string, int countSpace)
 	{
 		char* newString = new char[200];
 		//TODO: Плохое именование - не понятно, для чего нужны переменные.
-		int e = 0;
-		int j = 0;
+		//+
+		int endSymbol = 0;
+		int currentSymbolNewString = 0;
 		for (int i = 0; i < GetLength(string); i++)
 		{
 			//TODO: Жёстко закодировано. Количество пробелов может быть разное.
+			//+
 			if (string[i] == '\t')
 			{
-				newString[j++] = ':';
-				newString[j++] = ':';
-				newString[j++] = ':';
-				newString[j++] = ':';
-				e += 4;
+				for (int i = 0; i < countSpace; i++)
+				{
+					newString[currentSymbolNewString++] = ':';
+					endSymbol++;
+				}
 			}
 			else
 			{
-				newString[j] = string[i];
-				j++;
-				e++;
+				newString[currentSymbolNewString] = string[i];
+				currentSymbolNewString++;
+				endSymbol++;
 			}
 		}
-		newString[e] = '\0';
+		newString[endSymbol] = '\0';
 		return newString;
 	}
 
-	char * ReplaceSpacesOnTabs(char * string)
+	char* ReplaceSpacesOnTabs(char* string, int countSpace)
 	{
 		char* newString = new char[200];
 		//TODO: Плохое именование - не понятно, для чего нужны переменные.
-		int e = 0;
-		int j = 0;
+		//+
+		int endSymbol = 0;
+		int currentSymbolNewString = 0;
 		//TODO: Жёстко закодировано. Количество пробелов может быть разное.
-		for (int i = 0; i < GetLength(string) - 4; i++)
+		//+
+		for (int i = 0; i < GetLength(string); i++)
 		{
-			j = i;
-			if (string[j++] == ':' && string[j++] == ':' &&
-				string[j++] == ':' && string[j++] == ':')
+			currentSymbolNewString = i;
+			bool isTab = true;
+			for (int i = 0; i < countSpace; i++)
+			{
+				if (string[currentSymbolNewString++] != ':') 
+				{
+					isTab = false;
+				}
+			}
+			if (isTab)
 			{
 				newString[i] = '\t';
 			}
@@ -283,28 +307,21 @@ namespace Lab3
 			{
 				newString[i] = string[i];
 			}
-			e++;
+			endSymbol++;
 		}
-		newString[e] = '\0';
+		newString[endSymbol] = '\0';
 		return newString;
 	}
 
 	void UILab3()
 	{
-		//TODO: Каждую сущность в отдельный файл!
-		enum MenuEnum
-		{
-			GetLengthEnum = 1, ConcatenateEnum, GetSubstringEnum,
-			FindSubstringEnum, UppercaseEnum, LowercaseEnum,
-			SplitFilenameEnum, ReplaceTabsOnSpacesEnum, ReplaceSpacesOnTabsEnum
-		};
 		cout << "---Program Menu---" << endl;
 		cout << "1. GetLength()" << endl;
 		cout << "2. Concatenate()" << endl;
 		cout << "3. GetSubstring()" << endl;
 		cout << "4. FindSubstring()" << endl;
-		cout << "5. Uppercase()" << endl;
-		cout << "6. Lowercase()" << endl;
+		cout << "5. ConvertUppercase()" << endl;
+		cout << "6. ConvertLowercase()" << endl;
 		cout << "7. SplitFilename()" << endl;
 		cout << "8. ReplaceTabsOnSpaces()" << endl;
 		cout << "9. ReplaceSpacesOnTabs()" << endl;
@@ -334,11 +351,14 @@ namespace Lab3
 				case ConcatenateEnum:
 				{
 					//TODO: Длинная строка - плохо читается
-					char* mass2 = Concatenate(new char[10]{ '1', '2', '3', '\0' }, new char[10]{ 'a', 'b', 'c','\0' });
+					//+
+					char* mass2 = Concatenate(new char[10]{ '1', '2', '3', '\0' }, 
+						new char[10]{ 'a', 'b', 'c','d','\0' });
 					for (int i = 0; i < GetLength(mass2); i++)
 					{
 						cout << mass2[i] << " ";
-					}cout << endl;//TODO: Форматирование кода не по RSDN.
+					}
+					cout << endl;
 					break;
 				}
 
@@ -349,7 +369,8 @@ namespace Lab3
 					for (int i = 0; i < GetLength(subMass3); i++)
 					{
 						cout << subMass3[i] << " ";
-					}cout << endl;//TODO: Форматирование кода не по RSDN.
+					}
+					cout << endl;
 					break;
 				}
 
@@ -373,21 +394,24 @@ namespace Lab3
 				case UppercaseEnum:
 				{
 					char* mass5 = (char*)"Different cases in That string, also 1 and 2 numbers!.!#@48";
-					cout << Uppercase(mass5) << endl;
+					cout << ConvertUppercase(mass5) << endl;
 					break;
 				}
 
 				case LowercaseEnum:
 				{
 					char* mass5 = (char*)"Different cases in That string, also 1 and 2 numbers!.!#@48";
-					cout << Lowercase(mass5) << endl;
+					cout << ConvertLowercase(mass5) << endl;
 					break;
 				}
 	
 				case SplitFilenameEnum:
 				{
 					//TODO: Длинная строка - плохо читается.
-					char source6[50]{ 'd',':','\\','f','o','l','d','e','r','\\','s','u','b','f','o','l','d','e','r','\\','f','i','l','e','N','e','x','e','\0' };
+					//+
+					char source6[50]{ 'd',':','\\','f','o','l','d','e','r',
+						'\\','s','u','b','f','o','l','d','e','r',
+						'\\','f','i','l','e','N','e','x','e','\0' };
 					char path6[50];
 					char name6[50];
 					char extension6[50];
@@ -403,14 +427,14 @@ namespace Lab3
 				case ReplaceTabsOnSpacesEnum:
 				{
 					char* mass7 = (char*)":::Cake\tis\ta lie! C::ake\t\tis a lie! ";
-					cout << ReplaceTabsOnSpaces(mass7) << endl;
+					cout << ReplaceTabsOnSpaces(mass7, 4) << endl;
 					break;
 				}
 
 				case ReplaceSpacesOnTabsEnum:
 				{
 					char* mass7 = (char*)":::Cake\tis\ta lie! C::ake\t\tis a lie! ";
-					cout << ReplaceSpacesOnTabs(mass7) << endl;
+					cout << ReplaceSpacesOnTabs(mass7, 4) << endl;
 					break;
 				}
 				case 10:

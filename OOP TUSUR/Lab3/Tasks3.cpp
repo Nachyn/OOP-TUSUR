@@ -32,6 +32,7 @@ namespace Lab3
 		return newPerson;
 	}
 
+	//TODO: Передача по значению - не оптимально!
 	void PrintPerson(Person person)
 	{
 		cout << "Surname: " << person.Surname << endl;
@@ -39,6 +40,7 @@ namespace Lab3
 		cout << "SexPerson: " << person.SexPerson << endl;
 	}
 
+	//TODO: Непонятно, зачем писать указатель с такими пробелами
 	int GetLength(char * str)
 	{
 		int length = 0;
@@ -53,7 +55,7 @@ namespace Lab3
 	{
 		char* newString = new char[200];
 		int j = 0;
-
+		//TODO: Дублируется ниже, можно сократить дублирование.
 		for (int i = 0; i < GetLength(string1); i++)
 		{
 			newString[i] = string1[i];
@@ -120,6 +122,7 @@ namespace Lab3
 		return -1;
 	}
 
+	//TODO: Плохое название для метода, должен быть глагол.
 	char * Uppercase(char * string)
 	{
 		char* newString = new char[200];
@@ -131,6 +134,7 @@ namespace Lab3
 
 		for (int i = 0; i < GetLength(newString); i++)
 		{
+			//TODO: Использование прямых ASCII символов плохо читеается.
 			if (newString[i] >= 97 && newString[i] <= 122)
 			{
 				newString[i] -= 32;
@@ -138,7 +142,7 @@ namespace Lab3
 		}
 		return newString;
 	}
-
+	//TODO: Плохое именование метода - должен быть глагол.
 	char * Lowercase(char * string)
 	{
 		char* newString = new char[200];
@@ -149,7 +153,7 @@ namespace Lab3
 		}
 
 		for (int i = 0; i < GetLength(newString); i++)
-		{
+		{//TODO: Использование прямых ASCII символов плохо читеается.
 			if (newString[i] >= 65 && newString[i] <= 90)
 			{
 				newString[i] += 32;
@@ -218,6 +222,7 @@ namespace Lab3
 			}
 			else
 			{
+				//TODO: Дублируется ниже, можжно сократить.
 				path[0] = NULL;
 				extension[0] = NULL;
 				name[0] = NULL;
@@ -234,10 +239,12 @@ namespace Lab3
 	char * ReplaceTabsOnSpaces(char * string)
 	{
 		char* newString = new char[200];
+		//TODO: Плохое именование - не понятно, для чего нужны переменные.
 		int e = 0;
 		int j = 0;
 		for (int i = 0; i < GetLength(string); i++)
 		{
+			//TODO: Жёстко закодировано. Количество пробелов может быть разное.
 			if (string[i] == '\t')
 			{
 				newString[j++] = ':';
@@ -260,8 +267,10 @@ namespace Lab3
 	char * ReplaceSpacesOnTabs(char * string)
 	{
 		char* newString = new char[200];
+		//TODO: Плохое именование - не понятно, для чего нужны переменные.
 		int e = 0;
 		int j = 0;
+		//TODO: Жёстко закодировано. Количество пробелов может быть разное.
 		for (int i = 0; i < GetLength(string) - 4; i++)
 		{
 			j = i;
@@ -282,6 +291,7 @@ namespace Lab3
 
 	void UILab3()
 	{
+		//TODO: Каждую сущность в отдельный файл!
 		enum MenuEnum
 		{
 			GetLengthEnum = 1, ConcatenateEnum, GetSubstringEnum,
@@ -323,11 +333,12 @@ namespace Lab3
 
 				case ConcatenateEnum:
 				{
+					//TODO: Длинная строка - плохо читается
 					char* mass2 = Concatenate(new char[10]{ '1', '2', '3', '\0' }, new char[10]{ 'a', 'b', 'c','\0' });
 					for (int i = 0; i < GetLength(mass2); i++)
 					{
 						cout << mass2[i] << " ";
-					}cout << endl;
+					}cout << endl;//TODO: Форматирование кода не по RSDN.
 					break;
 				}
 
@@ -338,7 +349,7 @@ namespace Lab3
 					for (int i = 0; i < GetLength(subMass3); i++)
 					{
 						cout << subMass3[i] << " ";
-					}cout << endl;
+					}cout << endl;//TODO: Форматирование кода не по RSDN.
 					break;
 				}
 
@@ -375,6 +386,7 @@ namespace Lab3
 	
 				case SplitFilenameEnum:
 				{
+					//TODO: Длинная строка - плохо читается.
 					char source6[50]{ 'd',':','\\','f','o','l','d','e','r','\\','s','u','b','f','o','l','d','e','r','\\','f','i','l','e','N','e','x','e','\0' };
 					char path6[50];
 					char name6[50];

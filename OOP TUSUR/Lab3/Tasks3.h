@@ -3,12 +3,14 @@
 
 namespace Lab3
 {
+	//TODO: Каждую сущность в отдельный файл!
 	enum Sex { Female, Male };
 
 	struct Person
 	{
 		char Surname[40];
 		char Name[20];
+		//TODO: По именованию не правильно использовать префикс или постфикс Person в той же структуре.
 		Sex SexPerson;
 	};
 

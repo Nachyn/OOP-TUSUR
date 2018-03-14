@@ -54,23 +54,19 @@ namespace Lab3
 	{
 		char* newString = new char[200];
 		int j = 0;
-		//TODO: ƒублируетс€ ниже, можно сократить дублирование.
-		//Ќет, так как размер входных строк может быть разным.
-		//если сократить, то –аботать будет только в том случае, если 2 строки одинаковой длины.
-		//TODO: Ќеверно. ¬ метод можно также передать позиции из новой строки, т.е. в первый метод i, во второй j
-		for (int i = 0; i < GetLength(string1); i++)
+		//TODO: ƒублируетс€ ниже, можно сократить дублирование.(+)
+		for (int i = 0; i < GetLength(string1) + GetLength(string2); i++)
 		{
-			newString[i] = string1[i];
-			j++;
+			if (i < GetLength(string1))
+			{
+				newString[i] = string1[i];
+			}
+			else
+			{
+				newString[i] = string2[j++];
+			}
 		}
-
-		for (int i = 0; i < GetLength(string2); i++)
-		{
-			newString[j] = string2[i];
-			j++;
-		}
-		newString[j] = '\0';
-
+		newString[GetLength(string1) + GetLength(string2)] = '\0';
 		return newString;
 	}
 
@@ -124,10 +120,6 @@ namespace Lab3
 		return -1;
 	}
 
-	//TODO: ѕлохое название дл€ метода, должен быть глагол.
-	//+
-	//в методичке было написано создать функцию с таким именем. 
-	//TODO: ѕон€л, кос€к в методичке. 
 	char* ConvertUppercase(char* string)
 	{
 		char* newString = new char[200];

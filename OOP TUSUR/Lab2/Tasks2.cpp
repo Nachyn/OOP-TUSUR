@@ -17,29 +17,29 @@ namespace Lab2
 		}
 
 		switch (key)
-		{//TODO: Форматирование не по RSDN
-		case '+':
-			return value1 + value2;
-			break;
+		{//TODO: Форматирование не по RSDN  (+)
+			case '+':
+				return value1 + value2;
+				break;
 
-		case '-':
-			return value1 - value2;
-			break;
+			case '-':
+				return value1 - value2;
+				break;
 
-		case '*':
-			return value1 * value2;
-			break;
+			case '*':
+				return value1 * value2;
+				break;
 
-		case '/':
-			return value1 / value2;
+			case '/':
+				return value1 / value2;
 
-		case '%':
-			return value1 % value2;
-			break;
+			case '%':
+				return value1 % value2;
+				break;
 
-		default:
-			return -1;
-			break;
+			default:
+				return -1;
+				break;
 		}
 	}
 

@@ -33,9 +33,7 @@ namespace Lab3
 		return newPerson;
 	}
 
-	//TODO: Передача по значению - не оптимально!
-	//+
-	void PrintPerson(Person& person)
+		void PrintPerson(Person& person)
 	{
 		cout << "Surname: " << person.Surname << endl;
 		cout << "Name: " << person.Name << endl;
@@ -59,6 +57,7 @@ namespace Lab3
 		//TODO: Дублируется ниже, можно сократить дублирование.
 		//Нет, так как размер входных строк может быть разным.
 		//если сократить, то Работать будет только в том случае, если 2 строки одинаковой длины.
+		//TODO: Неверно. В метод можно также передать позиции из новой строки, т.е. в первый метод i, во второй j
 		for (int i = 0; i < GetLength(string1); i++)
 		{
 			newString[i] = string1[i];
@@ -127,7 +126,8 @@ namespace Lab3
 
 	//TODO: Плохое название для метода, должен быть глагол.
 	//+
-	//в методичке было написано создать функцию с таким именем.
+	//в методичке было написано создать функцию с таким именем. 
+	//TODO: Понял, косяк в методичке. 
 	char* ConvertUppercase(char* string)
 	{
 		char* newString = new char[200];
@@ -139,8 +139,6 @@ namespace Lab3
 
 		for (int i = 0; i < GetLength(newString); i++)
 		{
-			//TODO: Использование прямых ASCII символов плохо читеается.
-			//+
 			if (newString[i] >= 'a' && newString[i] <= 'z')
 			{
 				newString[i] -= 32;
@@ -148,8 +146,7 @@ namespace Lab3
 		}
 		return newString;
 	}
-	//TODO: Плохое именование метода - должен быть глагол.
-	//+
+	
 	char* ConvertLowercase(char* string)
 	{
 		char* newString = new char[200];
@@ -161,8 +158,6 @@ namespace Lab3
 
 		for (int i = 0; i < GetLength(newString); i++)
 		{	
-			//TODO: Использование прямых ASCII символов плохо читеается.
-			//+
 			if (newString[i] >= 'A' && newString[i] <= 'Z')
 			{
 				newString[i] += 32;
@@ -231,8 +226,6 @@ namespace Lab3
 			}
 			else
 			{
-				//TODO: Дублируется ниже, можжно сократить.
-				//Как. else if не пойдет. Если только ввести bool переменную.
 				exit = true;
 			}
 		}
@@ -252,14 +245,10 @@ namespace Lab3
 	char* ReplaceTabsOnSpaces(char* string, int countSpace)
 	{
 		char* newString = new char[200];
-		//TODO: Плохое именование - не понятно, для чего нужны переменные.
-		//+
 		int endSymbol = 0;
 		int currentSymbolNewString = 0;
 		for (int i = 0; i < GetLength(string); i++)
 		{
-			//TODO: Жёстко закодировано. Количество пробелов может быть разное.
-			//+
 			if (string[i] == '\t')
 			{
 				for (int i = 0; i < countSpace; i++)
@@ -282,12 +271,8 @@ namespace Lab3
 	char* ReplaceSpacesOnTabs(char* string, int countSpace)
 	{
 		char* newString = new char[200];
-		//TODO: Плохое именование - не понятно, для чего нужны переменные.
-		//+
 		int endSymbol = 0;
 		int currentSymbolNewString = 0;
-		//TODO: Жёстко закодировано. Количество пробелов может быть разное.
-		//+
 		for (int i = 0; i < GetLength(string); i++)
 		{
 			currentSymbolNewString = i;
@@ -350,8 +335,6 @@ namespace Lab3
 
 				case ConcatenateEnum:
 				{
-					//TODO: Длинная строка - плохо читается
-					//+
 					char* mass2 = Concatenate(new char[10]{ '1', '2', '3', '\0' }, 
 						new char[10]{ 'a', 'b', 'c','d','\0' });
 					for (int i = 0; i < GetLength(mass2); i++)
@@ -407,8 +390,6 @@ namespace Lab3
 	
 				case SplitFilenameEnum:
 				{
-					//TODO: Длинная строка - плохо читается.
-					//+
 					char source6[50]{ 'd',':','\\','f','o','l','d','e','r',
 						'\\','s','u','b','f','o','l','d','e','r',
 						'\\','f','i','l','e','N','e','x','e','\0' };

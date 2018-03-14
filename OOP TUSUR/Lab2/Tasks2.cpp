@@ -17,7 +17,7 @@ namespace Lab2
 		}
 
 		switch (key)
-		{
+		{//TODO: Форматирование не по RSDN
 		case '+':
 			return value1 + value2;
 			break;
@@ -123,7 +123,7 @@ namespace Lab2
 		base = base - power;
 		return 1 + GetPower(base, power);
 	}
-
+	//TODO: Метод ниже дублируется, можно сократить.
 	void InsertionSort(double arr[], int size)
 	{
 		for (int i = 1; i < size; i++)

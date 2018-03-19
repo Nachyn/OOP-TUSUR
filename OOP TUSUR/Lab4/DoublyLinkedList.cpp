@@ -192,22 +192,26 @@ namespace Lab4
 		cout << endl << "Insert Name: ";
 		cin >> newPerson.Name;
 		cout << endl << "Insert Sex: ";
-		int n;
+		int sex;
 
 		do
 		{
-			n = CheckSymbol();
-		} while (n != 0 && n != 1);
-		switch (n)
+			//TODO: Непонятное именование
+			//+
+			sex = CheckSymbol();
+		} 
+		while (sex != 0 && sex != 1);
+		
+		switch (sex)
 		{
-		case Female:
-			newPerson.Sex = Female;
-			break;
-		case Male:
-			newPerson.Sex = Male;
-			break;
-		default:
-			break;
+			case Female:
+				newPerson.Sex = Female;
+				break;
+			case Male:
+				newPerson.Sex = Male;
+				break;
+			default:
+				break;
 		}
 		return newPerson;
 	}

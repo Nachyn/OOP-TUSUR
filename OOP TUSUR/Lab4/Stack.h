@@ -3,15 +3,16 @@
 
 namespace Lab4
 {
-	struct Stack
+	//TODO: Ќеправильное именование, это не сам Stack, а StackItem (+)
+	struct StackItem
 	{
 		int Value;
-		struct Stack *Next;
+		struct StackItem *Next;
 	};
 
-	void Push(Stack* &stack, int value);
-	int Pop(Stack* &stack);
-	int Top(Stack* &stack);
-	int Size(Stack* &stack);
-	bool isEmpty(Stack* &stack);
+	void Push(StackItem*& stack, int value);
+	int Pop(StackItem*& stack);
+	int Top(StackItem*& stack);
+	int Size(StackItem*& stack);
+	bool IsEmpty(StackItem*& stack);
 }

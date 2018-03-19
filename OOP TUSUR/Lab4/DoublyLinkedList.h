@@ -1,24 +1,9 @@
 #pragma once
 #include "../CheckSymbol.h"
+#include "Node4.h"
 
 namespace Lab4
 {
-	enum Sex { Female, Male };
-
-	struct Person
-	{
-		string Surname;
-		string Name;
-		Sex Sex;
-	};
-
-	struct Node
-	{
-		Person Data;
-		Node* Next = NULL;
-		Node* Prev = NULL;
-	};
-
 	struct DoublyLinkedList
 	{
 		Node* Head = NULL;

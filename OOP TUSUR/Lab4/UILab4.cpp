@@ -45,7 +45,7 @@ void UILab4()
 			{
 				cout << "Surname: " << newPerson->Surname << endl;
 				cout << "Name: " << newPerson->Name << endl;
-				cout << "Sex: " << newPerson->SexPerson << endl;
+				cout << "Sex: " << newPerson->Sex << endl;
 			}
 			break;
 		}

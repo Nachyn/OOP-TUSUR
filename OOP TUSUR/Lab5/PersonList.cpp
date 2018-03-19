@@ -170,18 +170,18 @@ namespace Lab5
 		if (_head != NULL)
 		{
 			cout << "-------------------------------------------------" << endl;
-			cout << "head = " << "Surname: " << _head->Value.Surname << endl;
-			cout << "head = " << "Name: " << _head->Value.Name << endl;
-			cout << "head = " << "Sex: " << _head->Value.Sex << endl << endl;
+			cout << "Head = " << "Surname: " << _head->Value.Surname << endl;
+			cout << "Head = " << "Name: " << _head->Value.Name << endl;
+			cout << "Head = " << "Sex: " << _head->Value.Sex << endl << endl;
 
-			cout << "tail = " << "Surname: " << _tail->Value.Surname << endl;
-			cout << "tail = " << "Name: " << _tail->Value.Name << endl;
-			cout << "tail = " << "Sex: " << _tail->Value.Sex << endl << endl;
+			cout << "Tail = " << "Surname: " << _tail->Value.Surname << endl;
+			cout << "Tail = " << "Name: " << _tail->Value.Name << endl;
+			cout << "Tail = " << "Sex: " << _tail->Value.Sex << endl << endl;
 			cout << "-------------------------------------------------";
 		}
 		else
 		{
-			cout << "head = NULL " << " tail = NULL " << endl;
+			cout << "Head = NULL " << " Tail = NULL " << endl;
 		}
 	}
 

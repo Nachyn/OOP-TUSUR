@@ -9,20 +9,20 @@ namespace Lab4
 	{
 		string Surname;
 		string Name;
-		Sex SexPerson;
+		Sex Sex;
 	};
 
 	struct Node
 	{
-		Person data;
-		Node* next = NULL;
-		Node* prev = NULL;
+		Person Data;
+		Node* Next = NULL;
+		Node* Prev = NULL;
 	};
 
 	struct DoublyLinkedList
 	{
-		Node* head = NULL;
-		Node* tail = NULL;
+		Node* Head = NULL;
+		Node* Tail = NULL;
 	};
 
 	DoublyLinkedList AddEnd(DoublyLinkedList list, Person* person);

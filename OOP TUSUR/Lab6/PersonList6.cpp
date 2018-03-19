@@ -179,13 +179,13 @@ namespace Lab6
 		if (_head != NULL)
 		{
 			cout << "-------------------------------------------------" << endl;
-			cout << "head = " << _head->Value->GetDescription() << endl;
-			cout << "tail = " << _tail->Value->GetDescription() << endl;
+			cout << "Head = " << _head->Value->GetDescription() << endl;
+			cout << "Tail = " << _tail->Value->GetDescription() << endl;
 			cout << "-------------------------------------------------" << endl;
 		}
 		else
 		{
-			cout << "head = NULL " << " tail = NULL " << endl;
+			cout << "Head = NULL " << " Tail = NULL " << endl;
 		}
 	}
 }

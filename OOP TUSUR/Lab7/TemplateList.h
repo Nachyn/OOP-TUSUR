@@ -301,13 +301,13 @@ namespace Lab7
 			if (_head != NULL)
 			{
 				cout << "-------------------------------------------------" << endl;
-				cout << "head = " << _head->Value << endl;
-				cout << "tail = " << _tail->Value << endl;
+				cout << "Head = " << _head->Value << endl;
+				cout << "Tail = " << _tail->Value << endl;
 				cout << "-------------------------------------------------" << endl;
 			}
 			else
 			{
-				cout << "head = NULL " << " tail = NULL " << endl;
+				cout << "Head = NULL " << " Tail = NULL " << endl;
 			}
 		}
 

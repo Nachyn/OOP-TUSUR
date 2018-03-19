@@ -5,17 +5,17 @@ namespace Lab4
 	DoublyLinkedList AddEnd(DoublyLinkedList list, Person * person)
 	{
 		Node* temp = new Node();
-		temp->data = *person;
+		temp->Data = *person;
 
-		if (list.head != NULL)
+		if (list.Head != NULL)
 		{
-			temp->prev = list.tail;
-			list.tail->next = temp;
-			list.tail = temp;
+			temp->Prev = list.Tail;
+			list.Tail->Next = temp;
+			list.Tail = temp;
 		}
 		else
 		{
-			list.head = list.tail = temp;
+			list.Head = list.Tail = temp;
 		}
 
 		return list;
@@ -24,30 +24,32 @@ namespace Lab4
 	void ShowInConsole(DoublyLinkedList list)
 	{
 		cout << endl;
-		Node* temp = list.head;
+		Node* temp = list.Head;
 		while (temp != NULL)
 		{
-			cout << "Surname: " << temp->data.Surname << endl;
-			cout << "Name: " << temp->data.Name << endl;
-			cout << "Sex: " << temp->data.SexPerson << endl << endl;
-			temp = temp->next;
+			cout << "Surname: " << temp->Data.Surname << endl;
+			cout << "Name: " << temp->Data.Name << endl;
+			cout << "Sex: " << temp->Data.Sex << endl << endl;
+			temp = temp->Next;
 		}
 
-		if (list.head != NULL)
+		if (list.Head != NULL)
 		{
+			//TODO: Дублирование - можно сократить.
+			//Для наглядности КОНЕЦ и НАЧАЛО вывожу. Рекурсивно хотите или в отдельную функцию?
 			cout << "-------------------------------------------------" << endl;
-			cout << "head = " << "Surname: " << list.head->data.Surname << endl;
-			cout << "head = " << "Name: " << list.head->data.Name << endl;
-			cout << "head = " << "Sex: " << list.head->data.SexPerson << endl << endl;
-
-			cout << "tail = " << "Surname: " << list.tail->data.Surname << endl;
-			cout << "tail = " << "Name: " << list.tail->data.Name << endl;
-			cout << "tail = " << "Sex: " << list.tail->data.SexPerson << endl << endl;
+			cout << "Head = " << "Surname: " << list.Head->Data.Surname << endl;
+			cout << "Head = " << "Name: " << list.Head->Data.Name << endl;
+			cout << "Head = " << "Sex: " << list.Head->Data.Sex << endl << endl;
+			
+			cout << "Tail = " << "Surname: " << list.Tail->Data.Surname << endl;
+			cout << "Tail = " << "Name: " << list.Tail->Data.Name << endl;
+			cout << "Tail = " << "Sex: " << list.Tail->Data.Sex << endl << endl;
 			cout << "-------------------------------------------------";
 		}
 		else
 		{
-			cout << "head = NULL " << " tail = NULL " << endl;
+			cout << "Head = NULL " << " Tail = NULL " << endl;
 		}
 	}
 
@@ -58,68 +60,68 @@ namespace Lab4
 			return NULL;
 		}
 		int i = 0;
-		Node* temp = list.head;
+		Node* temp = list.Head;
 		while (i < index)
 		{
 			if (temp == NULL)
 			{
 				return NULL;
 			}
-			temp = temp->next;
+			temp = temp->Next;
 			i++;
 		};
-		return &temp->data;
+		return &temp->Data;
 	}
 
 	DoublyLinkedList RemoveByIndex(DoublyLinkedList list, int index)
 	{
 		Person* element = GetByIndex(list, index);
-		Node* temp = list.head;
+		Node* temp = list.Head;
 
 		while (temp != NULL)
 		{
-			if (&temp->data == element)
+			if (&temp->Data == element)
 			{
-				if (list.head == temp)
+				if (list.Head == temp)
 				{
-					if (temp->next == NULL)
+					if (temp->Next == NULL)
 					{
-						list.head = NULL;
-						list.tail = NULL;
+						list.Head = NULL;
+						list.Tail = NULL;
 						return list;
 					}
-					list.head->next->prev = NULL;
-					list.head = list.head->next;
+					list.Head->Next->Prev = NULL;
+					list.Head = list.Head->Next;
 					return list;
 				}
 
-				if (list.tail == temp)
+				if (list.Tail == temp)
 				{
-					list.tail->prev->next = NULL;
-					list.tail = list.tail->prev;
+					list.Tail->Prev->Next = NULL;
+					list.Tail = list.Tail->Prev;
 					return list;
 				}
 
-				if (list.head != temp && list.tail != temp)
+				if (list.Head != temp && list.Tail != temp)
 				{
-					temp->prev->next = temp->next;
-					temp->next->prev = temp->prev;
+					temp->Prev->Next = temp->Next;
+					temp->Next->Prev = temp->Prev;
 					return list;
 				}
 			}
-			temp = temp->next;
+			temp = temp->Next;
 		}
 		return list;
 	}
 
 	DoublyLinkedList InsertByindex(DoublyLinkedList list, Person * person, int index)
 	{
-		if (list.head == NULL || index < 0)
+		if (list.Head == NULL || index < 0)
 		{
 			return list;
 		}
 
-		Node* temp = list.head;
+		Node* temp = list.Head;
 		int i = 0;
 		while (i < index)
 		{
@@ -127,31 +129,31 @@ namespace Lab4
 			{
 				return list;
 			}
-			temp = temp->next;
+			temp = temp->Next;
 			i++;
 		};
 
-		if (temp == list.head)
+		if (temp == list.Head)
 		{
 			Node* newNode = new Node();
-			newNode->data = *person;
+			newNode->Data = *person;
 
-			list.head->prev = newNode;
-			newNode->next = list.head;
+			list.Head->Prev = newNode;
+			newNode->Next = list.Head;
 
-			list.head = newNode;
+			list.Head = newNode;
 			return list;
 		}
 
-		if (temp == list.tail)
+		if (temp == list.Tail)
 		{
 			Node* newNode = new Node();
-			newNode->data = *person;
-			list.tail->prev->next = newNode;
-			newNode->prev = list.tail->prev;
-			newNode->next = list.tail;
-			list.tail->prev = newNode;
-			list.tail->next = NULL;
+			newNode->Data = *person;
+			list.Tail->Prev->Next = newNode;
+			newNode->Prev = list.Tail->Prev;
+			newNode->Next = list.Tail;
+			list.Tail->Prev = newNode;
+			list.Tail->Next = NULL;
 			return list;
 		}
 
@@ -159,26 +161,26 @@ namespace Lab4
 		if (temp != NULL)
 		{
 			Node* newNode = new Node();
-			newNode->data = *person;
-			temp->prev->next = newNode;
-			newNode->prev = temp->prev;
-			newNode->next = temp;
-			temp->prev = newNode;
+			newNode->Data = *person;
+			temp->Prev->Next = newNode;
+			newNode->Prev = temp->Prev;
+			newNode->Next = temp;
+			temp->Prev = newNode;
 		}
 		return list;
 	}
 
 	DoublyLinkedList Clear(DoublyLinkedList list)
 	{
-		Node* next = list.head;
+		Node* next = list.Head;
 		while (next != NULL)
 		{
-			Node* tempNext = next->next;
+			Node* tempNext = next->Next;
 			delete next;
 			next = tempNext;
 		}
-		list.head = NULL;
-		list.tail = NULL;
+		list.Head = NULL;
+		list.Tail = NULL;
 		return list;
 	}
 
@@ -199,10 +201,10 @@ namespace Lab4
 		switch (n)
 		{
 		case Female:
-			newPerson.SexPerson = Female;
+			newPerson.Sex = Female;
 			break;
 		case Male:
-			newPerson.SexPerson = Male;
+			newPerson.Sex = Male;
 			break;
 		default:
 			break;
@@ -223,7 +225,7 @@ namespace Lab4
 		Person newPerson;
 		newPerson.Name = names[name];
 		newPerson.Surname = surnames[surname];
-		newPerson.SexPerson = Male;
+		newPerson.Sex = Male;
 		return newPerson;
 	}
 }

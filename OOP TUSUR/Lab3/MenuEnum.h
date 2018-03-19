@@ -1,15 +1,14 @@
 #pragma once
-//TODO:
-enum MenuEnum
+
+enum Menu
 {
-	//TODO: Не по RSDN оформлено перечисление. (+)
-	GetLengthEnum = 1, 
-	ConcatenateEnum, 
-	GetSubstringEnum,
-	FindSubstringEnum, 
-	UppercaseEnum, 
-	LowercaseEnum,
-	SplitFilenameEnum, 
-	ReplaceTabsOnSpacesEnum, 
-	ReplaceSpacesOnTabsEnum
+	GetLengthItem = 1, 
+	ConcatenateItem, 
+	GetSubstringItem,
+	FindSubstringItem, 
+	UppercaseItem, 
+	LowercaseItem,
+	SplitFilenameItem, 
+	ReplaceTabsOnSpacesItem, 
+	ReplaceSpacesOnTabsItem
 };

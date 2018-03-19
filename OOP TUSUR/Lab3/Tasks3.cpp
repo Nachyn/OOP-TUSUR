@@ -293,15 +293,15 @@ namespace Lab3
 	void UILab3()
 	{
 		cout << "---Program Menu---" << endl;
-		cout << "1. GetLength()" << endl;
-		cout << "2. Concatenate()" << endl;
-		cout << "3. GetSubstring()" << endl;
-		cout << "4. FindSubstring()" << endl;
+		cout << "1. GetLengthItem()" << endl;
+		cout << "2. ConcatenateItem()" << endl;
+		cout << "3. GetSubstringItem()" << endl;
+		cout << "4. FindSubstringItem()" << endl;
 		cout << "5. ConvertUppercase()" << endl;
 		cout << "6. ConvertLowercase()" << endl;
-		cout << "7. SplitFilename()" << endl;
-		cout << "8. ReplaceTabsOnSpaces()" << endl;
-		cout << "9. ReplaceSpacesOnTabs()" << endl;
+		cout << "7. SplitFilenameItem()" << endl;
+		cout << "8. ReplaceTabsOnSpacesItem()" << endl;
+		cout << "9. ReplaceSpacesOnTabsItem()" << endl;
 		cout << "10. Exit" << endl;
 		cout << "---Choose function number for testing (1-10): ";
 
@@ -318,14 +318,14 @@ namespace Lab3
 
 			switch (n)
 			{
-				case GetLengthEnum:
+				case GetLengthItem:
 				{
 					char* mass1 = (char*)"abc123";
 					cout << GetLength(mass1) << endl;
 					break;
 				}
 
-				case ConcatenateEnum:
+				case ConcatenateItem:
 				{
 					char* mass2 = Concatenate(new char[10]{ '1', '2', '3', '\0' }, 
 						new char[10]{ 'a', 'b', 'c','d','\0' });
@@ -337,7 +337,7 @@ namespace Lab3
 					break;
 				}
 
-				case GetSubstringEnum:
+				case GetSubstringItem:
 				{
 					char* mass3 = (char*)"abc123";
 					char* subMass3 = GetSubstring(mass3, 3, 3);
@@ -349,7 +349,7 @@ namespace Lab3
 					break;
 				}
 
-				case FindSubstringEnum:
+				case FindSubstringItem:
 				{
 					char* mass4 = (char*)"vybory2018putin";
 					char* subStr = (char*)"naval";
@@ -366,21 +366,21 @@ namespace Lab3
 					break;
 				}
 	
-				case UppercaseEnum:
+				case UppercaseItem:
 				{
 					char* mass5 = (char*)"Different cases in That string, also 1 and 2 numbers!.!#@48";
 					cout << ConvertUppercase(mass5) << endl;
 					break;
 				}
 
-				case LowercaseEnum:
+				case LowercaseItem:
 				{
 					char* mass5 = (char*)"Different cases in That string, also 1 and 2 numbers!.!#@48";
 					cout << ConvertLowercase(mass5) << endl;
 					break;
 				}
 	
-				case SplitFilenameEnum:
+				case SplitFilenameItem:
 				{
 					char source6[50]{ "d:\\fol der\\file.exe.txt.pdf" };
 					char path6[50];
@@ -395,14 +395,14 @@ namespace Lab3
 					break;
 				}
 
-				case ReplaceTabsOnSpacesEnum:
+				case ReplaceTabsOnSpacesItem:
 				{
 					char* mass7 = (char*)":::Cake\tis\ta lie! C::ake\t\tis a lie! ";
 					cout << ReplaceTabsOnSpaces(mass7, 4) << endl;
 					break;
 				}
 
-				case ReplaceSpacesOnTabsEnum:
+				case ReplaceSpacesOnTabsItem:
 				{
 					char* mass7 = (char*)":::Cake\tis\ta lie! C::ake\t\tis a lie! ";
 					cout << ReplaceSpacesOnTabs(mass7, 4) << endl;

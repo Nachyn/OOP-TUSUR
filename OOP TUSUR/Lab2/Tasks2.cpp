@@ -123,7 +123,7 @@ namespace Lab2
 		base = base - power;
 		return 1 + GetPower(base, power);
 	}
-	//TODO: Метод ниже дублируется, можно сократить.
+
 	void InsertionSort(double arr[], int size)
 	{
 		for (int i = 1; i < size; i++)
@@ -137,17 +137,9 @@ namespace Lab2
 		}
 	}
 
-	void InsertionSort2(double * arr, int size)
+	void InsertionSort2(double* arr, int size)
 	{
-		for (int i = 1; i < size; i++)
-		{
-			for (int j = i; j > 0 && arr[j - 1] > arr[j]; j--)
-			{
-				double temp = arr[j - 1];
-				arr[j - 1] = arr[j];
-				arr[j] = temp;
-			}
-		}
+		InsertionSort(arr, size);
 	}
 
 	void ShowArray(double arr[100][100], int size)

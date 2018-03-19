@@ -17,7 +17,7 @@ namespace Lab5
 		}
 	}
 
-	Person * PersonList::Find(int index)
+	Person* PersonList::Find(int index)
 	{
 		if (index < 0)
 		{

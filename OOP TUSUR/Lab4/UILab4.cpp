@@ -6,7 +6,8 @@ void UILab4()
 	bool key = true;
 	Lab4::Person newPerson;
 	//TODO: На ушение станда та офо мления RSDN - так объявлять пе еменные - не п авильно.
-	int selectAction, index;
+	int selectAction; 
+	int index;
 	while (key)
 	{
 		setlocale(0, "");

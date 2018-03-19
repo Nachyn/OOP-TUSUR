@@ -53,7 +53,7 @@ namespace Lab4
 		}
 	}
 
-	Person * GetByIndex(DoublyLinkedList list, int index)
+	Person* GetByIndex(DoublyLinkedList list, int index)
 	{
 		if (index < 0)
 		{

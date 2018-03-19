@@ -17,7 +17,7 @@ namespace Lab2
 		}
 
 		switch (key)
-		{//TODO: Форматирование не по RSDN  (+)
+		{
 			case '+':
 				return value1 + value2;
 				break;
@@ -199,7 +199,7 @@ namespace Lab2
 		int b = 2;
 		SummNumbers(a, b);
 		double x = 3.0;
-		double y = 4.0;
+		double y = 4.0; 
 		SummNumbers(x, y);
 		SummNumbers(a, y);
 		float m = 5.0;

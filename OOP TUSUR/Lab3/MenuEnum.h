@@ -1,4 +1,5 @@
 #pragma once
+//TODO:
 enum MenuEnum
 {
 	//TODO: Не по RSDN оформлено перечисление. (+)

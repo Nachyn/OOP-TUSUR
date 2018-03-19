@@ -33,7 +33,7 @@ namespace Lab3
 		return newPerson;
 	}
 
-		void PrintPerson(Person& person)
+	void PrintPerson(Person& person)
 	{
 		cout << "Surname: " << person.Surname << endl;
 		cout << "Name: " << person.Name << endl;
@@ -54,7 +54,7 @@ namespace Lab3
 	{
 		char* newString = new char[200];
 		int j = 0;
-		//TODO: ƒублируетс€ ниже, можно сократить дублирование.(+)
+		
 		for (int i = 0; i < GetLength(string1) + GetLength(string2); i++)
 		{
 			if (i < GetLength(string1))
@@ -382,9 +382,7 @@ namespace Lab3
 	
 				case SplitFilenameEnum:
 				{
-					char source6[50]{ 'd',':','\\','f','o','l','d','e','r',
-						'\\','s','u','b','f','o','l','d','e','r',
-						'\\','f','i','l','e','N','e','x','e','\0' };
+					char source6[50]{ "d:\\fol der\\file.exe.txt.pdf" };
 					char path6[50];
 					char name6[50];
 					char extension6[50];

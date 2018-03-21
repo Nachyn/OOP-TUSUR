@@ -11,6 +11,7 @@ namespace Lab4
 	};
 
 	DoublyLinkedList AddEnd(DoublyLinkedList list, Person* person);
+	void ShowNodeInConsole(Node& node, string message = "");
 	void ShowInConsole(DoublyLinkedList list);
 	Person* GetByIndex(DoublyLinkedList list, int index);
 	DoublyLinkedList RemoveByIndex(DoublyLinkedList list, int index);

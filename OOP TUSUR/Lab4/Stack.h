@@ -8,10 +8,10 @@ namespace Lab4
 		int Value;
 		struct StackItem *Next;
 	};
-	//TODO: Тип в StackItem переименовали, а аргументы - нет
-	void Push(StackItem*& stack, int value);
-	int Pop(StackItem*& stack);
-	int Top(StackItem*& stack);
-	int Size(StackItem*& stack);
-	bool IsEmpty(StackItem*& stack);
+	//TODO: Тип в StackItem переименовали, а аргументы - нет(+)
+	void Push(StackItem*& stackItem, int value);
+	int Pop(StackItem*& stackItem);
+	int Top(StackItem*& stackItem);
+	int Size(StackItem*& stackItem);
+	bool IsEmpty(StackItem*& stackItem);
 }

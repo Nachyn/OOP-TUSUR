@@ -2,41 +2,41 @@
 
 namespace Lab4
 {
-	void Push(StackItem *& stack, int value)
+	void Push(StackItem*& stackItem, int value)
 	{
 		StackItem *newStack = new StackItem;
 		newStack->Value = value;
-		newStack->Next = stack;
-		stack = newStack;
+		newStack->Next = stackItem;
+		stackItem = newStack;
 	}
 
-	int Pop(StackItem *& stack)
+	int Pop(StackItem*& stackItem)
 	{
-		if (stack == NULL)
+		if (stackItem == NULL)
 		{
 			return -1;
 		}
-		int temp = stack->Value;
-		StackItem *newStack = stack;
+		int temp = stackItem->Value;
+		StackItem *newStack = stackItem;
 
-		stack = stack->Next;
+		stackItem = stackItem->Next;
 		delete newStack;
 		return temp;
 	}
 
-	int Top(StackItem *& stack)
+	int Top(StackItem*& stackItem)
 	{
-		if (stack == NULL)
+		if (stackItem == NULL)
 		{
 			return -1;
 		}
-		return stack->Value;
+		return stackItem->Value;
 	}
 
-	int Size(StackItem *& stack)
+	int Size(StackItem*& stackItem)
 	{
 		int size = 0;
-		StackItem* temp = stack;
+		StackItem* temp = stackItem;
 		while (temp != NULL)
 		{
 			temp = temp->Next;
@@ -45,8 +45,8 @@ namespace Lab4
 		return size;
 	}
 
-	bool IsEmpty(StackItem *& stack)
+	bool IsEmpty(StackItem*& stackItem)
 	{
-		return stack == NULL;
+		return stackItem == NULL;
 	}
 }

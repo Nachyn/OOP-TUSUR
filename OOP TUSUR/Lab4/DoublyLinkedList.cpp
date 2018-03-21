@@ -21,15 +21,22 @@ namespace Lab4
 		return list;
 	}
 
+	void ShowNodeInConsole(Node& node, string message)
+	{
+		cout << message << " Surname: " << node.Data.Surname << endl;
+		cout << message << " Name: " << node.Data.Name << endl;
+		cout << message << " Sex: " << node.Data.Sex << endl << endl;
+	}
+
+
+
 	void ShowInConsole(DoublyLinkedList list)
 	{
 		cout << endl;
 		Node* temp = list.Head;
 		while (temp != NULL)
 		{
-			cout << "Surname: " << temp->Data.Surname << endl;
-			cout << "Name: " << temp->Data.Name << endl;
-			cout << "Sex: " << temp->Data.Sex << endl << endl;
+			ShowNodeInConsole(*temp);
 			temp = temp->Next;
 		}
 
@@ -37,15 +44,10 @@ namespace Lab4
 		{
 			//TODO: Дублирование - можно сократить.
 			//Для наглядности КОНЕЦ и НАЧАЛО вывожу. Рекурсивно хотите или в отдельную функцию?
-			//TODO: В отдельную функцию
+			//TODO: В отдельную функцию (+)
 			cout << "-------------------------------------------------" << endl;
-			cout << "Head = " << "Surname: " << list.Head->Data.Surname << endl;
-			cout << "Head = " << "Name: " << list.Head->Data.Name << endl;
-			cout << "Head = " << "Sex: " << list.Head->Data.Sex << endl << endl;
-			
-			cout << "Tail = " << "Surname: " << list.Tail->Data.Surname << endl;
-			cout << "Tail = " << "Name: " << list.Tail->Data.Name << endl;
-			cout << "Tail = " << "Sex: " << list.Tail->Data.Sex << endl << endl;
+			ShowNodeInConsole(*list.Head, "Head =");
+			ShowNodeInConsole(*list.Tail, "Tail =");
 			cout << "-------------------------------------------------";
 		}
 		else

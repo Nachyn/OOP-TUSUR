@@ -5,7 +5,6 @@ void UILab4()
 	Lab4::DoublyLinkedList list;
 	bool key = true;
 	Lab4::Person newPerson;
-	//TODO: На ушение станда та офо мления RSDN - так объявлять пе еменные - не п авильно.
 	int selectAction; 
 	int index;
 	while (key)

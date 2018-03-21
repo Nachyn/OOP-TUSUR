@@ -47,8 +47,6 @@ namespace Lab4
 
 	bool IsEmpty(StackItem *& stack)
 	{
-		//TODO: Можно возвращать сразу stack == NULL.
-		//+
 		return stack == NULL;
 	}
 }

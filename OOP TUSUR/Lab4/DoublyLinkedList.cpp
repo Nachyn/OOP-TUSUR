@@ -37,6 +37,7 @@ namespace Lab4
 		{
 			//TODO: Дублирование - можно сократить.
 			//Для наглядности КОНЕЦ и НАЧАЛО вывожу. Рекурсивно хотите или в отдельную функцию?
+			//TODO: В отдельную функцию
 			cout << "-------------------------------------------------" << endl;
 			cout << "Head = " << "Surname: " << list.Head->Data.Surname << endl;
 			cout << "Head = " << "Name: " << list.Head->Data.Name << endl;
@@ -196,8 +197,6 @@ namespace Lab4
 
 		do
 		{
-			//TODO: Непонятное именование
-			//+
 			sex = CheckSymbol();
 		} 
 		while (sex != 0 && sex != 1);

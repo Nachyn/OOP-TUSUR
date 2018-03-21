@@ -3,13 +3,12 @@
 
 namespace Lab4
 {
-	//TODO: Неправильное именование, это не сам Stack, а StackItem (+)
 	struct StackItem
 	{
 		int Value;
 		struct StackItem *Next;
 	};
-
+	//TODO: Тип в StackItem переименовали, а аргументы - нет
 	void Push(StackItem*& stack, int value);
 	int Pop(StackItem*& stack);
 	int Top(StackItem*& stack);

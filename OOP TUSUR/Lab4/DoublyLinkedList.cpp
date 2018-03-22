@@ -42,9 +42,6 @@ namespace Lab4
 
 		if (list.Head != NULL)
 		{
-			//TODO: Дублирование - можно сократить.
-			//Для наглядности КОНЕЦ и НАЧАЛО вывожу. Рекурсивно хотите или в отдельную функцию?
-			//TODO: В отдельную функцию (+)
 			cout << "-------------------------------------------------" << endl;
 			ShowNodeInConsole(*list.Head, "Head =");
 			ShowNodeInConsole(*list.Tail, "Tail =");

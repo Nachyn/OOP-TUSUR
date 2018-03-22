@@ -264,14 +264,15 @@ namespace Lab3
 	{
 		char* newString = new char[200];
 		int endSymbol = 0;
+		int testSymbolNewString = 0;
 		int currentSymbolNewString = 0;
 		for (int i = 0; i < GetLength(string); i++)
 		{
-			currentSymbolNewString = i;
+			testSymbolNewString = i;
 			bool isTab = true;
 			for (int i = 0; i < countSpace; i++)
 			{
-				if (string[currentSymbolNewString++] != ':') 
+				if (string[testSymbolNewString++] != ':') 
 				{
 					isTab = false;
 				}
@@ -279,12 +280,14 @@ namespace Lab3
 			if (isTab)
 			{
 				newString[i] = '\t';
+				i += 3;
 			}
 			else
 			{
-				newString[i] = string[i];
+				newString[currentSymbolNewString] = string[i];
 			}
 			endSymbol++;
+			currentSymbolNewString++;
 		}
 		newString[endSymbol] = '\0';
 		return newString;
@@ -404,7 +407,7 @@ namespace Lab3
 
 				case ReplaceSpacesOnTabsItem:
 				{
-					char* mass7 = (char*)":::Cake\tis\ta lie! C::ake\t\tis a lie! ";
+					char* mass7 = (char*)"Cake::::is::a:lie!";
 					cout << ReplaceSpacesOnTabs(mass7, 4) << endl;
 					break;
 				}

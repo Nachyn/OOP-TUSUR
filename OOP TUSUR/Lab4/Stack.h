@@ -8,7 +8,7 @@ namespace Lab4
 		int Value;
 		struct StackItem *Next;
 	};
-	//TODO: Тип в StackItem переименовали, а аргументы - нет(+)
+
 	void Push(StackItem*& stackItem, int value);
 	int Pop(StackItem*& stackItem);
 	int Top(StackItem*& stackItem);

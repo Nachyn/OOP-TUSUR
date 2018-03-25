@@ -1,4 +1,4 @@
-#include "DoublyLinkedList.h"
+#include "FunctionsDoublyLinkedList.h"
 
 namespace Lab4
 {

@@ -69,9 +69,6 @@
     <ClCompile Include="Lab3\Tasks3.cpp">
       <Filter>Исходные файлы\Lab3</Filter>
     </ClCompile>
-    <ClCompile Include="Lab4\DoublyLinkedList.cpp">
-      <Filter>Исходные файлы\Lab4</Filter>
-    </ClCompile>
     <ClCompile Include="Lab4\Stack.cpp">
       <Filter>Исходные файлы\Lab4</Filter>
     </ClCompile>
@@ -102,11 +99,11 @@
     <ClCompile Include="Lab7\UILab7.cpp">
       <Filter>Исходные файлы\Lab7</Filter>
     </ClCompile>
+    <ClCompile Include="Lab4\FunctionsDoublyLinkedList.cpp">
+      <Filter>Исходные файлы\Lab4</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CheckSymbol.h">
-      <Filter>Исходные файлы</Filter>
-    </ClInclude>
     <ClInclude Include="Lab1\Tasks.h">
       <Filter>Файлы заголовков\Lab1</Filter>
     </ClInclude>
@@ -117,9 +114,6 @@
       <Filter>Файлы заголовков\Lab3</Filter>
     </ClInclude>
     <ClInclude Include="Lab4\Stack.h">
-      <Filter>Файлы заголовков\Lab4</Filter>
-    </ClInclude>
-    <ClInclude Include="Lab4\DoublyLinkedList.h">
       <Filter>Файлы заголовков\Lab4</Filter>
     </ClInclude>
     <ClInclude Include="Lab4\UILab4.h">
@@ -155,20 +149,29 @@
     <ClInclude Include="Lab3\MenuEnum.h">
       <Filter>Файлы заголовков\Lab3</Filter>
     </ClInclude>
-    <ClInclude Include="Lab3\Sex3.h">
-      <Filter>Файлы заголовков\Lab3</Filter>
-    </ClInclude>
     <ClInclude Include="Lab3\Person3.h">
       <Filter>Файлы заголовков\Lab3</Filter>
-    </ClInclude>
-    <ClInclude Include="Lab4\Sex4.h">
-      <Filter>Файлы заголовков\Lab4</Filter>
     </ClInclude>
     <ClInclude Include="Lab4\Person4.h">
       <Filter>Файлы заголовков\Lab4</Filter>
     </ClInclude>
     <ClInclude Include="Lab4\Node4.h">
       <Filter>Файлы заголовков\Lab4</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab4\FunctionsDoublyLinkedList.h">
+      <Filter>Файлы заголовков\Lab4</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab4\DoublyLinkedList.h">
+      <Filter>Файлы заголовков\Lab4</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab4\StackItem.h">
+      <Filter>Файлы заголовков\Lab4</Filter>
+    </ClInclude>
+    <ClInclude Include="Sex.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="CheckSymbol.h">
+      <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

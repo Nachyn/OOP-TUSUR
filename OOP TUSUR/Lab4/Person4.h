@@ -1,5 +1,5 @@
 #pragma once
-#include "Sex4.h"
+#include "../Sex.h"
 #include "../CheckSymbol.h"
 
 namespace Lab4

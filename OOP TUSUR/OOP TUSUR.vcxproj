@@ -118,7 +118,7 @@
     <ClCompile Include="Lab1\Tasks.cpp" />
     <ClCompile Include="Lab2\Tasks2.cpp" />
     <ClCompile Include="Lab3\Tasks3.cpp" />
-    <ClCompile Include="Lab4\DoublyLinkedList.cpp" />
+    <ClCompile Include="Lab4\FunctionsDoublyLinkedList.cpp" />
     <ClCompile Include="Lab4\Stack.cpp" />
     <ClCompile Include="Lab4\UILab4.cpp" />
     <ClCompile Include="Lab5\PersonList.cpp" />
@@ -137,13 +137,13 @@
     <ClInclude Include="Lab2\Tasks2.h" />
     <ClInclude Include="Lab3\MenuEnum.h" />
     <ClInclude Include="Lab3\Person3.h" />
-    <ClInclude Include="Lab3\Sex3.h" />
     <ClInclude Include="Lab3\Tasks3.h" />
     <ClInclude Include="Lab4\DoublyLinkedList.h" />
+    <ClInclude Include="Lab4\FunctionsDoublyLinkedList.h" />
     <ClInclude Include="Lab4\Node4.h" />
     <ClInclude Include="Lab4\Person4.h" />
-    <ClInclude Include="Lab4\Sex4.h" />
     <ClInclude Include="Lab4\Stack.h" />
+    <ClInclude Include="Lab4\StackItem.h" />
     <ClInclude Include="Lab4\UILab4.h" />
     <ClInclude Include="Lab5\PersonList.h" />
     <ClInclude Include="Lab5\UILab5.h" />
@@ -154,6 +154,7 @@
     <ClInclude Include="Lab6\UILab6.h" />
     <ClInclude Include="Lab7\TemplateList.h" />
     <ClInclude Include="Lab7\UILab7.h" />
+    <ClInclude Include="Sex.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

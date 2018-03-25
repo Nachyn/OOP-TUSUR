@@ -121,6 +121,7 @@
     <ClCompile Include="Lab4\FunctionsDoublyLinkedList.cpp" />
     <ClCompile Include="Lab4\Stack.cpp" />
     <ClCompile Include="Lab4\UILab4.cpp" />
+    <ClCompile Include="Lab5\Person5.cpp" />
     <ClCompile Include="Lab5\PersonList.cpp" />
     <ClCompile Include="Lab5\UILab5.cpp" />
     <ClCompile Include="Lab6\Adult6.cpp" />
@@ -145,7 +146,9 @@
     <ClInclude Include="Lab4\Stack.h" />
     <ClInclude Include="Lab4\StackItem.h" />
     <ClInclude Include="Lab4\UILab4.h" />
+    <ClInclude Include="Lab5\Person5.h" />
     <ClInclude Include="Lab5\PersonList.h" />
+    <ClInclude Include="Lab5\PersonListItem5.h" />
     <ClInclude Include="Lab5\UILab5.h" />
     <ClInclude Include="Lab6\Adult6.h" />
     <ClInclude Include="Lab6\Child6.h" />

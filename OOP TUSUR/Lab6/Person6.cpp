@@ -32,10 +32,5 @@ namespace Lab6
 		return temp;
 	}
 		
-	bool Person::operator==(const Person& right)
-	{
-		return(!strcmp(Name, right.Name) &&
-			!strcmp(Surname, right.Surname) &&
-			Age == right.Age && Sex == right.Sex) ? true : false;
-	}
+	
 }

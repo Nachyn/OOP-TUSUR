@@ -25,10 +25,10 @@ namespace Lab4
 	{
 		cout << message << " Surname: " << node.Data.Surname << endl;
 		cout << message << " Name: " << node.Data.Name << endl;
-		cout << message << " Sex: " << node.Data.Sex << endl << endl;
+		cout << message << " Sex: ";
+		node.Data.Sex == 1 ? cout << "Male" : cout << "Female";
+		cout << endl << endl;
 	}
-
-
 
 	void ShowInConsole(DoublyLinkedList list)
 	{
@@ -53,7 +53,7 @@ namespace Lab4
 		}
 	}
 
-	Person* GetByIndex(DoublyLinkedList list, int index)
+	Node* GetByIndex(DoublyLinkedList list, int index)
 	{
 		if (index < 0)
 		{
@@ -70,12 +70,12 @@ namespace Lab4
 			temp = temp->Next;
 			i++;
 		};
-		return &temp->Data;
+		return temp;
 	}
 
 	DoublyLinkedList RemoveByIndex(DoublyLinkedList list, int index)
 	{
-		Person* element = GetByIndex(list, index);
+		Person* element = &GetByIndex(list, index)->Data;
 		Node* temp = list.Head;
 
 		while (temp != NULL)

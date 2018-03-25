@@ -2,18 +2,18 @@
 
 namespace Lab5
 {
-	void PersonList::Add(Person * person)
+	void PersonList::Add(Person* person)
 	{
 		PersonListItem* temp = new PersonListItem(*person);
-		if (_head != NULL)
+		if (_Head != NULL)
 		{
-			temp->Prev = _tail;
-			_tail->Next = temp;
-			_tail = temp;
+			temp->Prev = _Tail;
+			_Tail->Next = temp;
+			_Tail = temp;
 		}
 		else
 		{
-			_head = _tail = temp;
+			_Head = _Tail = temp;
 		}
 	}
 
@@ -24,7 +24,7 @@ namespace Lab5
 			return NULL;
 		}
 		int i = 0;
-		PersonListItem* temp = _head;
+		PersonListItem* temp = _Head;
 		while (i < index)
 		{
 			if (temp == NULL)
@@ -37,9 +37,9 @@ namespace Lab5
 		return &temp->Value;
 	}
 
-	int PersonList::IndexOf(Person * person)
+	int PersonList::IndexOf(Person* person)
 	{
-		PersonListItem* temp = _head;
+		PersonListItem* temp = _Head;
 		int index = 0;
 		while (temp != NULL)
 		{
@@ -53,34 +53,34 @@ namespace Lab5
 		return -1;
 	}
 
-	void PersonList::Remove(Person * person)
+	void PersonList::Remove(Person* person)
 	{
-		PersonListItem* temp = _head;
+		PersonListItem* temp = _Head;
 		while (temp != NULL)
 		{
 			if (temp->Value == *person)
 			{
-				if (_head == temp)
+				if (_Head == temp)
 				{
 					if (temp->Next == NULL)
 					{
-						_head = NULL;
-						_tail = NULL;
+						_Head = NULL;
+						_Tail = NULL;
 						break;
 					}
-					_head->Next->Prev = NULL;
-					_head = _head->Next;
+					_Head->Next->Prev = NULL;
+					_Head = _Head->Next;
 					break;
 				}
 
-				if (_tail == temp)
+				if (_Tail == temp)
 				{
-					_tail->Prev->Next = NULL;
-					_tail = _tail->Prev;
+					_Tail->Prev->Next = NULL;
+					_Tail = _Tail->Prev;
 					break;
 				}
 
-				if (_head != temp && _tail != temp)
+				if (_Head != temp && _Tail != temp)
 				{
 					temp->Prev->Next = temp->Next;
 					temp->Next->Prev = temp->Prev;
@@ -94,32 +94,32 @@ namespace Lab5
 	void PersonList::RemoveAt(int index)
 	{
 		Person* person = Find(index);
-		PersonListItem* temp = _head;
+		PersonListItem* temp = _Head;
 		while (temp != NULL)
 		{
 			if (temp->Value == *person)
 			{
-				if (_head == temp)
+				if (_Head == temp)
 				{
 					if (temp->Next == NULL)
 					{
-						_head = NULL;
-						_tail = NULL;
+						_Head = NULL;
+						_Tail = NULL;
 						break;
 					}
-					_head->Next->Prev = NULL;
-					_head = _head->Next;
+					_Head->Next->Prev = NULL;
+					_Head = _Head->Next;
 					break;
 				}
 
-				if (_tail == temp)
+				if (_Tail == temp)
 				{
-					_tail->Prev->Next = NULL;
-					_tail = _tail->Prev;
+					_Tail->Prev->Next = NULL;
+					_Tail = _Tail->Prev;
 					break;
 				}
 
-				if (_head != temp && _tail != temp)
+				if (_Head != temp && _Tail != temp)
 				{
 					temp->Prev->Next = temp->Next;
 					temp->Next->Prev = temp->Prev;
@@ -132,21 +132,21 @@ namespace Lab5
 
 	void PersonList::Clear()
 	{
-		PersonListItem* next = _head;
+		PersonListItem* next = _Head;
 		while (next != NULL)
 		{
 			PersonListItem* tempNext = next->Next;
 			delete next;
 			next = tempNext;
 		}
-		_head = NULL;
-		_tail = NULL;
+		_Head = NULL;
+		_Tail = NULL;
 	}
 
 	int PersonList::GetCount()
 	{
 		int count = 0;
-		PersonListItem* temp = _head;
+		PersonListItem* temp = _Head;
 		while (temp != NULL)
 		{
 			temp = temp->Next;
@@ -155,34 +155,63 @@ namespace Lab5
 		return count;
 	}
 
+	void PersonList::ShowNodeInConsole(PersonListItem list, string message)
+	{
+		cout << message << " Surname: " << list.Value.Surname << endl;
+		cout << message << " Name: " << list.Value.Name << endl;
+		cout << message << " Sex: ";
+		list.Value.Sex == 1 ? cout << "Male" : cout << "Female";
+		cout << endl << endl;
+	}
+
 	void PersonList::ShowInConsole()
 	{
 		cout << endl;
-		PersonListItem* temp = _head;
+		PersonListItem* temp = _Head;
 		while (temp != NULL)
 		{
-			cout << "Surname: " << temp->Value.Surname << endl;
-			cout << "Name: " << temp->Value.Name << endl;
-			cout << "Sex: " << temp->Value.Sex << endl << endl;
+			ShowNodeInConsole(*temp);
 			temp = temp->Next;
 		}
 
-		if (_head != NULL)
+		if (_Head != NULL)
 		{
 			cout << "-------------------------------------------------" << endl;
-			cout << "Head = " << "Surname: " << _head->Value.Surname << endl;
-			cout << "Head = " << "Name: " << _head->Value.Name << endl;
-			cout << "Head = " << "Sex: " << _head->Value.Sex << endl << endl;
-
-			cout << "Tail = " << "Surname: " << _tail->Value.Surname << endl;
-			cout << "Tail = " << "Name: " << _tail->Value.Name << endl;
-			cout << "Tail = " << "Sex: " << _tail->Value.Sex << endl << endl;
+			ShowNodeInConsole(*_Head, "Head =");
+			ShowNodeInConsole(*_Tail, "Tail =");
 			cout << "-------------------------------------------------";
 		}
 		else
 		{
 			cout << "Head = NULL " << " Tail = NULL " << endl;
 		}
+	}
+
+	bool PersonList::ValidationName(char name[])
+	{
+		bool validate = true;
+		for (int i = 0; i < strlen(name); i++)
+		{
+			if (isdigit(name[i]) || isspace(name[i]))
+			{
+				validate = false;
+				break;
+			}
+			if (name[i] == '-')
+			{
+				if (isalpha(name[i + 1]))
+				{
+					name[i + 1] = toupper(name[i + 1]);
+				}
+				else
+				{
+					validate = false;
+					break;
+				}
+			}
+		}
+		name[0] = toupper(name[0]);
+		return validate;
 	}
 
 	void PersonList::Read()
@@ -193,28 +222,7 @@ namespace Lab5
 		{
 			cout << endl << "Insert Surname: ";
 			cin >> newPerson.Surname;
-			key = false;
-			for (int i = 0; i < strlen(newPerson.Surname); i++)
-			{
-				if (isdigit(newPerson.Surname[i]) || isspace(newPerson.Surname[i]))
-				{
-					key = true;
-					break;
-				}
-				if (newPerson.Surname[i] == '-')
-				{
-					if (isalpha(newPerson.Surname[i + 1]))
-					{
-						newPerson.Surname[i + 1] = toupper(newPerson.Surname[i + 1]);
-					}
-					else
-					{
-						key = true;
-						break;
-					}
-				}
-			}
-			newPerson.Surname[0] = toupper(newPerson.Surname[0]);
+			key = !ValidationName(newPerson.Surname);
 		}
 
 		key = true;
@@ -222,46 +230,27 @@ namespace Lab5
 		{
 			cout << endl << "Insert Name: ";
 			cin >> newPerson.Name;
-			key = false;
-			for (int i = 0; i < strlen(newPerson.Name); i++)
-			{
-				if (isdigit(newPerson.Name[i]) || isspace(newPerson.Name[i]))
-				{
-					key = true;
-					break;
-				}
-				if (newPerson.Name[i] == '-')
-				{
-					if (isalpha(newPerson.Surname[i + 1]))
-					{
-						newPerson.Surname[i + 1] = toupper(newPerson.Surname[i + 1]);
-					}
-					else
-					{
-						key = true;
-						break;
-					}
-				}
-			}
-			newPerson.Name[0] = toupper(newPerson.Name[0]);
+			key = !ValidationName(newPerson.Name);
 		}
+
 		cout << endl << "Insert Sex: ";
 		int n;
-
 		do
 		{
 			n = CheckSymbol();
-		} while (n != 0 && n != 1);
+		} 
+		while (n != 0 && n != 1);
+
 		switch (n)
 		{
-		case Female:
-			newPerson.Sex = Female;
-			break;
-		case Male:
-			newPerson.Sex = Male;
-			break;
-		default:
-			break;
+			case Female:
+				newPerson.Sex = Female;
+				break;
+			case Male:
+				newPerson.Sex = Male;
+				break;
+			default:
+				break;
 		}
 		this->Add(&newPerson);
 	}

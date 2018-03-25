@@ -46,12 +46,14 @@ void UILab4()
 			{
 				cout << "¬ведите индекс: ";
 				index = CheckSymbol();
-				Lab4::Person* newPerson = GetByIndex(list, index);
+				Lab4::Person* newPerson = &GetByIndex(list, index)->Data;
 				if (newPerson != NULL)
 				{
 					cout << "Surname: " << newPerson->Surname << endl;
 					cout << "Name: " << newPerson->Name << endl;
-					cout << "Sex: " << newPerson->Sex << endl;
+					cout << "Sex: ";
+					newPerson->Sex == 1 ? cout << "Male" : cout << "Female";
+					cout << endl;
 				}
 				break;
 			}

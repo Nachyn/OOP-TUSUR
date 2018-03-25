@@ -182,5 +182,8 @@
     <ClInclude Include="Lab5\PersonListItem5.h">
       <Filter>Файлы заголовков\Lab5</Filter>
     </ClInclude>
+    <ClInclude Include="Lab6\PersonListItem6.h">
+      <Filter>Файлы заголовков\Lab6</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

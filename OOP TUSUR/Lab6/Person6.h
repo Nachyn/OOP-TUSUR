@@ -7,16 +7,16 @@ namespace Lab6
 
 	class Person
 	{
-	private:
-		int Age;
-	public:
-		char Name[20];
-		char Surname[20];
-		Sex Sex;
-		virtual void SetAge(int age);
-		virtual int GetAge();
-		Person() { };
-		virtual string GetDescription();
-		bool operator==(const Person& right);
+		private:
+			int Age;
+		public:
+			char Name[20];
+			char Surname[20];
+			Sex Sex;
+			virtual void SetAge(int age);
+			virtual int GetAge();
+			Person() { };
+			virtual string GetDescription();
+			bool operator==(const Person& right);
 	};
 }

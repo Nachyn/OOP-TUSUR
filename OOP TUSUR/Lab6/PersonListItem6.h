@@ -1,16 +1,15 @@
 #pragma once
-#include "Person5.h"
-
-namespace Lab5
+#include "Person6.h"
+namespace Lab6
 {
 	class PersonListItem
 	{
 		public:
-			PersonListItem(Person person)
+			PersonListItem(Person *person)
 			{
 				Value = person;
 			}
-			Person Value;
+			Person* Value;
 			PersonListItem* Next = NULL;
 			PersonListItem* Prev = NULL;
 	};

@@ -6,15 +6,15 @@ namespace Lab6
 	void PersonList::Add(Person * person)
 	{
 		PersonListItem* temp = new PersonListItem(person);
-		if (_head != NULL)
+		if (_Head != NULL)
 		{
-			temp->Prev = _tail;
-			_tail->Next = temp;
-			_tail = temp;
+			temp->Prev = _Tail;
+			_Tail->Next = temp;
+			_Tail = temp;
 		}
 		else
 		{
-			_head = _tail = temp;
+			_Head = _Tail = temp;
 		}
 	}
 
@@ -25,7 +25,7 @@ namespace Lab6
 			return NULL;
 		}
 		int i = 0;
-		PersonListItem* temp = _head;
+		PersonListItem* temp = _Head;
 		while (i < index)
 		{
 			if (temp == NULL)
@@ -40,7 +40,7 @@ namespace Lab6
 
 	int PersonList::IndexOf(Person * person)
 	{
-		PersonListItem* temp = _head;
+		PersonListItem* temp = _Head;
 		int index = 0;
 		while (temp != NULL)
 		{
@@ -56,32 +56,32 @@ namespace Lab6
 
 	void PersonList::Remove(Person * person)
 	{
-		PersonListItem* temp = _head;
+		PersonListItem* temp = _Head;
 		while (temp != NULL)
 		{
 			if (temp->Value == person)
 			{
-				if (_head == temp)
+				if (_Head == temp)
 				{
 					if (temp->Next == NULL)
 					{
-						_head = NULL;
-						_tail = NULL;
+						_Head = NULL;
+						_Tail = NULL;
 						break;
 					}
-					_head->Next->Prev = NULL;
-					_head = _head->Next;
+					_Head->Next->Prev = NULL;
+					_Head = _Head->Next;
 					break;
 				}
 
-				if (_tail == temp)
+				if (_Tail == temp)
 				{
-					_tail->Prev->Next = NULL;
-					_tail = _tail->Prev;
+					_Tail->Prev->Next = NULL;
+					_Tail = _Tail->Prev;
 					break;
 				}
 
-				if (_head != temp && _tail != temp)
+				if (_Head != temp && _Tail != temp)
 				{
 					temp->Prev->Next = temp->Next;
 					temp->Next->Prev = temp->Prev;
@@ -95,32 +95,32 @@ namespace Lab6
 	void PersonList::RemoveAt(int index)
 	{
 		Person* person = Find(index);
-		PersonListItem* temp = _head;
+		PersonListItem* temp = _Head;
 		while (temp != NULL)
 		{
 			if (temp->Value == person)
 			{
-				if (_head == temp)
+				if (_Head == temp)
 				{
 					if (temp->Next == NULL)
 					{
-						_head = NULL;
-						_tail = NULL;
+						_Head = NULL;
+						_Tail = NULL;
 						break;
 					}
-					_head->Next->Prev = NULL;
-					_head = _head->Next;
+					_Head->Next->Prev = NULL;
+					_Head = _Head->Next;
 					break;
 				}
 
-				if (_tail == temp)
+				if (_Tail == temp)
 				{
-					_tail->Prev->Next = NULL;
-					_tail = _tail->Prev;
+					_Tail->Prev->Next = NULL;
+					_Tail = _Tail->Prev;
 					break;
 				}
 
-				if (_head != temp && _tail != temp)
+				if (_Head != temp && _Tail != temp)
 				{
 					temp->Prev->Next = temp->Next;
 					temp->Next->Prev = temp->Prev;
@@ -133,7 +133,7 @@ namespace Lab6
 
 	void PersonList::Clear()
 	{
-		PersonListItem* next = _head;
+		PersonListItem* next = _Head;
 		while (next != NULL)
 		{
 			PersonListItem* tempNext = next->Next;
@@ -141,14 +141,14 @@ namespace Lab6
 			delete next;
 			next = tempNext;
 		}
-		_head = NULL;
-		_tail = NULL;
+		_Head = NULL;
+		_Tail = NULL;
 	}
 
 	int PersonList::GetCount()
 	{
 		int count = 0;
-		PersonListItem* temp = _head;
+		PersonListItem* temp = _Head;
 		while (temp != NULL)
 		{
 			temp = temp->Next;
@@ -160,7 +160,7 @@ namespace Lab6
 	void PersonList::ShowInConsole()
 	{
 		cout << endl;
-		PersonListItem* temp = _head;
+		PersonListItem* temp = _Head;
 		while (temp != NULL)
 		{
 			if (temp->Value->GetAge() < 18)
@@ -176,11 +176,11 @@ namespace Lab6
 			temp = temp->Next;
 		}
 
-		if (_head != NULL)
+		if (_Head != NULL)
 		{
 			cout << "-------------------------------------------------" << endl;
-			cout << "Head = " << _head->Value->GetDescription() << endl;
-			cout << "Tail = " << _tail->Value->GetDescription() << endl;
+			cout << "Head = " << _Head->Value->GetDescription() << endl;
+			cout << "Tail = " << _Tail->Value->GetDescription() << endl;
 			cout << "-------------------------------------------------" << endl;
 		}
 		else

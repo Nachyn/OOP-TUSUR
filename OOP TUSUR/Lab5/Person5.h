@@ -6,12 +6,12 @@ namespace Lab5
 {
 	class Person
 	{
-	public:
-		char Name[20];
-		char Surname[20];
-		int Age;
-		Sex Sex;
-		Person() { };
-		bool operator==(const Person& right);
+		public:
+			char Name[20];
+			char Surname[20];
+			int Age;
+			Sex Sex;
+			Person() { };
+			bool operator==(const Person& right);
 	};
 }

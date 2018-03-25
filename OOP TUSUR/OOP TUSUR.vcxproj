@@ -154,6 +154,7 @@
     <ClInclude Include="Lab6\Child6.h" />
     <ClInclude Include="Lab6\Person6.h" />
     <ClInclude Include="Lab6\PersonList6.h" />
+    <ClInclude Include="Lab6\PersonListItem6.h" />
     <ClInclude Include="Lab6\UILab6.h" />
     <ClInclude Include="Lab7\TemplateList.h" />
     <ClInclude Include="Lab7\UILab7.h" />

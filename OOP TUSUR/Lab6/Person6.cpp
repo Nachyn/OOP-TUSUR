@@ -31,6 +31,4 @@ namespace Lab6
 		Sex == Male ? temp.append(", male") : temp.append(", female");
 		return temp;
 	}
-		
-	
 }

@@ -11,7 +11,6 @@ namespace Lab6
 		{
 			Person::SetAge(age);
 		}
-
 	}
 
 	int Adult::GetAge()

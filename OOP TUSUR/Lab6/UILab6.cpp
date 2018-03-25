@@ -8,23 +8,47 @@ void UILab6()
 
 	Lab6::PersonList list;
 	list.Add(adultl1);
-	list.Add(adultl2);
-	list.Add(adultl3);
-	list.ShowInConsole();
+	cout << "Äîáàâëåí: " << adultl1->Name << " " << adultl1->Surname << endl;
 
+	list.Add(adultl2);
+	cout << "Äîáàâëåí: " << adultl2->Name << " " << adultl2->Surname << endl;
+
+	list.Add(adultl3);
+	cout << "Äîáàâëåí: " << adultl3->Name << " " << adultl3->Surname << endl;
+
+	cout << "==============ÂÛÂÎÄ ÑÏÈÑÊÀ================" << endl;
+	list.ShowInConsole();
+	cout << "==============ÊÎÍÅÖ ÂÛÂÎÄÀ================" << endl;
+
+	
 	Lab6::Person* find = list.Find(0);
+	cout << "Ïî ïåðâîìó èíäåêñó íàéäåí:" << endl;
 	cout << find->GetDescription();
 
-	cout << endl << list.IndexOf(find);
-	list.Remove(find);
+	cout << endl << "Òîò æå ÷åëîâåê íàéäåí ïî èíäåêñó: " << list.IndexOf(find);
+	cout << endl;
 
+	list.Remove(find);
+	cout << "Óäàëèëè: " << find->Name << " " << find->Surname << endl;
+
+	cout << "==============ÂÛÂÎÄ ÑÏÈÑÊÀ================" << endl;
 	list.ShowInConsole();
+	cout << "==============ÊÎÍÅÖ ÂÛÂÎÄÀ================" << endl;
+
+	
 	list.RemoveAt(0);
+	cout << "Óäàëèëè ÷åëà, êîòîðûé íàõîäèëñÿ ïî èíäåêñó 0" << endl;
+
+	cout << "==============ÂÛÂÎÄ ÑÏÈÑÊÀ================" << endl;
 	list.ShowInConsole();
+	cout << "==============ÊÎÍÅÖ ÂÛÂÎÄÀ================" << endl;
 
 	list.Clear();
-	cout << "Ëèñò î÷èùåí" << endl;
+	cout << "=========================ËÈÑÒ Î×ÈÙÅÍ ====================" << endl;
+
+	cout << "==============ÂÛÂÎÄ ÑÏÈÑÊÀ================" << endl;
 	list.ShowInConsole();
+	cout << "==============ÊÎÍÅÖ ÂÛÂÎÄÀ================" << endl;
 
 	system("pause");
 }

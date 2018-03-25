@@ -1,10 +1,9 @@
 #pragma once
 #include "../CheckSymbol.h"
+#include "../Sex.h"
 
 namespace Lab6
 {
-	enum Sex { Female, Male };
-
 	class Person
 	{
 		private:

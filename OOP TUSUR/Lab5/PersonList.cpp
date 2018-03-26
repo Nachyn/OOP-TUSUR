@@ -57,7 +57,7 @@ namespace Lab5
 	{
 		PersonListItem* temp = _Head;
 		while (temp != NULL)
-		{
+		{//TODO: Дублируется в следующем методе
 			if (temp->Value == *person)
 			{
 				if (_Head == temp)
@@ -160,6 +160,7 @@ namespace Lab5
 		cout << message << " Surname: " << list.Value.Surname << endl;
 		cout << message << " Name: " << list.Value.Name << endl;
 		cout << message << " Sex: ";
+		//TODO: Не надо писать так тернарные операторы - плохо читается
 		list.Value.Sex == 1 ? cout << "Male" : cout << "Female";
 		cout << endl << endl;
 	}
@@ -186,7 +187,7 @@ namespace Lab5
 			cout << "Head = NULL " << " Tail = NULL " << endl;
 		}
 	}
-
+	//TODO: Некорректное именование - метод должен быть с глаголом
 	bool PersonList::ValidationName(char name[])
 	{
 		bool validate = true;

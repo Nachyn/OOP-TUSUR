@@ -16,9 +16,13 @@ namespace Lab5
 			int GetCount();
 			void ShowInConsole();
 			void Read();
+			//TODO: Вообще получение рандомной персоны не должно тут храниться
 			static Person GetRandomPerson();
+			//TODO: Неправильное использование конструктора
 			PersonList() { };
+			//TODO: Где деструктор?
 		private:
+			//TODO: Некорректное именование
 			PersonListItem * _Head;
 			PersonListItem* _Tail;
 			void ShowNodeInConsole(PersonListItem list, string message = "");

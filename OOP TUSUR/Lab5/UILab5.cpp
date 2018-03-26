@@ -6,7 +6,9 @@ void UILab5()
 	Lab5::PersonList list2;
 	Lab5::Person p1 = list1.GetRandomPerson();
 
-
+	//TODO: При выводе показывает иероглифы
+	//TODO: Сделайте меню для добавления элементов в список.
+	//TODO: Сейчас вы очень многие вещи для себя упростили автоматическим вводом.
 	list1.Add(&list1.GetRandomPerson());
 	cout << "Добавлен рандомный человек в Список 1" << endl;
 

@@ -3,70 +3,82 @@
 void UILab5()
 {
 	Lab5::PersonList list1;
-	Lab5::PersonList list2;
-	Lab5::Person p1 = list1.GetRandomPerson();
-
-	//TODO: При выводе показывает иероглифы
-	//TODO: Сделайте меню для добавления элементов в список.
-	//TODO: Сейчас вы очень многие вещи для себя упростили автоматическим вводом.
-	list1.Add(&list1.GetRandomPerson());
-	cout << "Добавлен рандомный человек в Список 1" << endl;
-
-	list1.Add(&p1);
-	cout << "Добавлен рандомный человек в Список 1" << endl;
-
-	list1.Add(&list1.GetRandomPerson());
-	cout << "Добавлен рандомный человек в Список 1" << endl;
-
-	list1.Add(&list1.GetRandomPerson());
-	cout << "Добавлен рандомный человек в Список 1" << endl;
-
-
-	list2.Add(&list1.GetRandomPerson());
-	cout << "Добавлен рандомный человек в Список 2" << endl;
-
-	list2.Add(&p1);
-	cout << "Добавлен человек по индексу 1 в Списке 1 в Список 2" << endl;
-
-	list2.Add(&list1.GetRandomPerson());
-	cout << "Добавлен рандомный человек в Список 2" << endl;
-
-	cout << "==============ВЫВОД СПИСКА [1]================" << endl;
-	list1.ShowInConsole();
-	cout << "==============КОНЕЦ ВЫВОДА [1]================" << endl << endl;
-
-	cout << "==============ВЫВОД СПИСКА [2]================" << endl;
-	list2.ShowInConsole();
-	cout << "==============КОНЕЦ ВЫВОДА [2]================" << endl << endl;
-
-	list1.RemoveAt(1);
-	cout << "Удален чел по индексу 1 в списке 1" << endl;
-	//list1.Remove(&p1);
-
-	cout << "==============ВЫВОД СПИСКА [1]================" << endl;
-	list1.ShowInConsole();
-	cout << "==============КОНЕЦ ВЫВОДА [1]================" << endl << endl;
-
-	cout << "==============ВЫВОД СПИСКА [2]================" << endl;
-	list2.ShowInConsole();
-	cout << "==============КОНЕЦ ВЫВОДА [2]================" << endl << endl;
-
-	cout << "Ввод чела в конец списка 1: " << endl;
-	list1.Read();
-
-	cout << "==============ВЫВОД СПИСКА [1]================" << endl;
-	list1.ShowInConsole();
-	cout << "==============КОНЕЦ ВЫВОДА [1]================" << endl << endl;
-
-	system("pause");
-
-
-	list1.Clear();
-	cout << "=============СПИСОК [1] ОЧИЩЕН===========" << endl;
-
-	cout << "==============ВЫВОД СПИСКА [1]================" << endl;
-	list1.ShowInConsole();
-	cout << "==============КОНЕЦ ВЫВОДА [1]================" << endl << endl;
-
+	//TODO: При выводе показывает иероглифы (+)
+	//TODO: Сделайте меню для добавления элементов в список. (+)
+	//TODO: Сейчас вы очень многие вещи для себя упростили автоматическим вводом. (+)
+	setlocale(0, "");
+	bool key = true;
+	while (key)
+	{
+		cout << "[1] Add Random Person" << endl
+			<< "[2] Add My Person" << endl
+			<< "[3] Find At Index" << endl
+			<< "[4] Remove At Index" << endl
+			<< "[5] Clear" << endl
+			<< "[6] Get Count" << endl
+			<< "[7] Show In Console" << endl
+			<< "[0] Exit" << endl
+			<< "-> Choose: ";
+		switch (CheckSymbol())
+		{
+			case 0:
+				cout << "Сейчас будет ошибка Дебаггера :)";
+				system("pause");
+				delete &list1;
+				key = false;
+				break;
+			case 1:
+				list1.Add(Lab5::PersonList::GetRandomPerson());
+				cout << "Random Person Added in List" << endl;
+				break;
+			case 2:
+				cout << "Enter Person:" << endl;
+				list1.Read();
+				break;
+			case 3:
+			{
+				cout << "Enter Index: ";
+				Lab5::Person* person = list1.Find(CheckSymbol());
+				if (person != NULL)
+				{
+					cout << "Find person: " << endl;
+					cout << " Surname: " << person->GetSurname() << endl;
+					cout << " Name: " << person->GetName() << endl;
+					cout << " Age: " << person->GetAge() << endl;
+					cout << " Sex: ";
+					if (person->GetSex() == Male)
+					{
+						cout << "Male";
+					}
+					else
+					{
+						cout << "Female";
+					}
+					cout << endl << endl;
+				}
+				else
+				{
+					cout << "Person not found" << endl;
+				}
+				break;
+			}
+			case 4:
+				cout << "Enter Index: ";
+				list1.RemoveAt(CheckSymbol());
+				break;
+			case 5:
+				list1.Clear();
+				cout << "List Clear" << endl;
+				break;
+			case 6:
+				cout << "Count: " << list1.GetCount() << endl;
+				break;
+			case 7:
+				list1.ShowInConsole();
+				break;
+		}
+		system("pause");
+		system("cls");	
+	}
 	system("pause");
 }

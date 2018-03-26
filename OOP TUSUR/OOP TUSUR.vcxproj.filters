@@ -105,6 +105,9 @@
     <ClCompile Include="Lab5\Person5.cpp">
       <Filter>Исходные файлы\Lab5</Filter>
     </ClCompile>
+    <ClCompile Include="Lab5\PersonListItem5.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lab1\Tasks.h">

@@ -4,16 +4,16 @@ namespace Lab5
 {
 	void PersonList::Add(Person* person)
 	{
-		PersonListItem* temp = new PersonListItem(*person);
-		if (_Head != NULL)
+		PersonListItem* temp = new PersonListItem(person);
+		if (_head != NULL)
 		{
-			temp->Prev = _Tail;
-			_Tail->Next = temp;
-			_Tail = temp;
+			temp->Prev = _tail;
+			_tail->Next = temp;
+			_tail = temp;
 		}
 		else
 		{
-			_Head = _Tail = temp;
+			_head = _tail = temp;
 		}
 	}
 
@@ -24,7 +24,7 @@ namespace Lab5
 			return NULL;
 		}
 		int i = 0;
-		PersonListItem* temp = _Head;
+		PersonListItem* temp = _head;
 		while (i < index)
 		{
 			if (temp == NULL)
@@ -34,16 +34,16 @@ namespace Lab5
 			temp = temp->Next;
 			i++;
 		};
-		return &temp->Value;
+		return temp->GetValue();
 	}
 
 	int PersonList::IndexOf(Person* person)
 	{
-		PersonListItem* temp = _Head;
+		PersonListItem* temp = _head;
 		int index = 0;
 		while (temp != NULL)
 		{
-			if (temp->Value == *person)
+			if (temp->GetValue() == person)
 			{
 				return index;
 			}
@@ -55,32 +55,32 @@ namespace Lab5
 
 	void PersonList::Remove(Person* person)
 	{
-		PersonListItem* temp = _Head;
+		PersonListItem* temp = _head;
 		while (temp != NULL)
-		{//TODO: Дублируется в следующем методе
-			if (temp->Value == *person)
+		{//TODO: Дублируется в следующем методе(+)
+			if (temp->GetValue() == person)
 			{
-				if (_Head == temp)
+				if (_head == temp)
 				{
 					if (temp->Next == NULL)
 					{
-						_Head = NULL;
-						_Tail = NULL;
+						_head = NULL;
+						_tail = NULL;
 						break;
 					}
-					_Head->Next->Prev = NULL;
-					_Head = _Head->Next;
+					_head->Next->Prev = NULL;
+					_head = _head->Next;
 					break;
 				}
 
-				if (_Tail == temp)
+				if (_tail == temp)
 				{
-					_Tail->Prev->Next = NULL;
-					_Tail = _Tail->Prev;
+					_tail->Prev->Next = NULL;
+					_tail = _tail->Prev;
 					break;
 				}
 
-				if (_Head != temp && _Tail != temp)
+				if (_head != temp && _tail != temp)
 				{
 					temp->Prev->Next = temp->Next;
 					temp->Next->Prev = temp->Prev;
@@ -94,59 +94,27 @@ namespace Lab5
 	void PersonList::RemoveAt(int index)
 	{
 		Person* person = Find(index);
-		PersonListItem* temp = _Head;
-		while (temp != NULL)
-		{
-			if (temp->Value == *person)
-			{
-				if (_Head == temp)
-				{
-					if (temp->Next == NULL)
-					{
-						_Head = NULL;
-						_Tail = NULL;
-						break;
-					}
-					_Head->Next->Prev = NULL;
-					_Head = _Head->Next;
-					break;
-				}
-
-				if (_Tail == temp)
-				{
-					_Tail->Prev->Next = NULL;
-					_Tail = _Tail->Prev;
-					break;
-				}
-
-				if (_Head != temp && _Tail != temp)
-				{
-					temp->Prev->Next = temp->Next;
-					temp->Next->Prev = temp->Prev;
-					break;
-				}
-			}
-			temp = temp->Next;
-		}
+		Remove(person);
 	}
 
 	void PersonList::Clear()
 	{
-		PersonListItem* next = _Head;
+		PersonListItem* next = _head;
 		while (next != NULL)
 		{
 			PersonListItem* tempNext = next->Next;
+			delete next->GetValue();
 			delete next;
 			next = tempNext;
 		}
-		_Head = NULL;
-		_Tail = NULL;
+		_head = NULL;
+		_tail = NULL;
 	}
 
 	int PersonList::GetCount()
 	{
 		int count = 0;
-		PersonListItem* temp = _Head;
+		PersonListItem* temp = _head;
 		while (temp != NULL)
 		{
 			temp = temp->Next;
@@ -155,31 +123,39 @@ namespace Lab5
 		return count;
 	}
 
-	void PersonList::ShowNodeInConsole(PersonListItem list, string message)
+	void PersonList::_showNodeInConsole(PersonListItem list, string message)
 	{
-		cout << message << " Surname: " << list.Value.Surname << endl;
-		cout << message << " Name: " << list.Value.Name << endl;
+		cout << message << " Surname: " << list.GetValue()->GetSurname() << endl;
+		cout << message << " Name: " << list.GetValue()->GetName() << endl;
+		cout << message << " Age: " << list.GetValue()->GetAge() << endl;
 		cout << message << " Sex: ";
-		//TODO: Не надо писать так тернарные операторы - плохо читается
-		list.Value.Sex == 1 ? cout << "Male" : cout << "Female";
+		//TODO: Не надо писать так тернарные операторы - плохо читается(+)
+		if (list.GetValue()->GetSex() == Male)
+		{
+			cout << "Male";
+		}
+		else
+		{
+			cout << "Female";
+		}
 		cout << endl << endl;
 	}
 
 	void PersonList::ShowInConsole()
 	{
 		cout << endl;
-		PersonListItem* temp = _Head;
+		PersonListItem* temp = _head;
 		while (temp != NULL)
 		{
-			ShowNodeInConsole(*temp);
+			_showNodeInConsole(*temp);
 			temp = temp->Next;
 		}
 
-		if (_Head != NULL)
+		if (_head != NULL)
 		{
 			cout << "-------------------------------------------------" << endl;
-			ShowNodeInConsole(*_Head, "Head =");
-			ShowNodeInConsole(*_Tail, "Tail =");
+			_showNodeInConsole(*_head, "Head =");
+			_showNodeInConsole(*_tail, "Tail =");
 			cout << "-------------------------------------------------" << endl;
 		}
 		else
@@ -187,8 +163,8 @@ namespace Lab5
 			cout << "Head = NULL " << " Tail = NULL " << endl;
 		}
 	}
-	//TODO: Некорректное именование - метод должен быть с глаголом
-	bool PersonList::ValidationName(char name[])
+	//TODO: Некорректное именование - метод должен быть с глаголом(+)
+	bool PersonList::_checkName(char name[])
 	{
 		bool validate = true;
 		for (int i = 0; i < strlen(name); i++)
@@ -217,21 +193,24 @@ namespace Lab5
 
 	void PersonList::Read()
 	{
-		Person newPerson;
+		char name[20];
+		char surname[20];
+		Sex sex;
+
 		bool key = true;
 		while (key)
 		{
 			cout << endl << "Insert Surname: ";
-			cin >> newPerson.Surname;
-			key = !ValidationName(newPerson.Surname);
+			cin >> surname;
+			key = !_checkName(surname);
 		}
 
 		key = true;
 		while (key)
 		{
 			cout << endl << "Insert Name: ";
-			cin >> newPerson.Name;
-			key = !ValidationName(newPerson.Name);
+			cin >> name;
+			key = !_checkName(name);
 		}
 
 		cout << endl << "Insert Sex: ";
@@ -245,18 +224,18 @@ namespace Lab5
 		switch (n)
 		{
 			case Female:
-				newPerson.Sex = Female;
+				sex = Female;
 				break;
 			case Male:
-				newPerson.Sex = Male;
+				sex = Male;
 				break;
 			default:
 				break;
 		}
-		this->Add(&newPerson);
+		this->Add(new Person(name, surname, rand() % 15 + 18, sex));
 	}
 
-	Person PersonList::GetRandomPerson()
+	Person* PersonList::GetRandomPerson()
 	{
 		string surnames[] = { "Holiday","Jacobson","James", "Allford", "Bawerman",
 			"MacAdam", "Marlow", "Bosworth", "Neal","Conors",
@@ -266,16 +245,40 @@ namespace Lab5
 			"Christian","Logan","Jose","Justin","Gabriel" };
 		int surname = rand() % 15;
 		int name = rand() % 15;
-		Person newPerson;
+		
+		char tempName[20];
+		char tempSurname[20];
+		Sex tempSex;
+
 		for (int i = 0; i <= strlen(names[name].c_str()); i++)
 		{
-			newPerson.Name[i] = names[name][i];
+			tempName[i] = names[name][i];
 		}
 		for (int i = 0; i <= strlen(surnames[surname].c_str()); i++)
 		{
-			newPerson.Surname[i] = surnames[surname][i];
+			tempSurname[i] = surnames[surname][i];
 		}
-		newPerson.Sex = Male;
-		return newPerson;
+		tempSex = Male;
+		return new Person(tempName, tempSurname, rand() % 15 + 18, tempSex);
+	}
+
+	PersonList::PersonList(int count, Person* first, ...)
+	{
+		Person* pointer = first;
+		while (count--)
+		{
+			this->Add(pointer);
+			pointer++;
+		}
+	}
+
+	PersonList::~PersonList()
+	{
+		Clear();
+	}
+
+	PersonList::PersonList()
+	{
+
 	}
 }

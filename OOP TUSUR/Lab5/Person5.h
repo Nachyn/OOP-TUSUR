@@ -7,13 +7,22 @@ namespace Lab5
 	class Person
 	{
 		public:
-			//TODO: Насколько ваш код соответстует принципу ООП - инкапсуляция
+			//TODO: Насколько ваш код соответстует принципу ООП - инкапсуляция (+)
+			//TODO: Неправильно использование конструктора (+)
+			Person(char name[20], char surname[20], int age, Sex sex);
+			bool SetName(char name[20]);
+			bool SetSurname(char surname[20]);
+			void SetAge(int age);
+			void SetSex(Sex sex);
+			char* GetName();
+			char* GetSurname();
+			int GetAge();
+			Sex GetSex();
+			bool operator==(const Person& right);
+		private:
 			char Name[20];
 			char Surname[20];
 			int Age;
 			Sex Sex;
-			//TODO: Неправильно использование конструктора
-			Person() { };
-			bool operator==(const Person& right);
 	};
 }

@@ -18,14 +18,12 @@ namespace Lab5
 			void Read();
 			//TODO: Вообще получение рандомной персоны не должно тут храниться (+ в задании);
 			//6. Создайте в классе Person статический метод GetRandomPerson().
+			//TODO: По заданию - всё верно. Я говорю про смысловую часть ООП декомпозиции.
 			static Person* GetRandomPerson();
-			//TODO: Неправильное использование конструктора (+);
 			PersonList();
 			PersonList(int count, Person* first, ...);
 			~PersonList();
-			//TODO: Где деструктор? (+)
 		private:
-			//TODO: Некорректное именование (+)
 			PersonListItem* _head;
 			PersonListItem* _tail;
 			void _showNodeInConsole(PersonListItem list, string message = "");

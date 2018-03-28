@@ -7,8 +7,6 @@ namespace Lab5
 	class Person
 	{
 		public:
-			//TODO: Насколько ваш код соответстует принципу ООП - инкапсуляция (+)
-			//TODO: Неправильно использование конструктора (+)
 			Person(char name[20], char surname[20], int age, Sex sex);
 			bool SetName(char name[20]);
 			bool SetSurname(char surname[20]);

@@ -3,9 +3,6 @@
 void UILab5()
 {
 	Lab5::PersonList list1;
-	//TODO: При выводе показывает иероглифы (+)
-	//TODO: Сделайте меню для добавления элементов в список. (+)
-	//TODO: Сейчас вы очень многие вещи для себя упростили автоматическим вводом. (+)
 	setlocale(0, "");
 	bool key = true;
 	while (key)
@@ -22,6 +19,9 @@ void UILab5()
 		switch (CheckSymbol())
 		{
 			case 0:
+
+				//TODO: А зачем?)
+				//TODO: Тут иероглифы.
 				cout << "Сейчас будет ошибка Дебаггера :)";
 				system("pause");
 				delete &list1;

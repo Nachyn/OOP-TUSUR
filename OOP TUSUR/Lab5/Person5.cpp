@@ -3,6 +3,8 @@
 
 namespace Lab5
 {
+	//TODO: 20 везде используется, а если нужен будет массив длиннее? Везде над будет пройти по использованиям.
+
 	Person::Person(char name[20], char surname[20], int age, enum Sex sex)
 	{
 		SetName(name);

@@ -10,7 +10,6 @@ namespace Lab5
 			{
 				Value = person;
 			}
-			//TODO: Нужно Value публично?(+) 
 			Person* GetValue();
 			PersonListItem* Next = NULL;
 			PersonListItem* Prev = NULL;

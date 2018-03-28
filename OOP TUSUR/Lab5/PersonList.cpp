@@ -57,7 +57,7 @@ namespace Lab5
 	{
 		PersonListItem* temp = _head;
 		while (temp != NULL)
-		{//TODO: Дублируется в следующем методе(+)
+		{
 			if (temp->GetValue() == person)
 			{
 				if (_head == temp)
@@ -129,7 +129,7 @@ namespace Lab5
 		cout << message << " Name: " << list.GetValue()->GetName() << endl;
 		cout << message << " Age: " << list.GetValue()->GetAge() << endl;
 		cout << message << " Sex: ";
-		//TODO: Не надо писать так тернарные операторы - плохо читается(+)
+		
 		if (list.GetValue()->GetSex() == Male)
 		{
 			cout << "Male";
@@ -163,7 +163,7 @@ namespace Lab5
 			cout << "Head = NULL " << " Tail = NULL " << endl;
 		}
 	}
-	//TODO: Некорректное именование - метод должен быть с глаголом(+)
+	//TODO: Некорректное именование, не по RSDN
 	bool PersonList::_checkName(char name[])
 	{
 		bool validate = true;
@@ -232,6 +232,7 @@ namespace Lab5
 			default:
 				break;
 		}
+		//TODO: Не понял - зачем тут rand()
 		this->Add(new Person(name, surname, rand() % 15 + 18, sex));
 	}
 

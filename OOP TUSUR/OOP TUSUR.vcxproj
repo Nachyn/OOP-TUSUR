@@ -124,6 +124,7 @@
     <ClCompile Include="Lab5\Person5.cpp" />
     <ClCompile Include="Lab5\PersonList.cpp" />
     <ClCompile Include="Lab5\PersonListItem5.cpp" />
+    <ClCompile Include="Lab5\PersonTools.cpp" />
     <ClCompile Include="Lab5\UILab5.cpp" />
     <ClCompile Include="Lab6\Adult6.cpp" />
     <ClCompile Include="Lab6\Child6.cpp" />
@@ -150,6 +151,7 @@
     <ClInclude Include="Lab5\Person5.h" />
     <ClInclude Include="Lab5\PersonList.h" />
     <ClInclude Include="Lab5\PersonListItem5.h" />
+    <ClInclude Include="Lab5\PersonTools.h" />
     <ClInclude Include="Lab5\UILab5.h" />
     <ClInclude Include="Lab6\Adult6.h" />
     <ClInclude Include="Lab6\Child6.h" />

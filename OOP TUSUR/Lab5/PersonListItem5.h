@@ -8,12 +8,12 @@ namespace Lab5
 		public:
 			PersonListItem(Person* person)
 			{
-				Value = person;
+				_value = person;
 			}
 			Person* GetValue();
-			PersonListItem* Next = NULL;
-			PersonListItem* Prev = NULL;
+			PersonListItem* Next = nullptr;
+			PersonListItem* Prev = nullptr;
 		private:
-			Person* Value = NULL;
+			Person* _value = nullptr;
 	};
 }

@@ -16,17 +16,13 @@ namespace Lab5
 			int GetCount();
 			void ShowInConsole();
 			void Read();
-			//TODO: Вообще получение рандомной персоны не должно тут храниться (+ в задании);
-			//6. Создайте в классе Person статический метод GetRandomPerson().
-			//TODO: По заданию - всё верно. Я говорю про смысловую часть ООП декомпозиции.
-			static Person* GetRandomPerson();
 			PersonList();
 			PersonList(int count, Person* first, ...);
 			~PersonList();
 		private:
 			PersonListItem* _head;
 			PersonListItem* _tail;
-			void _showNodeInConsole(PersonListItem list, string message = "");
-			bool _checkName(char name[]);
+			void ShowNodeInConsole(PersonListItem list, string message = "");
+			bool CheckName(char name[]);
 	};
 }

@@ -108,6 +108,9 @@
     <ClCompile Include="Lab5\PersonListItem5.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
+    <ClCompile Include="Lab5\PersonTools.cpp">
+      <Filter>Исходные файлы\Lab5</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lab1\Tasks.h">
@@ -187,6 +190,9 @@
     </ClInclude>
     <ClInclude Include="Lab6\PersonListItem6.h">
       <Filter>Файлы заголовков\Lab6</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab5\PersonTools.h">
+      <Filter>Файлы заголовков\Lab5</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

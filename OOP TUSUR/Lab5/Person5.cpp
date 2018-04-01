@@ -3,9 +3,9 @@
 
 namespace Lab5
 {
-	//TODO: 20 везде используется, а если нужен будет массив длиннее? Везде над будет пройти по использованиям.
+	//TODO: 20 везде используется, а если нужен будет массив длиннее? Везде над будет пройти по использованиям.(-)
 
-	Person::Person(char name[20], char surname[20], int age, enum Sex sex)
+	Person::Person(char name[], char surname[], int age, enum Sex sex)
 	{
 		SetName(name);
 		SetSurname(surname);
@@ -13,7 +13,7 @@ namespace Lab5
 		SetSex(sex);
 	}
 
-	bool Person::SetName(char name[20])
+	bool Person::SetName(char name[])
 	{
 		try
 		{
@@ -34,7 +34,7 @@ namespace Lab5
 		}
 	}
 
-	bool Person::SetSurname(char surname[20])
+	bool Person::SetSurname(char surname[])
 	{
 		try
 		{

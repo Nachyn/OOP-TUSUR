@@ -5,7 +5,7 @@ namespace Lab5
 	void PersonList::Add(Person* person)
 	{
 		PersonListItem* temp = new PersonListItem(person);
-		if (_head != NULL)
+		if (_head != nullptr)
 		{
 			temp->Prev = _tail;
 			_tail->Next = temp;
@@ -21,15 +21,15 @@ namespace Lab5
 	{
 		if (index < 0)
 		{
-			return NULL;
+			return nullptr;
 		}
 		int i = 0;
 		PersonListItem* temp = _head;
 		while (i < index)
 		{
-			if (temp == NULL)
+			if (temp == nullptr)
 			{
-				return NULL;
+				return nullptr;
 			}
 			temp = temp->Next;
 			i++;
@@ -41,7 +41,7 @@ namespace Lab5
 	{
 		PersonListItem* temp = _head;
 		int index = 0;
-		while (temp != NULL)
+		while (temp != nullptr)
 		{
 			if (temp->GetValue() == person)
 			{
@@ -56,26 +56,26 @@ namespace Lab5
 	void PersonList::Remove(Person* person)
 	{
 		PersonListItem* temp = _head;
-		while (temp != NULL)
+		while (temp != nullptr)
 		{
 			if (temp->GetValue() == person)
 			{
 				if (_head == temp)
 				{
-					if (temp->Next == NULL)
+					if (temp->Next == nullptr)
 					{
-						_head = NULL;
-						_tail = NULL;
+						_head = nullptr;
+						_tail = nullptr;
 						break;
 					}
-					_head->Next->Prev = NULL;
+					_head->Next->Prev = nullptr;
 					_head = _head->Next;
 					break;
 				}
 
 				if (_tail == temp)
 				{
-					_tail->Prev->Next = NULL;
+					_tail->Prev->Next = nullptr;
 					_tail = _tail->Prev;
 					break;
 				}
@@ -100,22 +100,22 @@ namespace Lab5
 	void PersonList::Clear()
 	{
 		PersonListItem* next = _head;
-		while (next != NULL)
+		while (next != nullptr)
 		{
 			PersonListItem* tempNext = next->Next;
 			delete next->GetValue();
 			delete next;
 			next = tempNext;
 		}
-		_head = NULL;
-		_tail = NULL;
+		_head = nullptr;
+		_tail = nullptr;
 	}
 
 	int PersonList::GetCount()
 	{
 		int count = 0;
 		PersonListItem* temp = _head;
-		while (temp != NULL)
+		while (temp != nullptr)
 		{
 			temp = temp->Next;
 			count++;
@@ -123,7 +123,7 @@ namespace Lab5
 		return count;
 	}
 
-	void PersonList::_showNodeInConsole(PersonListItem list, string message)
+	void PersonList::ShowNodeInConsole(PersonListItem list, string message)
 	{
 		cout << message << " Surname: " << list.GetValue()->GetSurname() << endl;
 		cout << message << " Name: " << list.GetValue()->GetName() << endl;
@@ -145,17 +145,17 @@ namespace Lab5
 	{
 		cout << endl;
 		PersonListItem* temp = _head;
-		while (temp != NULL)
+		while (temp != nullptr)
 		{
-			_showNodeInConsole(*temp);
+			ShowNodeInConsole(*temp);
 			temp = temp->Next;
 		}
 
-		if (_head != NULL)
+		if (_head != nullptr)
 		{
 			cout << "-------------------------------------------------" << endl;
-			_showNodeInConsole(*_head, "Head =");
-			_showNodeInConsole(*_tail, "Tail =");
+			ShowNodeInConsole(*_head, "Head =");
+			ShowNodeInConsole(*_tail, "Tail =");
 			cout << "-------------------------------------------------" << endl;
 		}
 		else
@@ -163,8 +163,8 @@ namespace Lab5
 			cout << "Head = NULL " << " Tail = NULL " << endl;
 		}
 	}
-	//TODO: Некорректное именование, не по RSDN
-	bool PersonList::_checkName(char name[])
+
+	bool PersonList::CheckName(char name[])
 	{
 		bool validate = true;
 		for (int i = 0; i < strlen(name); i++)
@@ -202,7 +202,7 @@ namespace Lab5
 		{
 			cout << endl << "Insert Surname: ";
 			cin >> surname;
-			key = !_checkName(surname);
+			key = !CheckName(surname);
 		}
 
 		key = true;
@@ -210,8 +210,16 @@ namespace Lab5
 		{
 			cout << endl << "Insert Name: ";
 			cin >> name;
-			key = !_checkName(name);
+			key = !CheckName(name);
 		}
+
+		cout << endl << "Insert Age: ";
+		int age;
+		do
+		{
+			age = CheckSymbol();
+		} 
+		while (age < 0 || age > 150);
 
 		cout << endl << "Insert Sex: ";
 		int n;
@@ -232,35 +240,7 @@ namespace Lab5
 			default:
 				break;
 		}
-		//TODO: Не понял - зачем тут rand()
-		this->Add(new Person(name, surname, rand() % 15 + 18, sex));
-	}
-
-	Person* PersonList::GetRandomPerson()
-	{
-		string surnames[] = { "Holiday","Jacobson","James", "Allford", "Bawerman",
-			"MacAdam", "Marlow", "Bosworth", "Neal","Conors",
-			"Daniels", "Parson", "Quincy", "Richards", "Fane" };
-		string names[] = { "Michael","Joshua","Matthew","Ethan","Andrew",
-			"Alexander", "Tyler", "James", "John","Samuel",
-			"Christian","Logan","Jose","Justin","Gabriel" };
-		int surname = rand() % 15;
-		int name = rand() % 15;
-		
-		char tempName[20];
-		char tempSurname[20];
-		Sex tempSex;
-
-		for (int i = 0; i <= strlen(names[name].c_str()); i++)
-		{
-			tempName[i] = names[name][i];
-		}
-		for (int i = 0; i <= strlen(surnames[surname].c_str()); i++)
-		{
-			tempSurname[i] = surnames[surname][i];
-		}
-		tempSex = Male;
-		return new Person(tempName, tempSurname, rand() % 15 + 18, tempSex);
+		this->Add(new Person(name, surname, age, sex));
 	}
 
 	PersonList::PersonList(int count, Person* first, ...)

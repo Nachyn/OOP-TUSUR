@@ -7,9 +7,9 @@ namespace Lab5
 	class Person
 	{
 		public:
-			Person(char name[20], char surname[20], int age, Sex sex);
-			bool SetName(char name[20]);
-			bool SetSurname(char surname[20]);
+			Person(char name[], char surname[], int age, Sex sex);
+			bool SetName(char name[]);
+			bool SetSurname(char surname[]);
 			void SetAge(int age);
 			void SetSex(Sex sex);
 			char* GetName();

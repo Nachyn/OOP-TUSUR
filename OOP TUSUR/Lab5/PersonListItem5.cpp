@@ -4,7 +4,7 @@ namespace Lab5
 {
 	Person* Lab5::PersonListItem::GetValue()
 	{
-		return Value;
+		return _value;
 	}
 }
 

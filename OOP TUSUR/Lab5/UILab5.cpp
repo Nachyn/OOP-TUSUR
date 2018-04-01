@@ -1,8 +1,9 @@
 #include "UILab5.h"
+#include "PersonTools.h"
 
 void UILab5()
 {
-	Lab5::PersonList list1;
+	Lab5::PersonList* list1 = new Lab5::PersonList();
 	setlocale(0, "");
 	bool key = true;
 	while (key)
@@ -19,27 +20,25 @@ void UILab5()
 		switch (CheckSymbol())
 		{
 			case 0:
-
-				//TODO: А зачем?)
-				//TODO: Тут иероглифы.
-				cout << "Сейчас будет ошибка Дебаггера :)";
-				system("pause");
-				delete &list1;
+				if (list1 != nullptr)
+				{
+					delete list1;
+				}
 				key = false;
 				break;
 			case 1:
-				list1.Add(Lab5::PersonList::GetRandomPerson());
+				list1->Add(Lab5::PersonTools::GetRandomPerson());
 				cout << "Random Person Added in List" << endl;
 				break;
 			case 2:
 				cout << "Enter Person:" << endl;
-				list1.Read();
+				list1->Read();
 				break;
 			case 3:
 			{
 				cout << "Enter Index: ";
-				Lab5::Person* person = list1.Find(CheckSymbol());
-				if (person != NULL)
+				Lab5::Person* person = list1->Find(CheckSymbol());
+				if (person != nullptr)
 				{
 					cout << "Find person: " << endl;
 					cout << " Surname: " << person->GetSurname() << endl;
@@ -64,21 +63,20 @@ void UILab5()
 			}
 			case 4:
 				cout << "Enter Index: ";
-				list1.RemoveAt(CheckSymbol());
+				list1->RemoveAt(CheckSymbol());
 				break;
 			case 5:
-				list1.Clear();
+				list1->Clear();
 				cout << "List Clear" << endl;
 				break;
 			case 6:
-				cout << "Count: " << list1.GetCount() << endl;
+				cout << "Count: " << list1->GetCount() << endl;
 				break;
 			case 7:
-				list1.ShowInConsole();
+				list1->ShowInConsole();
 				break;
 		}
 		system("pause");
 		system("cls");	
 	}
-	system("pause");
 }

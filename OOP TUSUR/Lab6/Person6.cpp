@@ -2,8 +2,10 @@
 
 namespace Lab6
 {
+	//TODO: Лучше uint
 	void Person::SetAge(int age)
 	{
+		//BUG: Условие
 		if (age < 0 && age < 150)
 		{
 			Age = 1;

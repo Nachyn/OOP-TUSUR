@@ -162,7 +162,8 @@ namespace Lab6
 		cout << endl;
 		PersonListItem* temp = _Head;
 		while (temp != NULL)
-		{
+		{//TODO: ѕолучаетс€, что список знает и то, что в нЄм хранитс€ - это не правильно.
+			//“аким образом нарушаетс€ принцип "единственной об€занности" класса.
 			if (temp->Value->GetAge() < 18)
 			{
 				cout << "This is a child: ";

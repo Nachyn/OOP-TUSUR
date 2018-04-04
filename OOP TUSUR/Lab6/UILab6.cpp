@@ -5,7 +5,7 @@ void UILab6()
 	Lab6::Adult* adultl1 = Lab6::Adult::GetRandomAdult();
 	Lab6::Adult* adultl2 = Lab6::Adult::GetRandomAdult();
 	Lab6::Adult* adultl3 = Lab6::Adult::GetRandomAdult();
-
+	//TODO: Выводятся иероглифы
 	Lab6::PersonList list;
 	list.Add(adultl1);
 	cout << "Добавлен: " << adultl1->Name << " " << adultl1->Surname << endl;

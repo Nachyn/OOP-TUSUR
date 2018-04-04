@@ -18,7 +18,9 @@ namespace Lab6
 			int GetCount();
 			void ShowInConsole();
 			PersonList() { };
+			//TODO: Деструктор?
 		private:
+			//TODO: именование не по RSDN
 			PersonListItem * _Head;
 			PersonListItem* _Tail;
 	};

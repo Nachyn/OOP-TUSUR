@@ -4,6 +4,8 @@ namespace Lab6
 {
 	void Child::SetAge(int age)
 	{
+		//TODO: Спорное поведение. Должны ли мы молча устанавливать значение 
+		//или нужно сообщить о некорректных данных?
 		if (age > 17)
 		{
 			Person::SetAge(10);
@@ -14,7 +16,7 @@ namespace Lab6
 		}
 
 	}
-
+	//TODO: Зачем перегружать, если это просто дубль базового?
 	int Child::GetAge()
 	{
 		return Person::GetAge();
@@ -24,7 +26,7 @@ namespace Lab6
 	{
 		string temp = Person::GetDescription();
 		if (Mother != NULL && Father != NULL)
-		{
+		{//TODO: Ниже четыре дубля.
 			temp.append(", parents are ")
 				.append(Mother->Name)
 				.append(" ")

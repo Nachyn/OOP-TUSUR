@@ -4,20 +4,21 @@
 
 namespace Lab6
 {
-	//TODO: Должен быть базовым
-	//TODO: Деструкторы во все классы!
+	//TODO: Должен быть базовым(?)
+	//TODO: Деструкторы во все классы!(+)
 	class Person
 	{
 		private:
 			int Age;
 		public:
-			//TODO: Почему не строками?
-			char Name[20];
-			char Surname[20];
+			//TODO: Почему не строками?(+)
+			string Name;
+			string Surname;
 			Sex Sex;
-			virtual void SetAge(int age);
+			virtual bool SetAge(unsigned int age);
 			virtual int GetAge();
-			Person() { };
+			Person();
+			~Person();
 			virtual string GetDescription();
 			bool operator==(const Person& right);
 	};

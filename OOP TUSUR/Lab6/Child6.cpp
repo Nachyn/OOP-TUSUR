@@ -2,31 +2,22 @@
 
 namespace Lab6
 {
-	void Child::SetAge(int age)
+	bool Child::SetAge(unsigned int age)
 	{
-		//TODO: Спорное поведение. Должны ли мы молча устанавливать значение 
-		//или нужно сообщить о некорректных данных?
+		//TODO: Спорное поведение. Должны ли мы молча устанавливать значение(+)
+		//или нужно сообщить о некорректных данных?(+)
 		if (age > 17)
 		{
-			Person::SetAge(10);
+			return false;
 		}
-		else
-		{
-			Person::SetAge(age);
-		}
-
-	}
-	//TODO: Зачем перегружать, если это просто дубль базового?
-	int Child::GetAge()
-	{
-		return Person::GetAge();
+		return Person::SetAge(age);
 	}
 
 	string Child::GetDescription()
 	{
 		string temp = Person::GetDescription();
-		if (Mother != NULL && Father != NULL)
-		{//TODO: Ниже четыре дубля.
+		if (Mother != nullptr && Father != nullptr)
+		{//TODO: Ниже четыре дубля.(?)
 			temp.append(", parents are ")
 				.append(Mother->Name)
 				.append(" ")
@@ -55,7 +46,7 @@ namespace Lab6
 			temp.append(", parents are not specified");
 		}
 
-		if (strlen(School) != 0)
+		if (School.length() > 0)
 		{
 			temp.append(", ")
 				.append(School);
@@ -65,5 +56,22 @@ namespace Lab6
 			temp.append(", does not go to school");
 		}
 		return temp;
+	}
+
+	Child::Child()
+	{
+
+	}
+
+	Child::~Child()
+	{
+		if (Mother != nullptr)
+		{
+			delete Mother;
+		}
+		if (Father != nullptr)
+		{
+			delete Father;
+		}
 	}
 }

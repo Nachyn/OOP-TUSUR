@@ -2,18 +2,16 @@
 
 namespace Lab6
 {
-	//TODO: Лучше uint
-	void Person::SetAge(int age)
+	//TODO: Лучше uint(+)
+	bool Person::SetAge(unsigned int age)
 	{
-		//BUG: Условие
-		if (age < 0 && age < 150)
+		//BUG: Условие(+)
+		if (age < 0 || age > 150)
 		{
-			Age = 1;
+			return false;
 		}
-		else
-		{
-			Age = age;
-		}
+		Age = age;
+		return true;
 	}
 
 	int Person::GetAge()
@@ -32,5 +30,23 @@ namespace Lab6
 			.append(" years old");
 		Sex == Male ? temp.append(", male") : temp.append(", female");
 		return temp;
+	}
+
+	bool Person::operator==(const Person& right)
+	{
+		return(Name == right.Name) 
+			&& (Surname == right.Surname) 
+			&& (Age == right.Age) 
+			&& (Sex == right.Sex);
+	}
+
+	Person::Person()
+	{
+
+	}
+
+	Person::~Person()
+	{
+
 	}
 }

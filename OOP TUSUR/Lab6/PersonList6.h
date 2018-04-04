@@ -17,11 +17,12 @@ namespace Lab6
 			void Clear();
 			int GetCount();
 			void ShowInConsole();
-			PersonList() { };
-			//TODO: Деструктор?
+			PersonList();
+			~PersonList();
+			//TODO: Деструктор?(+)
 		private:
-			//TODO: именование не по RSDN
-			PersonListItem * _Head;
-			PersonListItem* _Tail;
+			//TODO: именование не по RSDN(+)
+			PersonListItem* _head;
+			PersonListItem* _tail;
 	};
 }

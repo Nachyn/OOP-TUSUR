@@ -130,6 +130,8 @@
     <ClCompile Include="Lab6\Child6.cpp" />
     <ClCompile Include="Lab6\Person6.cpp" />
     <ClCompile Include="Lab6\PersonList6.cpp" />
+    <ClCompile Include="Lab6\PersonListItem6.cpp" />
+    <ClCompile Include="Lab6\PersonTools6.cpp" />
     <ClCompile Include="Lab6\UILab6.cpp" />
     <ClCompile Include="Lab7\UILab7.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -158,6 +160,7 @@
     <ClInclude Include="Lab6\Person6.h" />
     <ClInclude Include="Lab6\PersonList6.h" />
     <ClInclude Include="Lab6\PersonListItem6.h" />
+    <ClInclude Include="Lab6\PersonTools6.h" />
     <ClInclude Include="Lab6\UILab6.h" />
     <ClInclude Include="Lab7\TemplateList.h" />
     <ClInclude Include="Lab7\UILab7.h" />

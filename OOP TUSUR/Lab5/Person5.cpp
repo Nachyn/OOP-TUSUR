@@ -3,8 +3,6 @@
 
 namespace Lab5
 {
-	//TODO: 20 везде используется, а если нужен будет массив длиннее? Везде над будет пройти по использованиям.(-)
-
 	Person::Person(char name[], char surname[], int age, enum Sex sex)
 	{
 		SetName(name);
@@ -13,10 +11,11 @@ namespace Lab5
 		SetSex(sex);
 	}
 
-	bool Person::SetName(char name[])
+	bool Person::SetName(char name[], int size)
 	{
 		try
 		{
+			Name = new char[size];
 			for (int i = 0; i < 20; i++)
 			{
 				Name[i] = name[i];
@@ -34,10 +33,11 @@ namespace Lab5
 		}
 	}
 
-	bool Person::SetSurname(char surname[])
+	bool Person::SetSurname(char surname[], int size)
 	{
 		try
 		{
+			Surname = new char[size];
 			for (int i = 0; i < 20; i++)
 			{
 				Surname[i] = surname[i];

@@ -8,8 +8,8 @@ namespace Lab5
 	{
 		public:
 			Person(char name[], char surname[], int age, Sex sex);
-			bool SetName(char name[]);
-			bool SetSurname(char surname[]);
+			bool SetName(char name[], int size = 20);
+			bool SetSurname(char surname[], int size = 20);
 			void SetAge(int age);
 			void SetSex(Sex sex);
 			char* GetName();
@@ -18,8 +18,8 @@ namespace Lab5
 			Sex GetSex();
 			bool operator==(const Person& right);
 		private:
-			char Name[20];
-			char Surname[20];
+			char* Name;
+			char* Surname;
 			int Age;
 			Sex Sex;
 	};

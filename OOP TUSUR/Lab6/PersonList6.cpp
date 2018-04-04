@@ -6,15 +6,15 @@ namespace Lab6
 	void PersonList::Add(Person * person)
 	{
 		PersonListItem* temp = new PersonListItem(person);
-		if (_Head != NULL)
+		if (_head != nullptr)
 		{
-			temp->Prev = _Tail;
-			_Tail->Next = temp;
-			_Tail = temp;
+			temp->Prev = _tail;
+			_tail->Next = temp;
+			_tail = temp;
 		}
 		else
 		{
-			_Head = _Tail = temp;
+			_head = _tail = temp;
 		}
 	}
 
@@ -22,29 +22,29 @@ namespace Lab6
 	{
 		if (index < 0)
 		{
-			return NULL;
+			return nullptr;
 		}
 		int i = 0;
-		PersonListItem* temp = _Head;
+		PersonListItem* temp = _head;
 		while (i < index)
 		{
-			if (temp == NULL)
+			if (temp == nullptr)
 			{
-				return NULL;
+				return nullptr;
 			}
 			temp = temp->Next;
 			i++;
 		};
-		return temp->Value;
+		return temp->GetValue();
 	}
 
-	int PersonList::IndexOf(Person * person)
+	int PersonList::IndexOf(Person* person)
 	{
-		PersonListItem* temp = _Head;
+		PersonListItem* temp = _head;
 		int index = 0;
-		while (temp != NULL)
+		while (temp != nullptr)
 		{
-			if (temp->Value == person)
+			if (temp->GetValue() == person)
 			{
 				return index;
 			}
@@ -54,34 +54,34 @@ namespace Lab6
 		return -1;
 	}
 
-	void PersonList::Remove(Person * person)
+	void PersonList::Remove(Person* person)
 	{
-		PersonListItem* temp = _Head;
-		while (temp != NULL)
+		PersonListItem* temp = _head;
+		while (temp != nullptr)
 		{
-			if (temp->Value == person)
+			if (temp->GetValue() == person)
 			{
-				if (_Head == temp)
+				if (_head == temp)
 				{
-					if (temp->Next == NULL)
+					if (temp->Next == nullptr)
 					{
-						_Head = NULL;
-						_Tail = NULL;
+						_head = nullptr;
+						_tail = nullptr;
 						break;
 					}
-					_Head->Next->Prev = NULL;
-					_Head = _Head->Next;
+					_head->Next->Prev = nullptr;
+					_head = _head->Next;
 					break;
 				}
 
-				if (_Tail == temp)
+				if (_tail == temp)
 				{
-					_Tail->Prev->Next = NULL;
-					_Tail = _Tail->Prev;
+					_tail->Prev->Next = nullptr;
+					_tail = _tail->Prev;
 					break;
 				}
 
-				if (_Head != temp && _Tail != temp)
+				if (_head != temp && _tail != temp)
 				{
 					temp->Prev->Next = temp->Next;
 					temp->Next->Prev = temp->Prev;
@@ -95,32 +95,32 @@ namespace Lab6
 	void PersonList::RemoveAt(int index)
 	{
 		Person* person = Find(index);
-		PersonListItem* temp = _Head;
-		while (temp != NULL)
+		PersonListItem* temp = _head;
+		while (temp != nullptr)
 		{
-			if (temp->Value == person)
+			if (temp->GetValue() == person)
 			{
-				if (_Head == temp)
+				if (_head == temp)
 				{
-					if (temp->Next == NULL)
+					if (temp->Next == nullptr)
 					{
-						_Head = NULL;
-						_Tail = NULL;
+						_head = nullptr;
+						_tail = nullptr;
 						break;
 					}
-					_Head->Next->Prev = NULL;
-					_Head = _Head->Next;
+					_head->Next->Prev = nullptr;
+					_head = _head->Next;
 					break;
 				}
 
-				if (_Tail == temp)
+				if (_tail == temp)
 				{
-					_Tail->Prev->Next = NULL;
-					_Tail = _Tail->Prev;
+					_tail->Prev->Next = nullptr;
+					_tail = _tail->Prev;
 					break;
 				}
 
-				if (_Head != temp && _Tail != temp)
+				if (_head != temp && _tail != temp)
 				{
 					temp->Prev->Next = temp->Next;
 					temp->Next->Prev = temp->Prev;
@@ -133,23 +133,23 @@ namespace Lab6
 
 	void PersonList::Clear()
 	{
-		PersonListItem* next = _Head;
-		while (next != NULL)
+		PersonListItem* next = _head;
+		while (next != nullptr)
 		{
 			PersonListItem* tempNext = next->Next;
-			delete next->Value;
+			delete next->GetValue();
 			delete next;
 			next = tempNext;
 		}
-		_Head = NULL;
-		_Tail = NULL;
+		_head = nullptr;
+		_tail = nullptr;
 	}
 
 	int PersonList::GetCount()
 	{
 		int count = 0;
-		PersonListItem* temp = _Head;
-		while (temp != NULL)
+		PersonListItem* temp = _head;
+		while (temp != nullptr)
 		{
 			temp = temp->Next;
 			count++;
@@ -159,34 +159,34 @@ namespace Lab6
 
 	void PersonList::ShowInConsole()
 	{
-		cout << endl;
-		PersonListItem* temp = _Head;
-		while (temp != NULL)
-		{//TODO: ѕолучаетс€, что список знает и то, что в нЄм хранитс€ - это не правильно.
-			//“аким образом нарушаетс€ принцип "единственной об€занности" класса.
-			if (temp->Value->GetAge() < 18)
-			{
-				cout << "This is a child: ";
-				cout << temp->Value->GetDescription() << endl;
-			}
-			else
-			{
-				cout << "This is a Adilt: ";
-				cout << temp->Value->GetDescription() << endl;
-			}
+		PersonListItem* temp = _head;
+		while (temp != nullptr)
+		{//TODO: ѕолучаетс€, что список знает и то, что в нЄм хранитс€ - это не правильно.(+)
+			//“аким образом нарушаетс€ принцип "единственной об€занности" класса.(+)
+			temp->GetValue()->GetDescription();
 			temp = temp->Next;
 		}
 
-		if (_Head != NULL)
+		if (_head != nullptr)
 		{
 			cout << "-------------------------------------------------" << endl;
-			cout << "Head = " << _Head->Value->GetDescription() << endl;
-			cout << "Tail = " << _Tail->Value->GetDescription() << endl;
+			cout << "Head = " << _head->GetValue()->GetDescription() << endl;
+			cout << "Tail = " << _tail->GetValue()->GetDescription() << endl;
 			cout << "-------------------------------------------------" << endl;
 		}
 		else
 		{
 			cout << "Head = NULL " << " Tail = NULL " << endl;
 		}
+	}
+
+	PersonList::PersonList()
+	{
+
+	}
+
+	PersonList::~PersonList()
+	{
+		Clear();
 	}
 }

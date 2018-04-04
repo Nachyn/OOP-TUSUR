@@ -4,15 +4,15 @@ namespace Lab6
 {
 	class PersonListItem
 	{
-		//TODO: ƒубль из предыдущей лабы
 		public:
-			PersonListItem(Person *person)
+			PersonListItem(Person* person)
 			{
-				Value = person;
+				_value = person;
 			}
-			//TODO: »нкапсул€ци€?
-			Person* Value;
-			PersonListItem* Next = NULL;
-			PersonListItem* Prev = NULL;
+			Person* GetValue();
+			PersonListItem* Next = nullptr;
+			PersonListItem* Prev = nullptr;
+		private:
+			Person* _value = nullptr;
 	};
 }

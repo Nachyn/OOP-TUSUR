@@ -16,7 +16,7 @@ namespace Lab6
 			void RemoveAt(int index);
 			void Clear();
 			int GetCount();
-			void ShowInConsole();
+			string GetItemsInfo();
 			PersonList();
 			~PersonList();
 		private:

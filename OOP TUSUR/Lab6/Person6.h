@@ -7,18 +7,22 @@ namespace Lab6
 	class Person
 	{
 		private:
-			int Age;
-		public:
-			//TODO: Нарушение инкапсуляции, публичные поля.
+			unsigned int Age;
 			string Name;
 			string Surname;
 			Sex Sex;
-			virtual bool SetAge(unsigned int age);
-			virtual int GetAge();
-			Person();
-			~Person();
+		public:
+			//TODO: Нарушение инкапсуляции, публичные поля. (+)
+			void SetName(string name);
+			void SetSurname(string surname);
+			void SetSex(enum Sex sex);
+			virtual void SetAge(unsigned int age);
+			
+			enum Sex GetSex();
 			virtual string GetDescription();
 			string GetShortDescription();
 			bool operator==(const Person& right);
+			Person(string name, string surname, unsigned int age, enum Sex sex);
+			~Person();
 	};
 }

@@ -1,20 +1,43 @@
 #include "Person6.h"
+#include "../Sex.h"
 
 namespace Lab6
 {
-	bool Person::SetAge(unsigned int age)
+	void Person::SetName(string name) 
 	{
-		if (age < 0 || age > 150)
+		if (name.length() < 1)
 		{
-			return false;
+			throw new exception("Person name is null");
 		}
-		Age = age;
-		return true;
+		Name = name;
 	}
 
-	int Person::GetAge()
+	void Person::SetSurname(string surname)
 	{
-		return Age;
+		if (surname.length() < 1)
+		{
+			throw new exception("Person surname is null");
+		}
+		Surname = surname;
+	}
+
+	void Person::SetSex(enum Sex sex)
+	{
+		Sex = sex;
+	}
+
+	void Person::SetAge(unsigned int age)
+	{
+		if (age < 0 || age > 160)
+		{
+			throw new exception("Incorrect age");
+		}
+		Age = age;
+	}
+
+	Sex Person::GetSex()
+	{
+		return Sex;
 	}
 
 	string Person::GetDescription()
@@ -46,12 +69,15 @@ namespace Lab6
 			&& (Age == right.Age) 
 			&& (Sex == right.Sex);
 	}
-	//TODO: Почему пустой?
-	Person::Person()
+	//TODO: Почему пустой?(+)
+	Person::Person(string name, string surname, unsigned int age, enum Sex sex)
 	{
-
+		SetName(name);
+		SetSurname(surname);
+		SetAge(age);
+		SetSex(sex);
 	}
-	//TODO: Почему пустой?
+	//TODO: Почему пустой? (нечего удалять)
 	Person::~Person()
 	{
 

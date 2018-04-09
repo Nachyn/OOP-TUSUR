@@ -9,31 +9,31 @@ void UILab6()
 	//TODO: Выводятся иероглифы (разберитесь)
 	Lab6::PersonList* list = new Lab6::PersonList;
 	list->Add(adultl1);
-	cout << "Added: " << adultl1->Name << " " << adultl1->Surname << endl;
+	cout << "Added: " << adultl1->GetShortDescription() << endl;
 
 	list->Add(adultl2);
-	cout << "Added: " << adultl2->Name << " " << adultl2->Surname << endl;
+	cout << "Added: " << adultl2->GetShortDescription() << endl;
 
 	list->Add(adultl3);
-	cout << "Added: " << adultl3->Name << " " << adultl3->Surname << endl;
+	cout << "Added: " << adultl3->GetShortDescription() << endl;
 
 	cout << "==============ShowInConsole================" << endl;
-	list->ShowInConsole();
+	cout << list->GetItemsInfo();
 	cout << "==============End_ShowInConsole================" << endl;
 
 	
 	Lab6::Person* find = list->Find(0);
 	cout << "The first index found:" << endl;
-	cout << find->GetDescription();
+	cout << find->GetDescription() << endl;
 
 	cout << endl << "The same person is found by the index: " << list->IndexOf(find);
 	cout << endl << endl;
 
 	list->Remove(find);
-	cout << "Removed: " << find->Name << " " << find->Surname << endl;
+	cout << "Removed: " << find->GetShortDescription() << endl;
 
 	cout << "==============ShowInConsole================" << endl;
-	list->ShowInConsole();
+	cout << list->GetItemsInfo();
 	cout << "==============End_ShowInConsole================" << endl;
 
 	
@@ -41,14 +41,14 @@ void UILab6()
 	cout << "Removed the person who was on the index 0." << endl;
 
 	cout << "==============ShowInConsole================" << endl;
-	list->ShowInConsole();
+	cout << list->GetItemsInfo();
 	cout << "==============End_ShowInConsole================" << endl;
 
 	list->Clear();
 	cout << "===============ListCleared====================" << endl;
 
 	cout << "==============ShowInConsole================" << endl;
-	list->ShowInConsole();
+	cout << list->GetItemsInfo();
 	cout << "==============End_ShowInConsole================" << endl;
 
 	system("pause");

@@ -2,42 +2,34 @@
 
 namespace Lab6
 {
-	bool Child::SetAge(unsigned int age)
+	void Child::SetAge(unsigned int age)
 	{
 		if (age > 17)
 		{
-			return false;
+			throw new exception("Incorrect age. Need children");
 		}
-		return Person::SetAge(age);
+		Person::SetAge(age);
 	}
 
 	string Child::GetDescription()
 	{
 		string temp = Person::GetDescription();
 		if (Mother != nullptr && Father != nullptr)
-		{//TODO: Ниже четыре дубля.(?)
+		{//TODO: Ниже четыре дубля.(+)
 			temp.append(", parents are ")
-				.append(Mother->Name)
-				.append(" ")
-				.append(Mother->Surname)
+				.append(Mother->GetShortDescription())
 				.append(" and ")
-				.append(Father->Name)
-				.append(" ")
-				.append(Father->Surname);
+				.append(Father->GetShortDescription());
 		}
 		else if (Mother != NULL)
 		{
 			temp.append(", mother is ")
-				.append(Mother->Name)
-				.append(" ")
-				.append(Mother->Surname);
+				.append(Mother->GetShortDescription());
 		}
 		else if (Father != NULL)
 		{
 			temp.append(", father is ")
-				.append(Father->Name)
-				.append(" ")
-				.append(Father->Surname);
+				.append(Father->GetShortDescription());
 		}
 		else
 		{
@@ -56,7 +48,7 @@ namespace Lab6
 		return temp;
 	}
 
-	Child::Child()
+	Child::Child(string name, string surname, unsigned int age, enum Sex sex) : Person(name, surname, age, sex)
 	{
 
 	}

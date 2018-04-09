@@ -12,7 +12,7 @@ int main()
 {
 	setlocale(0, "");
 	srand(time(0));
-	int n;
+	int chooseLab;
 	while (true)
 	{
 		cout << endl
@@ -27,10 +27,10 @@ int main()
 			<< "[0] Exit" << endl
 			<< "------------------" << endl
 			<< "Choose 0-7: ";
-		//TODO: Именование.
-		n = CheckSymbol();
+		//TODO: Именование.(+)
+		chooseLab = CheckSymbol();
 		system("cls");
-		switch (n)
+		switch (chooseLab)
 		{
 			case 1:
 				Lab1::UILab1(); break;

@@ -1,13 +1,13 @@
 #include "Adult6.h"
 namespace Lab6
 {
-	bool Adult::SetAge(unsigned int age)
+	void Adult::SetAge(unsigned int age)
 	{
 		if (age < 18)
 		{
-			return false;
+			throw new exception("Incorrect age. Need +18");
 		}
-		return Person::SetAge(age);
+		Person::SetAge(age);
 	}
 
 	string Adult::GetDescription()
@@ -24,9 +24,7 @@ namespace Lab6
 		if (MarriedOn != nullptr)
 		{
 			temp.append(", married on ")
-				.append(MarriedOn->Name)
-				.append(" ")
-				.append(MarriedOn->Surname);
+				.append(MarriedOn->GetShortDescription());
 		}
 		else
 		{
@@ -35,7 +33,7 @@ namespace Lab6
 		return temp;
 	}
 
-	Adult::Adult()
+	Adult::Adult(string name, string surname, unsigned int age, enum Sex sex) : Person(name, surname, age, sex)
 	{
 
 	}

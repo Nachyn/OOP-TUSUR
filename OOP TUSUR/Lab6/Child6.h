@@ -3,17 +3,15 @@
 
 namespace Lab6
 {
-	//TODO: Деструкторы во все классы!(+)
 	class Child : public Person
 	{
 		public:
 			Person* Mother;
 			Person* Father;
-			//TODO: Почему не строка(+)
 			string School;
-			virtual bool SetAge(unsigned int age) override;
+			virtual void SetAge(unsigned int age) override;
 			virtual string GetDescription() override;
-			Child();
+			Child(string name, string surname, unsigned int age, enum Sex sex);
 			~Child();
 	};
 }

@@ -157,27 +157,27 @@ namespace Lab6
 		return count;
 	}
 
-	void PersonList::ShowInConsole()
+	string PersonList::GetItemsInfo()
 	{
+		string info;
 		PersonListItem* temp = _head;
 		while (temp != nullptr)
-		{   //TODO: Принцип единственной ответственности всё равно нарушается, с хранением списка есть
-			//TODO: и консольный вывод
-			temp->GetValue()->GetDescription();
+		{   //TODO: Принцип единственной ответственности всё равно нарушается, с хранением списка есть(+)
+			//TODO: и консольный вывод(+)
+			info.append(temp->GetValue()->GetDescription()).append("\n");
 			temp = temp->Next;
 		}
 
 		if (_head != nullptr)
 		{
-			cout << "-------------------------------------------------" << endl;
-			cout << "Head = " << _head->GetValue()->GetDescription() << endl;
-			cout << "Tail = " << _tail->GetValue()->GetDescription() << endl;
-			cout << "-------------------------------------------------" << endl;
+			info.append("Head = ").append(_head->GetValue()->GetDescription()).append("\n");
+			info.append("Tail = ").append(_tail->GetValue()->GetDescription()).append("\n");
 		}
 		else
 		{
-			cout << "Head = NULL " << " Tail = NULL " << endl;
+			info.append("Head = NULL Tail = NULL");
 		}
+		return info;
 	}
 
 	PersonList::PersonList()

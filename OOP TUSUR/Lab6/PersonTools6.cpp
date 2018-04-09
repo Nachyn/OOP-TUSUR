@@ -11,28 +11,47 @@ namespace Lab6
 		string names[] = { "Michael","Joshua","Matthew","Ethan","Andrew",
 			"Alexander", "Tyler", "James", "John","Samuel",
 			"Christian","Logan","Jose","Justin","Gabriel" };
-		Adult* newPerson = new Adult();
-		//TODO: Много магических чисел, лучше исправить
-		//TODO: Есть ниже дублирование.
-		newPerson->Name = names[rand() % 15];
-		newPerson->Surname = surnames[rand() % 15];
-		newPerson->SetAge(rand() % 20 + 18);
-		rand() % 2 == 0 ? newPerson->Sex = Male : newPerson->Sex = Female;
+		
+		//TODO: Много магических чисел, лучше исправить(+)
+		//TODO: Есть ниже дублирование.(+)
+		string name = names[rand() % 15];
+		string surname = surnames[rand() % 15];
+		unsigned int age = rand() % 20 + 18;
+		Sex sex;
+
 		if (rand() % 2 == 0)
 		{
-			Adult* spouse = new Adult();
-			spouse->Name = names[rand() % 15];
-			spouse->Surname = surnames[rand() % 15];
-			spouse->SetAge(rand() % 20 + 18);
-			newPerson->Sex == Male ? spouse->Sex = Female : spouse->Sex = Male;
+			sex = Male;
+		}
+		else
+		{
+			sex = Female;
+		}
+
+		Adult* newPerson = new Adult(name, surname, age, sex);
+		if (rand() % 2 == 0)
+		{
+			name = names[rand() % 15];
+			surname = surnames[rand() % 15];
+			age = rand() % 20 + 18;
+
+			if (newPerson->GetSex() == Male)
+			{
+				sex = Female;
+			}
+			else
+			{
+				sex = Male;
+			}
+			Adult* spouse = new Adult(name, surname, age, sex);
 			spouse->MarriedOn = newPerson;
 			newPerson->MarriedOn = spouse;
 		}
+
 		if (rand() % 2 == 0)
 		{
 			newPerson->WorkPlace = "Microsoft";
 		}
 		return newPerson;
 	}
-
 }

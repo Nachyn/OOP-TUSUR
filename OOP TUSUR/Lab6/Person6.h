@@ -20,6 +20,7 @@ namespace Lab6
 			Person();
 			~Person();
 			virtual string GetDescription();
+			string GetShortDescription();
 			bool operator==(const Person& right);
 	};
 }

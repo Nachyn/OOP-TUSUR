@@ -32,6 +32,15 @@ namespace Lab6
 		return temp;
 	}
 
+	string Person::GetShortDescription()
+	{
+		string temp;
+		temp.append(Name)
+			.append(" ")
+			.append(Surname);
+		return temp;
+	}
+
 	bool Person::operator==(const Person& right)
 	{
 		return(Name == right.Name) 

@@ -4,7 +4,7 @@ namespace Lab6
 {
 	class PersonTools
 	{
-	public:
-		static Adult* GetRandomAdult();
+		public:
+			static Adult* GetRandomAdult();
 	};
 }

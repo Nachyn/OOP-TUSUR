@@ -12,6 +12,8 @@ namespace Lab6
 			"Alexander", "Tyler", "James", "John","Samuel",
 			"Christian","Logan","Jose","Justin","Gabriel" };
 		Adult* newPerson = new Adult();
+		//TODO: Много магических чисел, лучше исправить
+		//TODO: Есть ниже дублирование.
 		newPerson->Name = names[rand() % 15];
 		newPerson->Surname = surnames[rand() % 15];
 		newPerson->SetAge(rand() % 20 + 18);

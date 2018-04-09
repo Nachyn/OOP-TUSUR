@@ -19,10 +19,8 @@ namespace Lab6
 			void ShowInConsole();
 			PersonList();
 			~PersonList();
-			//TODO: Деструктор?(+)
 		private:
-			//TODO: именование не по RSDN(+)
-			PersonListItem* _head = nullptr;
-			PersonListItem* _tail = nullptr;
+			PersonListItem* _head;
+			PersonListItem* _tail;
 	};
 }

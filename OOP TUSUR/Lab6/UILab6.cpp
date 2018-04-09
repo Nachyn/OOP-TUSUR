@@ -6,7 +6,7 @@ void UILab6()
 	Lab6::Adult* adultl1 = Lab6::PersonTools::GetRandomAdult();
 	Lab6::Adult* adultl2 = Lab6::PersonTools::GetRandomAdult();
 	Lab6::Adult* adultl3 = Lab6::PersonTools::GetRandomAdult();
-	//TODO: Выводятся иероглифы(-)
+	//TODO: Выводятся иероглифы (разберитесь)
 	Lab6::PersonList* list = new Lab6::PersonList;
 	list->Add(adultl1);
 	cout << "Added: " << adultl1->Name << " " << adultl1->Surname << endl;

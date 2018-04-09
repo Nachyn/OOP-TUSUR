@@ -1,9 +1,9 @@
-#include "PersonListItem6.h"
+﻿#include "PersonListItem6.h"
 
 namespace Lab6
 {
 	Person* PersonListItem::GetValue()
 	{
-		return _value;
+		return Value;
 	}
 }

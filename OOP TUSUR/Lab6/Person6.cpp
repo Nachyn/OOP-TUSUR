@@ -1,4 +1,4 @@
-#include "Person6.h"
+п»ї#include "Person6.h"
 #include "../Sex.h"
 
 namespace Lab6
@@ -69,7 +69,7 @@ namespace Lab6
 			&& (Age == right.Age) 
 			&& (Sex == right.Sex);
 	}
-	//TODO: Почему пустой?(+)
+	//TODO: РџРѕС‡РµРјСѓ РїСѓСЃС‚РѕР№?(+)
 	Person::Person(string name, string surname, unsigned int age, enum Sex sex)
 	{
 		SetName(name);
@@ -77,7 +77,7 @@ namespace Lab6
 		SetAge(age);
 		SetSex(sex);
 	}
-	//TODO: Почему пустой? (нечего удалять)
+	//TODO: РџРѕС‡РµРјСѓ РїСѓСЃС‚РѕР№? (РЅРµС‡РµРіРѕ СѓРґР°Р»СЏС‚СЊ)
 	Person::~Person()
 	{
 

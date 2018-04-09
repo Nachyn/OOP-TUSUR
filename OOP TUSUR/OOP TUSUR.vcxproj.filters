@@ -117,6 +117,15 @@
     <ClCompile Include="Lab6\PersonTools6.cpp">
       <Filter>Исходные файлы\Lab6</Filter>
     </ClCompile>
+    <ClCompile Include="Lab7\UIList.cpp">
+      <Filter>Исходные файлы\Lab7</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab7\UIPerson.cpp">
+      <Filter>Исходные файлы\Lab7</Filter>
+    </ClCompile>
+    <ClCompile Include="Lab7\UIDouble.cpp">
+      <Filter>Исходные файлы\Lab7</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lab1\Tasks.h">
@@ -202,6 +211,18 @@
     </ClInclude>
     <ClInclude Include="Lab6\PersonTools6.h">
       <Filter>Файлы заголовков\Lab6</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab7\TemplateListItem.h">
+      <Filter>Файлы заголовков\Lab7</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab7\UIDouble.h">
+      <Filter>Файлы заголовков\Lab7</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab7\UIPerson.h">
+      <Filter>Файлы заголовков\Lab7</Filter>
+    </ClInclude>
+    <ClInclude Include="Lab7\UIList.h">
+      <Filter>Файлы заголовков\Lab7</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

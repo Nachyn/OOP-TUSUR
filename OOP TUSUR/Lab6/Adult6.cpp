@@ -1,4 +1,4 @@
-#include "Adult6.h"
+﻿#include "Adult6.h"
 namespace Lab6
 {
 	void Adult::SetAge(unsigned int age)

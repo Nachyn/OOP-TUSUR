@@ -1,5 +1,6 @@
 ﻿#pragma once
-#include "../CheckSymbol.h"
 #include "TemplateList.h"
 
-void UILab7();
+using namespace Lab7;
+
+void UIDouble();

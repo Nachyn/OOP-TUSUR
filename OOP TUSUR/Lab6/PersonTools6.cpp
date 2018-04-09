@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include "PersonTools6.h"
 
 namespace Lab6
@@ -12,8 +12,8 @@ namespace Lab6
 			"Alexander", "Tyler", "James", "John","Samuel",
 			"Christian","Logan","Jose","Justin","Gabriel" };
 		
-		//TODO: Много магических чисел, лучше исправить(+)
-		//TODO: Есть ниже дублирование.(+)
+		//TODO: РњРЅРѕРіРѕ РјР°РіРёС‡РµСЃРєРёС… С‡РёСЃРµР», Р»СѓС‡С€Рµ РёСЃРїСЂР°РІРёС‚СЊ(+)
+		//TODO: Р•СЃС‚СЊ РЅРёР¶Рµ РґСѓР±Р»РёСЂРѕРІР°РЅРёРµ.(+)
 		string name = names[rand() % 15];
 		string surname = surnames[rand() % 15];
 		unsigned int age = rand() % 20 + 18;

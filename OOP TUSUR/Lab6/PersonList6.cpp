@@ -1,4 +1,4 @@
-#pragma once
+п»ї#pragma once
 #include "PersonList6.h"
 
 namespace Lab6
@@ -162,8 +162,8 @@ namespace Lab6
 		string info;
 		PersonListItem* temp = _head;
 		while (temp != nullptr)
-		{   //TODO: Принцип единственной ответственности всё равно нарушается, с хранением списка есть(+)
-			//TODO: и консольный вывод(+)
+		{   //TODO: РџСЂРёРЅС†РёРї РµРґРёРЅСЃС‚РІРµРЅРЅРѕР№ РѕС‚РІРµС‚СЃС‚РІРµРЅРЅРѕСЃС‚Рё РІСЃС‘ СЂР°РІРЅРѕ РЅР°СЂСѓС€Р°РµС‚СЃСЏ, СЃ С…СЂР°РЅРµРЅРёРµРј СЃРїРёСЃРєР° РµСЃС‚СЊ(+)
+			//TODO: Рё РєРѕРЅСЃРѕР»СЊРЅС‹Р№ РІС‹РІРѕРґ(+)
 			info.append(temp->GetValue()->GetDescription()).append("\n");
 			temp = temp->Next;
 		}

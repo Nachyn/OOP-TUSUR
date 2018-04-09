@@ -7,12 +7,12 @@ namespace Lab6
 		public:
 			PersonListItem(Person* person)
 			{
-				_value = person;
+				Value = person;
 			}
 			Person* GetValue();
 			PersonListItem* Next = nullptr;
 			PersonListItem* Prev = nullptr;
 		private:
-			Person* _value = nullptr;
+			Person* Value = nullptr;
 	};
 }

@@ -1,4 +1,4 @@
-#include "Child6.h"
+ï»¿#include "Child6.h"
 
 namespace Lab6
 {
@@ -15,7 +15,7 @@ namespace Lab6
 	{
 		string temp = Person::GetDescription();
 		if (Mother != nullptr && Father != nullptr)
-		{//TODO: Íèæå ÷åòûðå äóáëÿ.(+)
+		{//TODO: ÐÐ¸Ð¶Ðµ Ñ‡ÐµÑ‚Ñ‹Ñ€Ðµ Ð´ÑƒÐ±Ð»Ñ.(+)
 			temp.append(", parents are ")
 				.append(Mother->GetShortDescription())
 				.append(" and ")

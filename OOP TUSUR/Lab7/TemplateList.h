@@ -1,52 +1,10 @@
-#pragma once
+п»ї#pragma once
 #include "../CheckSymbol.h"
+#include "TemplateListItem.h"
+#include "../Lab6/Person6.h"
 
 namespace Lab7
 {
-	enum Sex { Female, Male };
-
-	class Person
-	{
-	public:
-		char Name[20];
-		char Surname[20];
-		int Age;
-		Sex Sex;
-		Person() { };
-		friend std::ostream& operator<<(std::ostream& os, Person& p)
-		{
-			os << "Surname: " << p.Surname << std::endl;
-			os << "Name: " << p.Name << std::endl;
-			os << "Age: " << p.Age << std::endl;
-			os << "Sex: " << p.Sex << std::endl;
-			return os;
-		}
-		bool operator==(const Person& right)
-		{
-			return(!strcmp(Name, right.Name) &&
-				!strcmp(Surname, right.Surname) &&
-				Age == right.Age && Sex == right.Sex) ? true : false;
-		}
-	};
-
-	template <class T>
-	class TemplateListItem
-	{
-	public:
-		TemplateListItem(T person)
-		{
-			Value = person;
-		}
-		T Value;
-		TemplateListItem* Next = NULL;
-		TemplateListItem* Prev = NULL;
-
-		bool operator==(const TemplateListItem& right)
-		{
-			return Value == right.Value ? true : false;
-		}
-	};
-
 	template <typename T>
 	class TemplateList
 	{
@@ -54,7 +12,7 @@ namespace Lab7
 		friend std::ostream& operator<<(std::ostream& os, TemplateList& list)
 		{
 			TemplateListItem<T>* temp = list._head;
-			cout << "Подсписок: ";
+			cout << "РџРѕРґСЃРїРёСЃРѕРє: ";
 			while (temp != NULL)
 			{
 				cout << temp->Value << "  ";
@@ -151,15 +109,15 @@ namespace Lab7
 		{
 			if (index < 0)
 			{
-				return NULL;
+				return nullptr;
 			}
 			int i = 0;
 			TemplateListItem<T>* temp = _head;
 			while (i < index)
 			{
-				if (temp == NULL)
+				if (temp == nullptr)
 				{
-					return NULL;
+					return nullptr;
 				}
 				temp = temp->Next;
 				i++;
@@ -289,57 +247,60 @@ namespace Lab7
 			return count;
 		}
 
-		void ShowInConsole()
+		void GetItemsInfo()
 		{
 			TemplateListItem<T>* temp = _head;
-			while (temp != NULL)
-			{
+			while (temp != nullptr)
+			{ 
 				cout << temp->Value << endl;
 				temp = temp->Next;
 			}
 
-			if (_head != NULL)
+			if (_head != nullptr)
 			{
-				cout << "-------------------------------------------------" << endl;
+				cout << "------------------------" << endl;
 				cout << "Head = " << _head->Value << endl;
 				cout << "Tail = " << _tail->Value << endl;
-				cout << "-------------------------------------------------" << endl;
+				cout << "------------------------" << endl;
 			}
 			else
 			{
-				cout << "Head = NULL " << " Tail = NULL " << endl;
+				cout << "------------------------" << endl;
+				cout << "Head = NULL Tail = NULL" << endl;
+				cout << "------------------------" << endl;
 			}
 		}
 
-		static Person GetRandomPerson()
+		static Lab6::Person GetRandomPerson()
 		{
 			string surnames[] = { "Holiday","Jacobson","James", "Allford", "Bawerman",
 				"MacAdam", "Marlow", "Bosworth", "Neal","Conors",
 				"Daniels", "Parson", "Quincy", "Richards", "Fane" };
-
 			string names[] = { "Michael","Joshua","Matthew","Ethan","Andrew",
 				"Alexander", "Tyler", "James", "John","Samuel",
 				"Christian","Logan","Jose","Justin","Gabriel" };
-			int surname = rand() % 15;
-			int name = rand() % 15;
-			Person newPerson;
-			newPerson.Age = rand() % 30 + 18;
-			for (int i = 0; i <= strlen(names[name].c_str()); i++)
+
+			string name = names[rand() % 15];
+			string surname = surnames[rand() % 15];
+			unsigned int age = rand() % 20 + 18;
+			Sex sex;
+
+			if (rand() % 2 == 0)
 			{
-				newPerson.Name[i] = names[name][i];
+				sex = Male;
 			}
-			for (int i = 0; i <= strlen(surnames[surname].c_str()); i++)
+			else
 			{
-				newPerson.Surname[i] = surnames[surname][i];
+				sex = Female;
 			}
-			newPerson.Sex = Male;
+			Lab6::Person newPerson(name, surname, age, sex);
 			return newPerson;
 		}
 
 		TemplateList() { }
 	private:
-		TemplateListItem<T> * _head;
-		TemplateListItem<T>* _tail;
+		TemplateListItem<T>* _head = nullptr;
+		TemplateListItem<T>* _tail = nullptr;
 		int _count;
 	};
 }

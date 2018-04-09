@@ -62,11 +62,11 @@ namespace Lab1
 		scanf_s("%d", &a);
 		if (a % 2 == 0)
 		{
-			printf_s("\n _value %d is even! \n", a);
+			printf_s("\n Value %d is even! \n", a);
 		}
 		else
 		{
-			printf_s("\n _value %d is odd! \n", a);
+			printf_s("\n Value %d is odd! \n", a);
 		}
 	}
 
@@ -77,15 +77,15 @@ namespace Lab1
 		scanf_s("%d", &a);
 		if (a % 5 == 0)
 		{
-			printf_s("\n _value %d multiples 5! \n", a);
+			printf_s("\n Value %d multiples 5! \n", a);
 		}
 		else if (a % 2 == 0)
 		{
-			printf_s("\n _value %d multiples 2! \n", a);
+			printf_s("\n Value %d multiples 2! \n", a);
 		}
 		else
 		{
-			printf_s("\n _value %d doesn`t multiply 5 or 2! \n", a);
+			printf_s("\n Value %d doesn`t multiply 5 or 2! \n", a);
 		}
 	}
 
@@ -94,7 +94,7 @@ namespace Lab1
 		int a = 0;
 		while (a < 5)
 		{
-			printf_s("_value is %d now \n", a);
+			printf_s("Value is %d now \n", a);
 			a++;
 		}
 	}
@@ -104,7 +104,7 @@ namespace Lab1
 		int a = 0;
 		do
 		{
-			printf_s("_value is %d now \n", a);
+			printf_s("Value is %d now \n", a);
 			a++;
 		} while (a < 5);
 	}
@@ -120,7 +120,7 @@ namespace Lab1
 		for (int i = 0; i < a; i++)
 		{
 			a--;
-			printf_s("Iteration #%d _value is %d \n", i, a);
+			printf_s("Iteration #%d Value is %d \n", i, a);
 		}
 	}
 
@@ -146,16 +146,16 @@ namespace Lab1
 		float z;
 
 		z = a;
-		printf_s("_value of z is %f \n", z);
+		printf_s("Value of z is %f \n", z);
 
 		a = (int)z;
-		printf_s("_value of a is %d \n", a);
+		printf_s("Value of a is %d \n", a);
 
 		z = a / b;
-		printf_s("_value of z is %f \n", z);
+		printf_s("Value of z is %f \n", z);
 
 		z = ((float)a) / b;
-		printf_s("_value of z is %f \n", z);
+		printf_s("Value of z is %f \n", z);
 	}
 
 	void UILab1()

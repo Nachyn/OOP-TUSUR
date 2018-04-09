@@ -1,4 +1,4 @@
-#include "Lab1/Tasks.h"
+ï»¿#include "Lab1/Tasks.h"
 #include "Lab2/Tasks2.h"
 #include "Lab3/Tasks3.h"
 #include "Lab4/UILab4.h"
@@ -27,7 +27,7 @@ int main()
 			<< "[0] Exit" << endl
 			<< "------------------" << endl
 			<< "Choose 0-7: ";
-		//TODO: Èìåíîâàíèå.(+)
+		//TODO: Ð˜Ð¼ÐµÐ½Ð¾Ð²Ð°Ð½Ð¸Ðµ.(+)
 		chooseLab = CheckSymbol();
 		system("cls");
 		switch (chooseLab)
@@ -49,7 +49,7 @@ int main()
 			case 0:
 				return 0;
 			default:
-				cout << "Ïîâòîðèòå ââîä"; break;
+				cout << "ÐŸÐ¾Ð²Ñ‚Ð¾Ñ€Ð¸Ñ‚Ðµ Ð²Ð²Ð¾Ð´"; break;
 		}
 	}
 	return 0;

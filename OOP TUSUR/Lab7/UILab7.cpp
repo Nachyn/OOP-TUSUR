@@ -1,119 +1,46 @@
-#include "UILab7.h"
+п»ї#include "UILab7.h"
+#include "../Lab6/Person6.h"
+#include "UIDouble.h"
+#include "UIPerson.h"
+#include "UIList.h"
 
 void UILab7()
 {
-	Lab7::TemplateList<double> doubleList;
-	Lab7::TemplateList<Lab7::Person> personList;
-	Lab7::TemplateList<double[5]> doubleArrayList;
-	Lab7::TemplateList<Lab7::TemplateList<double>> doubleListList;
-
-	Lab7::TemplateList<double> doubleList2;
-	Lab7::TemplateList<double> doubleList3;
-	Lab7::TemplateList<double> doubleList4;
-	Lab7::TemplateList<double> doubleList5;
-	Lab7::TemplateList<double> doubleListAdd;
-	//TODO: Лучше разделить эти части, сделать выбор - выберите такой список, 
-	//TODO: такой список, ещё список, а внутри уже показать/очистить.
-	//TODO: Иначе сейчас всё перемешано.
+	//TODO: Р›СѓС‡С€Рµ СЂР°Р·РґРµР»РёС‚СЊ СЌС‚Рё С‡Р°СЃС‚Рё, СЃРґРµР»Р°С‚СЊ РІС‹Р±РѕСЂ - РІС‹Р±РµСЂРёС‚Рµ С‚Р°РєРѕР№ СЃРїРёСЃРѕРє, (+)
+	//TODO: С‚Р°РєРѕР№ СЃРїРёСЃРѕРє, РµС‰С‘ СЃРїРёСЃРѕРє, Р° РІРЅСѓС‚СЂРё СѓР¶Рµ РїРѕРєР°Р·Р°С‚СЊ/РѕС‡РёСЃС‚РёС‚СЊ. (+)
+	//TODO: РРЅР°С‡Рµ СЃРµР№С‡Р°СЃ РІСЃС‘ РїРµСЂРµРјРµС€Р°РЅРѕ. (+)
 	bool key = true;
-	int n;
+	int chooseMenu;
 	while (key)
 	{
-		cout << endl
-			<< "-------------------------------------------------" << endl
-			<< "[1] Demonstrate on double" << endl
+		system("cls");
+		cout << "[1] Demonstrate on double" << endl
 			<< "[2] Demonstrate on Person" << endl
 			<< "[3] Demonstrate on List<double>" << endl
-			<< "[4] Clear double" << endl
-			<< "[5] Clear Person" << endl
-			<< "[6] Clear List<double>" << endl
 			<< "[0] Exit" << endl
-			<< "-------------------------------------------------" << endl
-			<< "Choose 0-6: ";
-		//TODO: Именование
-		n = CheckSymbol();
+			<< "> Choose 0-3: ";
+		//TODO: РРјРµРЅРѕРІР°РЅРёРµ(+)
+		chooseMenu = CheckSymbol();
 		system("cls");
-		switch (n)
+		switch (chooseMenu)
 		{
-		case 1://TODO: Дубли
-			doubleList.Add(1.17);
-			doubleList.Add(2.17);
-			doubleList.Add(3.17);
-			doubleList.Add(4.17);
-			doubleList.Add(5.17);
-			doubleList.ShowInConsole();
-			doubleList.RemoveAt(2);
-			doubleList.ShowInConsole();
-			doubleList.InsertByIndex(4.44, 4);
-			doubleList.ShowInConsole();
-			break;
-		case 2:
-			//TODO: Дубли
-			personList.Add(personList.GetRandomPerson());
-			personList.Add(personList.GetRandomPerson());
-			personList.Add(personList.GetRandomPerson());
-			personList.Add(personList.GetRandomPerson());
-			personList.Add(personList.GetRandomPerson());
-			personList.ShowInConsole();
-			personList.RemoveAt(2);
-			personList.ShowInConsole();
-			personList.InsertByIndex(personList.GetRandomPerson(), 4);
-			personList.ShowInConsole();
-			break;
-		case 0:
-			//TODO: Почему 0 идёт перед 3?
-			key = false;
-			break;
-		case 3:
-			//TODO: Дубли
-			doubleList.Add(1.1);
-			doubleList.Add(2.1);
-			doubleList.Add(3.1);
-
-			doubleList2.Add(1.2);
-			doubleList2.Add(2.2);
-			doubleList2.Add(3.2);
-
-			doubleList3.Add(1.3);
-			doubleList3.Add(2.3);
-			doubleList3.Add(3.3);
-
-			doubleList4.Add(1.4);
-			doubleList4.Add(2.4);
-			doubleList4.Add(3.4);
-
-			doubleList5.Add(1.5);
-			doubleList5.Add(2.5);
-			doubleList5.Add(3.5);
-
-			doubleListList.Add(doubleList);
-			doubleListList.Add(doubleList2);
-			doubleListList.Add(doubleList3);
-			doubleListList.Add(doubleList4);
-			doubleListList.Add(doubleList5);
-			doubleListList.ShowInConsole();
-			doubleListList.RemoveAt(2);
-			doubleListList.ShowInConsole();
-			doubleListAdd.Add(4.4);
-			doubleListAdd.Add(4.4);
-			doubleListAdd.Add(4.4);
-
-			doubleListList.InsertByIndex(doubleListAdd, 4);
-			doubleListList.ShowInConsole();
-			break;
-
-		case 4:
-			doubleList.Clear();
-			break;
-		case 5:
-			personList.Clear();
-			break;
-		case 6:
-			doubleListList.Clear();
-			break;
-		default:
-			cout << "Повторите ввод";
-			break;
+			case 0:
+				//TODO: РџРѕС‡РµРјСѓ 0 РёРґС‘С‚ РїРµСЂРµРґ 3? (+)
+				key = false;
+				break;
+			case 1://TODO: Р”СѓР±Р»Рё (+)
+				UIDouble();
+				break;
+			case 2:
+				//TODO: Р”СѓР±Р»Рё (+)
+				UIPerson();
+				break;
+			case 3:
+				UIList();
+				break;
+			default:
+				cout << "РџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ";
+				break;
 		}
 	}
 	system("pause");

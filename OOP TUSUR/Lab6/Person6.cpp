@@ -2,10 +2,8 @@
 
 namespace Lab6
 {
-	//TODO: Лучше uint(+)
 	bool Person::SetAge(unsigned int age)
 	{
-		//BUG: Условие(+)
 		if (age < 0 || age > 150)
 		{
 			return false;
@@ -39,12 +37,12 @@ namespace Lab6
 			&& (Age == right.Age) 
 			&& (Sex == right.Sex);
 	}
-
+	//TODO: Почему пустой?
 	Person::Person()
 	{
 
 	}
-
+	//TODO: Почему пустой?
 	Person::~Person()
 	{
 

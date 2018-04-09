@@ -3,8 +3,6 @@ namespace Lab6
 {
 	bool Adult::SetAge(unsigned int age)
 	{
-		//TODO: Спорное поведение. Должны ли мы молча устанавливать значение(+)
-		//или нужно сообщить о некорректных данных? (+)
 		if (age < 18)
 		{
 			return false;

@@ -4,14 +4,12 @@
 
 namespace Lab6
 {
-	//TODO: Должен быть базовым(?)
-	//TODO: Деструкторы во все классы!(+)
 	class Person
 	{
 		private:
 			int Age;
 		public:
-			//TODO: Почему не строками?(+)
+			//TODO: Нарушение инкапсуляции, публичные поля.
 			string Name;
 			string Surname;
 			Sex Sex;

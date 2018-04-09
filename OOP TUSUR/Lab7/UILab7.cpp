@@ -12,7 +12,9 @@ void UILab7()
 	Lab7::TemplateList<double> doubleList4;
 	Lab7::TemplateList<double> doubleList5;
 	Lab7::TemplateList<double> doubleListAdd;
-
+	//TODO: Лучше разделить эти части, сделать выбор - выберите такой список, 
+	//TODO: такой список, ещё список, а внутри уже показать/очистить.
+	//TODO: Иначе сейчас всё перемешано.
 	bool key = true;
 	int n;
 	while (key)
@@ -28,11 +30,12 @@ void UILab7()
 			<< "[0] Exit" << endl
 			<< "-------------------------------------------------" << endl
 			<< "Choose 0-6: ";
+		//TODO: Именование
 		n = CheckSymbol();
 		system("cls");
 		switch (n)
 		{
-		case 1:
+		case 1://TODO: Дубли
 			doubleList.Add(1.17);
 			doubleList.Add(2.17);
 			doubleList.Add(3.17);
@@ -45,6 +48,7 @@ void UILab7()
 			doubleList.ShowInConsole();
 			break;
 		case 2:
+			//TODO: Дубли
 			personList.Add(personList.GetRandomPerson());
 			personList.Add(personList.GetRandomPerson());
 			personList.Add(personList.GetRandomPerson());
@@ -57,9 +61,11 @@ void UILab7()
 			personList.ShowInConsole();
 			break;
 		case 0:
+			//TODO: Почему 0 идёт перед 3?
 			key = false;
 			break;
 		case 3:
+			//TODO: Дубли
 			doubleList.Add(1.1);
 			doubleList.Add(2.1);
 			doubleList.Add(3.1);

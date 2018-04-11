@@ -6,9 +6,6 @@
 
 void UILab7()
 {
-	//TODO: Лучше разделить эти части, сделать выбор - выберите такой список, (+)
-	//TODO: такой список, ещё список, а внутри уже показать/очистить. (+)
-	//TODO: Иначе сейчас всё перемешано. (+)
 	bool key = true;
 	int chooseMenu;
 	while (key)
@@ -19,20 +16,19 @@ void UILab7()
 			<< "[3] Demonstrate on List<double>" << endl
 			<< "[0] Exit" << endl
 			<< "> Choose 0-3: ";
-		//TODO: Именование(+)
+
 		chooseMenu = CheckSymbol();
 		system("cls");
 		switch (chooseMenu)
 		{
 			case 0:
-				//TODO: Почему 0 идёт перед 3? (+)
+
 				key = false;
 				break;
-			case 1://TODO: Дубли (+)
+			case 1:
 				UIDouble();
 				break;
 			case 2:
-				//TODO: Дубли (+)
 				UIPerson();
 				break;
 			case 3:

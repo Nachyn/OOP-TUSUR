@@ -11,7 +11,7 @@ void ListMenu(TemplateList<double>* list, int number)
 
 		bool key = true;
 		while (key)
-		{
+		{//TODO: Похоже, что менюшки дублируются.
 			cout << "ЛИСТ под индексом: " << number << endl
 				<< "[1] Дообавить элемент" << endl
 				<< "[2] Очистить список" << endl
@@ -107,7 +107,7 @@ void UIList()
 		TemplateList<TemplateList<double>>* list = new TemplateList<TemplateList<double>>();
 		bool key = true;
 		while (key)
-		{
+		{//TODO: Похоже, что менюшки дублируются.
 			cout << "[1] Добавить Лист" << endl
 				<< "[2] Очистить список" << endl
 				<< "[3] *Работать с Листом по индексу*" << endl

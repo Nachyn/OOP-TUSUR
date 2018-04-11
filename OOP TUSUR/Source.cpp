@@ -27,7 +27,6 @@ int main()
 			<< "[0] Exit" << endl
 			<< "------------------" << endl
 			<< "Choose 0-7: ";
-		//TODO: Именование.(+)
 		chooseLab = CheckSymbol();
 		system("cls");
 		switch (chooseLab)

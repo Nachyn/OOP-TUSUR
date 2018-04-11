@@ -12,7 +12,6 @@ namespace Lab6
 			string Surname;
 			Sex Sex;
 		public:
-			//TODO: Нарушение инкапсуляции, публичные поля. (+)
 			void SetName(string name);
 			void SetSurname(string surname);
 			void SetSex(enum Sex sex);

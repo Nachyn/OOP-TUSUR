@@ -270,7 +270,7 @@ namespace Lab7
 				cout << "------------------------" << endl;
 			}
 		}
-
+		//TODO: Не должно быть тут!
 		static Lab6::Person GetRandomPerson()
 		{
 			string surnames[] = { "Holiday","Jacobson","James", "Allford", "Bawerman",

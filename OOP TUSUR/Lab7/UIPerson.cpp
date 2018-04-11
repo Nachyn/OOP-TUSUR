@@ -6,7 +6,7 @@ void UIPerson()
 	TemplateList<Person>* list = new TemplateList<Person>();
 	bool key = true;
 	while (key)
-	{
+	{//TODO: Похоже, что менюшки дублируются.
 		cout << "[1] Дообавить рандом элемент" << endl
 			<< "[2] Очистить список" << endl
 			<< "[3] Найти по индексу" << endl
@@ -17,7 +17,7 @@ void UIPerson()
 			<< "[0] Выход" << endl
 			<< "-> Выберите: ";
 		switch (CheckSymbol())
-		{
+		{//TODO: Форматирование
 		case 0:
 			key = false;
 			break;

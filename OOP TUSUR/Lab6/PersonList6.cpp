@@ -162,8 +162,7 @@ namespace Lab6
 		string info;
 		PersonListItem* temp = _head;
 		while (temp != nullptr)
-		{   //TODO: Принцип единственной ответственности всё равно нарушается, с хранением списка есть(+)
-			//TODO: и консольный вывод(+)
+		{   
 			info.append(temp->GetValue()->GetDescription()).append("\n");
 			temp = temp->Next;
 		}

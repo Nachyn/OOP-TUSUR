@@ -12,8 +12,8 @@ namespace Lab6
 			"Alexander", "Tyler", "James", "John","Samuel",
 			"Christian","Logan","Jose","Justin","Gabriel" };
 		
-		//TODO: Много магических чисел, лучше исправить(+)
-		//TODO: Есть ниже дублирование.(+)
+		//TODO: Много магических чисел, лучше исправить
+		//TODO: Есть ниже дублирование.
 		string name = names[rand() % 15];
 		string surname = surnames[rand() % 15];
 		unsigned int age = rand() % 20 + 18;

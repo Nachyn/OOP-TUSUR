@@ -15,7 +15,7 @@ namespace Lab6
 	{
 		string temp = Person::GetDescription();
 		if (Mother != nullptr && Father != nullptr)
-		{//TODO: Ниже четыре дубля.(+)
+		{
 			temp.append(", parents are ")
 				.append(Mother->GetShortDescription())
 				.append(" and ")

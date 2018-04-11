@@ -6,7 +6,7 @@ void UIDouble()
 	TemplateList<double>* list = new TemplateList<double>();
 	bool key = true;
 	while (key)
-	{
+	{//TODO: Похоже, что менюшки дублируются.
 		cout << "[1] Дообавить элемент" << endl
 			<< "[2] Очистить список" << endl
 			<< "[3] Найти по индексу" << endl

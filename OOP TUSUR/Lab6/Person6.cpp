@@ -69,7 +69,7 @@ namespace Lab6
 			&& (Age == right.Age) 
 			&& (Sex == right.Sex);
 	}
-	//TODO: Почему пустой?(+)
+	
 	Person::Person(string name, string surname, unsigned int age, enum Sex sex)
 	{
 		SetName(name);
@@ -78,6 +78,9 @@ namespace Lab6
 		SetSex(sex);
 	}
 	//TODO: Почему пустой? (нечего удалять)
+	//TODO: Неверно. Сейчас класс испольузется при автоматическом заполнении, а правильнее его использовать
+	//TODO: при пользовательском вводе, в котором будет работа с динамической памятью.
+	//TODO: Отсутствие освобождения выделенной памяти - может привести к серъёзным проблемам.
 	Person::~Person()
 	{
 

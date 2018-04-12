@@ -3,7 +3,7 @@
 
 namespace Lab6
 {
-	void Person::SetName(string name) 
+	void Person::SetName(string name)
 	{
 		if (name.length() < 1)
 		{
@@ -81,8 +81,26 @@ namespace Lab6
 	//TODO: Неверно. Сейчас класс испольузется при автоматическом заполнении, а правильнее его использовать
 	//TODO: при пользовательском вводе, в котором будет работа с динамической памятью.
 	//TODO: Отсутствие освобождения выделенной памяти - может привести к серъёзным проблемам.
+
+	//В пользовательском вводе вроде тоже нечего удалять.(Он в PersonTools6)
 	Person::~Person()
 	{
 
+	}
+
+	std::ostream & operator<<(std::ostream & os, Person & p)
+	{
+		os << "Surname: " << p.Surname << std::endl;
+		os << "Name: " << p.Name << std::endl;
+		os << "Age: " << p.Age << std::endl;
+		if (p.Sex == Male)
+		{
+			os << "Male" << endl;
+		}
+		else
+		{
+			os << "Female" << endl;
+		}
+		return os;
 	}
 }

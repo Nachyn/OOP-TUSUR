@@ -6,5 +6,9 @@ namespace Lab6
 	{
 		public:
 			static Adult* GetRandomAdult();
+			static Adult* GetSingleAdult();
+			static Person* GetCreatePerson();
+		private:
+			static bool CheckName(string name);
 	};
 }

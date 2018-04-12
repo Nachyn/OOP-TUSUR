@@ -25,20 +25,6 @@ namespace Lab6
 			~Person();
 
 			Person() { }; //ƒл€ 7й лабы.
-			friend std::ostream& operator<<(std::ostream& os, Person& p) //ƒл€ 7й лабы.
-			{
-				os << "Surname: " << p.Surname << std::endl;
-				os << "Name: " << p.Name << std::endl;
-				os << "Age: " << p.Age << std::endl;
-				if (p.Sex == Male)
-				{
-					os << "Male" << endl;
-				}
-				else
-				{
-					os << "Female" << endl;
-				}
-				return os;
-			}
+			friend std::ostream& operator<<(std::ostream& os, Person& p); //ƒл€ 7й лабы.
 	};
 }

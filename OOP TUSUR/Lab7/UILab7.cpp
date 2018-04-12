@@ -1,8 +1,6 @@
 ﻿#include "UILab7.h"
 #include "../Lab6/Person6.h"
-#include "UIDouble.h"
-#include "UIPerson.h"
-#include "UIList.h"
+#include "UIData7.h"
 
 void UILab7()
 {
@@ -41,4 +39,3 @@ void UILab7()
 	}
 	system("pause");
 }
-
